@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>前端开发面试题集锦 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="前端开发,面试题,集锦">
+    <meta name="description" content="你如何理解HTML结构的语意化?
+
+1、去掉或样式丢失的时候能让页面呈现清晰的结构2、屏幕阅读器（如果访客有视障）会完全根据你的标记来”读”你的网页3、PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）4、搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重5、你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记，而只注重语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发面试题集锦">
+<meta property="og:url" content="https://blog.luckyw.cn/2015/12/15/front-end-development/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="你如何理解HTML结构的语意化?
+
+1、去掉或样式丢失的时候能让页面呈现清晰的结构2、屏幕阅读器（如果访客有视障）会完全根据你的标记来”读”你的网页3、PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）4、搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重5、你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记，而只注重语">
+<meta property="og:updated_time" content="2016-11-20T10:47:23.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发面试题集锦">
+<meta name="twitter:description" content="你如何理解HTML结构的语意化?
+
+1、去掉或样式丢失的时候能让页面呈现清晰的结构2、屏幕阅读器（如果访客有视障）会完全根据你的标记来”读”你的网页3、PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）4、搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重5、你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记，而只注重语">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-front-end-development" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            前端开发面试题集锦
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/12/15/front-end-development/">
+            <time datetime="2015-12-14T16:00:00.000Z" itemprop="datePublished">2015-12-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/WEB/">WEB</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WEB/">WEB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="你如何理解HTML结构的语意化"><a href="#你如何理解HTML结构的语意化" class="headerlink" title="你如何理解HTML结构的语意化?"></a>你如何理解HTML结构的语意化?</h4><hr>
+<blockquote>
+<p>1、去掉或样式丢失的时候能让页面呈现清晰的结构<br>2、屏幕阅读器（如果访客有视障）会完全根据你的标记来”读”你的网页<br>3、PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）<br>4、搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重<br>5、你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记，而只注重语义标记<br>6、便于团队开发和维护</p>
+</blockquote>
+<h4 id="Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义"><a href="#Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义" class="headerlink" title="Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义?"></a>Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义?</h4><hr>
+<p><strong>1、如何触发两种模式</strong><br>加入xml头部声明，可以触发IE浏览器的<code>Quirks mode</code>(怪异模式)，触发之后，浏览器解析方式就和IE5.5一样，拥有IE5.5一样的bug和其他问题，行为（<code>Javascript</code>）也是如此。<br><strong>2、IE6的触发：在XHTML的DOCTYPE前加入XML声明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>3、IE7的触发：在XML声明和XHTML的DOCTYPE之间，加入HTML注释</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;!-- ... and keep IE7 in quirks mode --&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>4、IE6和IE7都可以触发的：在HTML4.01的DOCTYPE文档头部，加入HTML注释</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- quirks mode --&gt;  &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>5、在页面顶部加<code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</code>，将触发”怪异模式”</strong><br><strong>6、没有使用DTD声明或者使用HTML4以下（不包括HTML4）的DTD声明时，基本上所有的浏览器都是使用<code>quirks mode</code>呈现</strong></p>
+<h4 id="谈谈以前端角度出发做好SEO需要考虑什么？"><a href="#谈谈以前端角度出发做好SEO需要考虑什么？" class="headerlink" title="谈谈以前端角度出发做好SEO需要考虑什么？"></a>谈谈以前端角度出发做好SEO需要考虑什么？</h4><hr>
+<blockquote>
+<p>1、了解搜索引擎如何抓取网页和如何索引网页<br>2、<code>Meta</code>标签优化<br>3、如何选取关键词并在网页中放置关键词<br>4、了解主要的搜索引擎<br>5、主要的互联网目录<br>6、按点击付费的搜索引擎<br>7、搜索引擎登录<br>8、链接交换和链接广泛度<br>9、标签的合理使用</p>
+</blockquote>
+<h4 id="我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？"><a href="#我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？" class="headerlink" title="我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？"></a>我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？</h4><hr>
+<p>CSS的引入方式最常用的有三种：</p>
+<blockquote>
+<ul>
+<li>第一：在<code>head</code>部分加入 <code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;my.css&quot;/&gt;</code>, 引入外部的<code>CSS</code>文件。</li>
+<li><p>第二：在<code>head</code>部分加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    div&#123;margin: 0;padding: 0;border:1px red solid;&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第三：直接在页面的标签里加，比如：<code>&lt;div style=&quot;border:1px red solid;&quot;&gt;</code></p>
+</li>
+</ul>
+</blockquote>
+<h4 id="CSS-Sprite是什么，谈谈这个技术的优缺点？"><a href="#CSS-Sprite是什么，谈谈这个技术的优缺点？" class="headerlink" title="CSS Sprite是什么，谈谈这个技术的优缺点？"></a>CSS Sprite是什么，谈谈这个技术的优缺点？</h4><hr>
+<p><code>CSS sprites</code>在国内很多人叫<code>css精灵</code>，是一种网页图片应用处理方式。它允许你将一个页面涉及到的所有零星图片都包含到中去，减少对服务器的请求次数，提高访问速度<br><strong>1、优点：</strong></p>
+<blockquote>
+<ul>
+<li>利用<code>CSS Sprites</code>能很好地减少了网页的<code>http</code>请求，从而大大的提高了页面的性能，这也是<code>CSS Sprite</code>的优点，也是其被广泛传播和应用的主要原因</li>
+<li>解决了网页设计师在图片命名上的困扰，只需对一张集合的图片上命名就可以了，不需要对每一个小元素命名，从而提高了网页的制作效率</li>
+<li>换风格方便，只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变。维护起来也很方便</li>
+</ul>
+</blockquote>
+<p><strong>2、缺点：</strong></p>
+<blockquote>
+<ul>
+<li>在图片合并的时候，你要把多张图片有序的合理的合并成一张图片，还要留好足够的空间，防止板块内显示不必要的背景。这些还好，最痛苦的是在宽屏，高分辨率的屏幕下的自适应页面，你的图片如果不够宽，很容易将背景断裂</li>
+<li><code>CSS Sprites</code>在开发的时候比较麻烦，你要通过<code>photoshop</code>或其他工具测量计算每一个背景单元的精确位是针线活，没什么难度，但是很繁琐</li>
+<li><code>CSS Sprites</code>在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无需改的好不要动，这样避免改动更多的<code>css</code>，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字加了，还要改动<code>css</code></li>
+</ul>
+</blockquote>
+<h4 id="以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）"><a href="#以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）" class="headerlink" title="以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）"></a>以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    -moz-border-radius: 10px;</div><div class="line">    -webkit-border-radius: 10px;</div><div class="line">    border-radius:10px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="行内元素有哪些？块级元素有哪些？CSS的盒模型？"><a href="#行内元素有哪些？块级元素有哪些？CSS的盒模型？" class="headerlink" title="行内元素有哪些？块级元素有哪些？CSS的盒模型？"></a>行内元素有哪些？块级元素有哪些？CSS的盒模型？</h4><hr>
+<blockquote>
+<ul>
+<li>行内元素有： <code>a b span I em img input select strong</code></li>
+<li>级元素有： <code>div ul ol li dl dt dd h1 h2 h3 h4 p</code></li>
+<li>盒模型： <code>margin border padding content</code></li>
+</ul>
+</blockquote>
+<h4 id="前端页面有哪三层构成，分别是什么？作用是什么？"><a href="#前端页面有哪三层构成，分别是什么？作用是什么？" class="headerlink" title="前端页面有哪三层构成，分别是什么？作用是什么？"></a>前端页面有哪三层构成，分别是什么？作用是什么？</h4><hr>
+<p>网页分成三个层次，即：结构层、表示层、行为层。</p>
+<blockquote>
+<ul>
+<li>网页的结构层:由<code>HTML</code>或<code>XHTML</code>之类的标记语言负责创建。标签，也就是那些出现在尖括号里的单词，对网页内容的语义含义做出这些标签不包含任何关于如何显示有关内容的信息。例如，P标签表达了这样一种语义：”这是一个文本段。”</li>
+<li>网页的表示层:由<code>CSS</code>负责创建。<code>CSS</code>对”如何显示有关内容”的问题做出了回答</li>
+<li>网页的行为层:负责回答”内容应该如何对事件做出反应”这一问题。这是<code>Javascript</code>语言和<code>DOM</code>主宰的领域</li>
+</ul>
+</blockquote>
+<h4 id="html中form里action方法的get和post有什么区别？"><a href="#html中form里action方法的get和post有什么区别？" class="headerlink" title="html中form里action方法的get和post有什么区别？"></a>html中form里action方法的get和post有什么区别？</h4><hr>
+<blockquote>
+<ul>
+<li><code>Get</code>是用来从服务器上获得数据，而<code>Post</code>是用来向服务器上传递数据</li>
+<li><code>Get</code>将表单中数据的按照<code>variable=value</code>的形式，添加到<code>action</code>所指向的<code>URL</code>后面，并且两者使用<code>?</code>连接，而各个变量之间使用<code>&amp;</code>连接。<code>Post</code>是将表单中的数据放在<code>form</code>的数据体中，按照变量和值相对应的方式，传递到<code>action</code>所指向<code>URL</code></li>
+<li><code>Get</code>是不安全的，因为在传输过程，数据被放在请求的<code>URL</code>中，而如今现有的很多服务器、代理服务器或者用户代理都会将请求<code>URL</code>记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上直接看到提交的数据，一些系统内部消息将会一同显示在用户面前。<code>Post</code>的所有操作对用户来说都是不可见的</li>
+<li><code>Get</code>传输的数据量小，这主要是因为受<code>URL</code>长度限制。而<code>Post</code>可以传输大量的数据，所以在上传文件只能使用<code>Post</code></li>
+<li><code>Get</code>限制<code>Form</code>表单的数据集的值必须为<code>ASCII</code>字符。而<code>Post</code>支持整个<code>ISO10646</code>字符集</li>
+<li><code>Get</code>是<code>Form</code>的默认方法</li>
+</ul>
+</blockquote>
+<h4 id="html元素的id跟class什么区别"><a href="#html元素的id跟class什么区别" class="headerlink" title="html元素的id跟class什么区别"></a>html元素的id跟class什么区别</h4><hr>
+<p><code>id</code>和<code>class</code>是网页中两个通用属性，他们协同工作使整个页面丰富多彩，当我们为一个元素定义样式时，二者都可用，但有区别</p>
+<blockquote>
+<p>1、在<code>css</code>样式表中书写时，<code>id</code>选择符前缀应加<code>#</code>，<code>class</code>选择符前缀应加<code>.</code><br>2、<code>id</code>属性在一个页面中书写时只能使用一次，而<code>class</code>可以反复使用<br>3、<code>id</code>作为元素标签用于区分不同结构和内容，而<code>class</code>作为一个样式，可以应用到任何结构和内容当中去<br>4、布局上的一般原则:<code>id</code>先确定结构和内容再为它定义样式。而<code>class</code>正好相反，是先定义样式，然后在页面中根据不同需求把样式应用到不同结构和内容上<br>5、目前浏览器都允许同一个页面出现多个相同属性值的<code>id</code>，一般情况能正常显示，不过当<code>javascript</code>通过<code>id</code>来控制元素时就会出错<br>6、在实际应用中，<code>class</code>常被用到文字版块和页面修饰上，而<code>id</code>多被用在宏伟布局和设计包含块，或包含框的样式</p>
+</blockquote>
+<h4 id="Ajax是什么？"><a href="#Ajax是什么？" class="headerlink" title="Ajax是什么？"></a>Ajax是什么？</h4><hr>
+<p><code>Ajax</code>不是一个技术，它实际上是几种技术，每种技术都有其独特这处，合在一起就成了一个功能强大的新技术。<code>Ajax</code>包括：</p>
+<blockquote>
+<ul>
+<li><code>XHTML</code>和<code>JS</code></li>
+<li>使用文档对象模型作动态显示和交互</li>
+<li>使用<code>XML</code>和<code>XSLT</code>做数据交互和操作</li>
+<li>使用<code>XMLHttpRequest</code>进行异步数据接收</li>
+<li>使用<code>JavaScript</code>将它们绑定在一起</li>
+</ul>
+</blockquote>
+<h4 id="html5-离线存储"><a href="#html5-离线存储" class="headerlink" title="html5 离线存储"></a>html5 离线存储</h4><hr>
+<p><code>Html5</code>的一个重要特性就是离线存储，所谓的离线存储就是将一些资源文件保存在本地，这样后续的页面重新加载将使用本地资源文件，在离线情况下可以继续访问<code>web</code>应用，同时通过一定的手法（更新相关文件或者使用相关API），可以更新、删除离线存储等操作。<br><code>Html5</code>的离线存储使用一个<code>manifest</code>文件来标明哪些文件是需要被存储的，使用如 <code>&lt;html manifest=&#39;offline.manifest&#39;&gt;</code>来引入一个<code>manifest</code>文件，这个文件的路径可以是相对的，也可以是绝对的，如果你的<code>web</code>应用很多，而且希望能集中管理<code>manifest</code>文件，那么静态文件服务器是个不错的选择</p>
+<h4 id="iframe的优缺点？"><a href="#iframe的优缺点？" class="headerlink" title="iframe的优缺点？"></a>iframe的优缺点？</h4><hr>
+<p><strong>1、缺点：</strong><br>在网页中使用框架结构最大的弊病是搜索引擎的”蜘蛛”程序无法解读这种页面。当”蜘蛛”程序遇到由数个框架组成的网页时，它们只看到框架而无法找到链接，因此它们会以为该网站是个死站点，并且很快转身离去。对一个网站来说这无异于一场灾难。如果你想销售产品，你需要客户;如想得到客户，你首先要让人们访问你的网站，而要做到这一点，你就非求助于搜索引擎不可。你花费了大量的时间、精力和金钱开设了一家网上商店，却又故意不让搜索引擎检索你，这就好象开家零售商店，却将窗户全部漆成黑色，而且还不挂任何招牌一样<br><strong>2、优点：</strong><br>从上文中我们可以发现，使用<code>iframe</code>框架的弊端是无法被搜索引擎所爬行抓取。但凡事总是具有两面性。它的这个缺点也可能是他的优点。利用这一点那我 =们就可以把我们站点上一些需要给我们的用户查看，但是不需要搜索引擎爬行的内容用<code>iframe</code>框架进行显示，这样就可以让<code>iframe</code>发挥真正的效果了，而且有我们站点中的代码也可以得到很大的精简<br><code>iframe</code>好在能够把原先的网页全部原封不动显示下来,但是如果用在首页,是搜索引擎最套讨厌的.那么你的网站即使做的在好,也排不到好的名次!如果是动态网页，用<code>include</code>还好点！但是必须要去除他的<code>&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;body&gt;</code>标签！<br><strong>框架的优点</strong></p>
+<blockquote>
+<ul>
+<li>重载页面时不需要重载整个页面，只需要重载页面中的一个框架页(减少了数据的传输，增加了网页下载速度)</li>
+<li>方便制作导航栏</li>
+</ul>
+</blockquote>
+<p><strong>框架的缺点</strong></p>
+<blockquote>
+<ul>
+<li>会产生很多页面，不容易管理</li>
+<li>不容易打印</li>
+<li>浏览器的后退按钮无效</li>
+<li>代码复杂,无法被一些搜索引擎索引到</li>
+<li>多数小型的移动设备无法完全显示框架</li>
+<li>多框架的页面会增加服务器的<code>http</code>请求</li>
+<li>由于上面诸多缺点，因此不符合标准网页设计的理念,已经被标准网页设计抛弃</li>
+</ul>
+</blockquote>
+<p>提示: 目前框架的所有优点完全可以使用<code>Ajax</code>实现，因此已经没有必要使用框架了</p>
+<h4 id="CSS盒模型原理"><a href="#CSS盒模型原理" class="headerlink" title="CSS盒模型原理"></a>CSS盒模型原理</h4><hr>
+<blockquote>
+<ul>
+<li>W3C 盒子模型的范围包括<code>margin、border、padding、content</code>，并且 content 部分不包含其他部分。</li>
+<li>IE 盒子模型的范围也包括<code>margin、border、padding、content</code>，和标准 W3C 盒子模型不同的是：IE盒子模型的<code>content</code>部分包含了<code>border</code>和<code>pading</code></li>
+</ul>
+</blockquote>
+<h4 id="CSS-display-none和visibility-hidden的区别"><a href="#CSS-display-none和visibility-hidden的区别" class="headerlink" title="CSS display:none和visibility:hidden的区别"></a>CSS display:none和visibility:hidden的区别</h4><hr>
+<blockquote>
+<ul>
+<li><code>visibility:hidden</code>隐藏，但在浏览时保留位置</li>
+<li><code>display:none</code>视为不存在，且不加载</li>
+</ul>
+</blockquote>
+<h4 id="jQuery是什么？"><a href="#jQuery是什么？" class="headerlink" title="jQuery是什么？"></a>jQuery是什么？</h4><hr>
+<p><code>jQuery</code>是<code>javascript</code>编写一个可重用的<code>JavaScript</code>库<br>不使用<code>jQuery</code>设置文本的<code>JavaScript</code>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&quot;txt1&quot;).value = &quot;hello&quot;;</div></pre></td></tr></table></figure></p>
+<p>用<code>jQuery</code>类库后的的<code>JavaScript</code>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;#txt1&quot;).val(&quot;Hello&quot;);</div></pre></td></tr></table></figure></p>
+<p>可见，在使用<code>jQuery</code>类库后的<code>JavaScript</code>代码明显简洁了很多</p>
+<h4 id="jquery与JavaScript的关系，jQuery会取代JavaScript吗？"><a href="#jquery与JavaScript的关系，jQuery会取代JavaScript吗？" class="headerlink" title="jquery与JavaScript的关系，jQuery会取代JavaScript吗？"></a>jquery与JavaScript的关系，jQuery会取代JavaScript吗？</h4><hr>
+<blockquote>
+<ul>
+<li><code>JavaScript</code>：是一门<code>Web</code>最流行的脚本语言</li>
+<li><code>jQuery</code>: 是一个优秀的<code>Javascript</code>框架。它是轻量级的<code>js</code>库 ，它兼容<code>CSS3</code>，还兼容各种浏览器（<code>IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+</code>）</li>
+</ul>
+</blockquote>
+<p><code>jQuery</code>是并不是要取代的<code>JavaScript</code>。使用<code>jQuery</code>使<code>Web</code>开发变得简单</p>
+<h4 id="CDN（内容分发网络）是什么？"><a href="#CDN（内容分发网络）是什么？" class="headerlink" title="CDN（内容分发网络）是什么？"></a>CDN（内容分发网络）是什么？</h4><hr>
+<p>在开发<code>Web</code>页面，考虑最多的问题之一是页面在客户端电脑的响应：时间越短，用户体验越好<br>而制约用户体验的关键因素之一是浏览器下载Web文件大小，包括<strong>html、图片、js、css</strong>等文件。<br>为了最大化复用和节约带宽，故<code>CDN</code>应运而生:其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。其目的是使用户可就近取得所需内容，解决<code>Internet</code>网络拥挤的状况，提高用户访问网站的响应速度</p>
+<h4 id="如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？"><a href="#如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？" class="headerlink" title="如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？"></a>如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？</h4><hr>
+<p>一般情况下，<code>CDN</code>网络节点是可靠的。但是偶尔也有失灵的时候，故为了提供双保险，可进行判断网络加载<code>CDN</code>失败，则自动加载网站上的<code>jQuery</code>, 示例代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//ajax.microsoft.com/ajax/jquery/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">if (typeof jQuery == &apos;undefined&apos;)</div><div class="line">&#123;</div><div class="line">	document.write(unescape(&quot;%3Cscript src=&apos;Scripts/jquery.1.9.1.min.js&apos; type=&apos;text/javascript&apos;%3E%3C/script%3E&quot;));</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="同版本的jQuery-js文件和jQuery-min-js有何不同？"><a href="#同版本的jQuery-js文件和jQuery-min-js有何不同？" class="headerlink" title="同版本的jQuery.js文件和jQuery.min.js有何不同？"></a>同版本的jQuery.js文件和jQuery.min.js有何不同？</h4><hr>
+<blockquote>
+<ul>
+<li>相同：这两个文件提供相同的<code>jQuery</code>的功能，即在函数调用上没有区别</li>
+<li>不同：<code>jQuery.js</code>文件，适合让程序员阅读。<code>jQuery.min.js</code>文件，通过压缩和删除所有的空格，以节省带宽和空间，使得文件更小，用于网络传输，不适合程序员阅读</li>
+</ul>
+</blockquote>
+<p><strong>何时使用jquery.js，何时使用jquery.min.js？</strong></p>
+<blockquote>
+<ul>
+<li>开发调试场景下：用<code>jQuery.js</code>文件，因为你想调试，能够看到<code>javascript</code>代码。</li>
+<li>生产部署环境下：用<code>jQuery.min.js</code>文件，可减少网络宽度，加快网页加载速度</li>
+</ul>
+</blockquote>
+<h4 id="为何要使用jQuery-noConflict-？"><a href="#为何要使用jQuery-noConflict-？" class="headerlink" title="为何要使用jQuery.noConflict()？"></a>为何要使用jQuery.noConflict()？</h4><hr>
+<p>有很多类似<code>jQuery</code>一样的类库，在这些类库中，有的也使用了<code>$</code>符号，如果同时使用，则会导致命名冲突<br>为了解决这个冲突，需要用到<code>jQuery.noConflict()</code>，这样就不依赖<code>$</code>这个默认符号了。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jQuery.noConflict();</div><div class="line">(function($)&#123;</div><div class="line">...</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2015/12/15/front-end-development/" target="_blank" title="前端开发面试题集锦">前端开发面试题集锦</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2015/12/15/front-end-development/" target="_blank" title="前端开发面试题集锦">https://blog.luckyw.cn/2015/12/15/front-end-development/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#你如何理解HTML结构的语意化"><span class="toc-number">1.</span> <span class="toc-text">你如何理解HTML结构的语意化?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义"><span class="toc-number">2.</span> <span class="toc-text">Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#谈谈以前端角度出发做好SEO需要考虑什么？"><span class="toc-number">3.</span> <span class="toc-text">谈谈以前端角度出发做好SEO需要考虑什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？"><span class="toc-number">4.</span> <span class="toc-text">我们知道可以以外链的方式引入CSS文件，请谈谈外链引入CSS有哪些方式，这些方式的性能有区别吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-Sprite是什么，谈谈这个技术的优缺点？"><span class="toc-number">5.</span> <span class="toc-text">CSS Sprite是什么，谈谈这个技术的优缺点？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）"><span class="toc-number">6.</span> <span class="toc-text">以CSS3标准定义一个webkit内核浏览器识别的圆角（尺寸随意）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行内元素有哪些？块级元素有哪些？CSS的盒模型？"><span class="toc-number">7.</span> <span class="toc-text">行内元素有哪些？块级元素有哪些？CSS的盒模型？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端页面有哪三层构成，分别是什么？作用是什么？"><span class="toc-number">8.</span> <span class="toc-text">前端页面有哪三层构成，分别是什么？作用是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html中form里action方法的get和post有什么区别？"><span class="toc-number">9.</span> <span class="toc-text">html中form里action方法的get和post有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html元素的id跟class什么区别"><span class="toc-number">10.</span> <span class="toc-text">html元素的id跟class什么区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax是什么？"><span class="toc-number">11.</span> <span class="toc-text">Ajax是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html5-离线存储"><span class="toc-number">12.</span> <span class="toc-text">html5 离线存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iframe的优缺点？"><span class="toc-number">13.</span> <span class="toc-text">iframe的优缺点？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS盒模型原理"><span class="toc-number">14.</span> <span class="toc-text">CSS盒模型原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-display-none和visibility-hidden的区别"><span class="toc-number">15.</span> <span class="toc-text">CSS display:none和visibility:hidden的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jQuery是什么？"><span class="toc-number">16.</span> <span class="toc-text">jQuery是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jquery与JavaScript的关系，jQuery会取代JavaScript吗？"><span class="toc-number">17.</span> <span class="toc-text">jquery与JavaScript的关系，jQuery会取代JavaScript吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CDN（内容分发网络）是什么？"><span class="toc-number">18.</span> <span class="toc-text">CDN（内容分发网络）是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？"><span class="toc-number">19.</span> <span class="toc-text">如何在CDN网络不可访问情况下，能自动访问网站的jQuery文件？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#同版本的jQuery-js文件和jQuery-min-js有何不同？"><span class="toc-number">20.</span> <span class="toc-text">同版本的jQuery.js文件和jQuery.min.js有何不同？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为何要使用jQuery-noConflict-？"><span class="toc-number">21.</span> <span class="toc-text">为何要使用jQuery.noConflict()？</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2015/12/20/js-45-tips/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    JavaScript 开发的45个经典技巧
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2015/12/10/web-interview-css/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">前端面试题总结HTML——CSS部分</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2015/12/15/front-end-development/" data-title="前端开发面试题集锦" data-url="https://blog.luckyw.cn/2015/12/15/front-end-development/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

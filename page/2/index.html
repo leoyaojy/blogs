@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="前端博客,JavaScript,html5,css3，Jquery，NodeJs，Ubuntu">
+    <meta name="description" content="Luckyw前端开发个人博客，汇集Html5、Css3、Jquery、NodeJs、Python、Php、AngularJs等相关内容，坚持每周一篇进行前端工作总结">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Leo Angel">
+<meta property="og:url" content="https://blog.luckyw.cn/page/2/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="Luckyw前端开发个人博客，汇集Html5、Css3、Jquery、NodeJs、Python、Php、AngularJs等相关内容，坚持每周一篇进行前端工作总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leo Angel">
+<meta name="twitter:description" content="Luckyw前端开发个人博客，汇集Html5、Css3、Jquery、NodeJs、Python、Php、AngularJs等相关内容，坚持每周一篇进行前端工作总结">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main">
+    <article id="post-js-jquery-wh" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/23/js-jquery-wh/">JS、jQuery各种宽高属性</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/23/js-jquery-wh/">
+            <time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JQuery/">JQuery</a>, <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="JS下各种宽高"><a href="#JS下各种宽高" class="headerlink" title="JS下各种宽高"></a>JS下各种宽高</h4><hr>
+<p><strong>Window和Document:</strong><br>JS下宽高分为挂载在<code>Window对象</code>和<code>Document对象</code>下的宽高属性，先说下<code>Window</code>和<code>Document</code>的区别:</p>
+<ul>
+<li><code>Window对象</code>表示浏览器中打开的窗口，<code>window对象</code>可以省略，比如<code>window.alert()</code>可以简写为<code>alert()</code></li>
+<li><code>Document对象</code>是<code>Window对象</code>的一部分，那么<code>window.document.body</code>我们可以写成<code>document.body</code>，浏览器的<code>HTML文档</code>成为<code>Document对象</code></li>
+</ul>
+<p><strong>Window下的宽高属性:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">window.innerWidth:浏览器窗口内部宽度</div><div class="line">window.innerHeight:浏览器窗口内部高度</div><div class="line">window.outerWidth:浏览器窗口外部宽度</div><div class="line">window.outerHeight:浏览器窗口外部高度</div><div class="line">window.screen.width:屏幕宽度</div><div class="line">window.screen.height:屏幕高度</div><div class="line">window.screen.availWidth:屏幕的可使用宽度</div><div class="line">window.screen.availHeight:屏幕的可使用高度</div><div class="line">window.screenTop:浏览器窗口距屏幕顶部的距离</div><div class="line">window.screenLeft:浏览器窗口距屏幕左侧的距离</div></pre></td></tr></table></figure></p>
+<p>注:<code>innerWidth、innerHeight</code>和<code>outerWidth、outerHeight</code>是不支持<code>IE9</code>以下版本的，而<code>screen</code>系列宽高则不存在兼容问题<br>参考图如下:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1fabl3al75tj311y0lcdrd.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/23/js-jquery-wh/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-https-whole-website" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/16/https-whole-website/">利用腾讯云免费证书打造全https站</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/16/https-whole-website/">
+            <time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Https/">Https</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Https/">Https</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="什么是https"><a href="#什么是https" class="headerlink" title="什么是https?"></a>什么是https?</h4><hr>
+<p>超文本传输安全协议(<code>Hypertext Transfer Protocol Secure</code>，缩写为<code>HTTPS</code>)是一种网络安全传输协议<br><code>http</code>是<code>HTTP</code>协议运行在<code>TCP</code>之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份<br><code>https</code>是<code>HTTP</code>运行在<code>SSL/TLS</code>之上，<code>SSL/TLS</code>运行在<code>TCP</code>之上，所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。<code>HTTPS</code>通过<code>TLS</code>层和证书机制提供了内容加密、身份认证和数据完整性三大功能，可以有效防止数据被查看或篡改，以及防止中间人冒充，相比http而言更安全，越来越多的网站选择了全站 <code>HTTPS</code></p>
+<h4 id="如何搭建https"><a href="#如何搭建https" class="headerlink" title="如何搭建https?"></a>如何搭建https?</h4><hr>
+<p>通过腾讯云申请免费的<code>SSL证书</code>，为期一年，申请地址:<a href="https://console.qcloud.com/ssl">https://console.qcloud.com/ssl</a><br>我就不废话了，直接上图如下:<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yhq7h440j30gt0ajaay.jpg" alt=""><br><strong>注意</strong>:域名这里我们填的是二级域名，因为腾讯云仅支持单个非顶级域名的证书申请，如果我们有多个子域需要申请多次<br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/16/https-whole-website/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-free-google-mirror" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/10/free-google-mirror/">免费日本樱花搭建谷歌镜像</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/10/free-google-mirror/">
+            <time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Google/">Google</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Google/">Google</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
+<p>日本樱花由于之前我已经在<a href="//blog.luckyw.cn/2016/09/04/arukas-create-ss/">arukas.io免费docker搭建ss服务</a>一文中介绍过，所以不再赘述了，不了解的可以先去看看，我们可以利用它来搭建<code>SS、VPS、VPN</code>等等，本文介绍的是怎么利用它来搭建谷歌镜像，利用的是<code>cuber大大</code>写的<code>ngx_http_google_filter_module</code>——<code>Nginx Google 扩展</code><br>因为不知道什么时候日本樱花会突然停止测试，所以有效性待查，失效的话我会及时更新告诉各位亲</p>
+<h4 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h4><hr>
+<p>由于我本机用的<code>linux</code>系统是<code>ubuntu</code>，对它相比较其它<code>linux</code>系统而言熟悉些，所以本测试在日本樱花服务安装的是<code>ubuntu</code>系统，如果你有其它的系统可以用其它的，安装过程见下图:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9m3916a4cj30w40e60w0.jpg" alt=""><br><code>docker</code>镜像地址:<code>tutum/ubuntu:latest</code>，看不清的点图放大看，最后点击创建，然后启动服务等待完成也就是<code>running</code>状态，然后点击<code>watch</code>查看输出的信息也就是<code>ssh</code>的随机密码<br><strong>注意</strong>:如果点击<code>watch</code>之后没反应，那么反复点击吧，不过别太快，大概十秒一次就可以，如果将近五六分钟还没反应建议重启以下，我也是这么熬过来的╮(╯▽╰)╭</p>
+<h4 id="安装nginx反向代理谷歌镜像"><a href="#安装nginx反向代理谷歌镜像" class="headerlink" title="安装nginx反向代理谷歌镜像"></a>安装nginx反向代理谷歌镜像</h4><hr>
+<p>首先我们先从<code>app</code>的<code>port</code>中查找到我们的服务器的<code>ip</code>和端口号，详见下图:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9m3r1ciwoj30i101pt95.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/10/free-google-mirror/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-ubuntu-heroku-node" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/05/ubuntu-heroku-node/">heroku线上部署node小程序</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/05/ubuntu-heroku-node/">
+            <time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Node/">Node</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><hr>
+<p>首先我们需要个<code>heroku</code>账户，可以点<a href="https://www.heroku.com/">这里</a>申请，然后我们需要在本地下载安装它的工具包(我这里只讲<code>Ubuntu</code>，其他请转<a href="https://devcenter.heroku.com/articles/heroku-command-line">https://devcenter.heroku.com/articles/heroku-command-line</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh</div></pre></td></tr></table></figure></p>
+<p>如果上面代码安装失败(可能只是我的电脑问题)，并报认证之类的错误，那就把<code>https://toolbelt.heroku.com/install-ubuntu.sh</code>的代码复制到本地保存为<code>install.sh</code>,将第13行的<code>http</code>改为<code>https</code>,如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">&#123;</div><div class="line">    echo &quot;This script requires superuser access to install apt packages.&quot;</div><div class="line">    echo &quot;You will be prompted for your password by sudo.&quot;</div><div class="line"></div><div class="line">    # clear any previous sudo permission</div><div class="line">    sudo -k</div><div class="line"></div><div class="line">    # run inside sudo</div><div class="line">    sudo sh &lt;&lt;SCRIPT</div><div class="line"></div><div class="line">  # add heroku repository to apt</div><div class="line">  echo &quot;deb https://toolbelt.heroku.com/ubuntu ./&quot; &gt; /etc/apt/sources.list.d/heroku.list</div><div class="line"></div><div class="line">  # install heroku&apos;s release key for package verification</div><div class="line">  wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -</div><div class="line"></div><div class="line">  # update your sources</div><div class="line">  apt-get update</div><div class="line"></div><div class="line">  # install the toolbelt</div><div class="line">  apt-get install -y heroku-toolbelt</div><div class="line"></div><div class="line">  # install ruby if needed (vervet)</div><div class="line">  if ! type ruby &gt;/dev/null 2&gt;&amp;1; then</div><div class="line">    apt-get install -y ruby</div><div class="line">  fi</div><div class="line"></div><div class="line">SCRIPT</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后再执行<code>sh install.sh</code>应该就没问题了<br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/05/ubuntu-heroku-node/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-py3-douban-movie" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/27/py3-douban-movie/">Python3爬取豆瓣电影保存到MySQL数据库</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/27/py3-douban-movie/">
+            <time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python，Mysql/">Python，Mysql</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="48行代码实现Python3爬取豆瓣电影排行榜"><a href="#48行代码实现Python3爬取豆瓣电影排行榜" class="headerlink" title="48行代码实现Python3爬取豆瓣电影排行榜"></a>48行代码实现Python3爬取豆瓣电影排行榜</h4><hr>
+<p>代码基于<code>python3</code>，用到的类库有:</p>
+<blockquote>
+<p><code>requests</code>:通过伪造请求头或设置代理等方式获取页面内容，<a href="http://docs.python-requests.org/en/master/">参考文档</a><br><code>BeautifulSoup</code>:对页面进行解析，提取数据，<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">参考文档</a><br><code>PyMySQL</code>:<code>python3</code>版本中用于操作<code>MySQL</code>数据库，<code>python2</code>中则使用<code>mysqldb</code>，<a href="https://github.com/PyMySQL/PyMySQL">Github</a></p>
+</blockquote>
+<p>pip安装用到的几个类库:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install requests</div><div class="line">pip install bs4</div><div class="line">pip install pymysql</div></pre></td></tr></table></figure></p>
+<h4 id="分析豆瓣电影页面"><a href="#分析豆瓣电影页面" class="headerlink" title="分析豆瓣电影页面"></a>分析豆瓣电影页面</h4><hr>
+<p><strong>页面分析:</strong><br>爬取数据之前，我们都需要对页面进行分析，看我们可以从中提取到哪些数据，从下图我们看到豆瓣电影top250的页面结构，我们可以从中提取出<code>排行榜(rank)、电影名字(name)、电影详情页链接(link)、电影海报(poster)、电影评分(score)、电影评论(quote)</code>等，我在图中进行了标注<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9cd7l52fnj30qk0cpn1e.jpg" alt=""><br><strong>URL分析:</strong><br>通过点击分页我们可以发现URL的格式为:<code>https://movie.douban.com/top250?start=num&amp;filter=</code><br>其中<code>num</code>表示<code>25</code>的倍数的数字，最小是<code>0</code>也就是第一页，最大为<code>225</code>也就是最后一页，这可以作为我们爬取页面的限制条件，<code>filter</code>为过滤条件这里可不用管<br></p>
+            <p class="article-more-link">
+                <a href="/2016/09/27/py3-douban-movie/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-linux-crontab" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/18/linux-crontab/">Linux crontab 定时任务</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/18/linux-crontab/">
+            <time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>今天是个特殊的日子，不用说大家也知道，在这里我只想说八个字:<strong>勿忘国耻，振兴中华</strong></p>
+<h4 id="什么是crontab？"><a href="#什么是crontab？" class="headerlink" title="什么是crontab？"></a>什么是crontab？</h4><hr>
+<p><code>crontab</code>命令是<code>cron table</code>的简写，它是<code>cron</code>的配置文件，也叫作任务列表，我们可以在下列目录下找到相关配置文件</p>
+<blockquote>
+<p><code>/var/spool/cron/</code>:存放所有用户定义要定期执行的任务，文件名与用户名一致<br><code>/etc/crontab</code>:系统周期性所要执行的任务<br><code>/etc/cron.d/</code>:目录用来存放任何要执行的<code>crontab</code>文件或脚本<br>其他目录:<code>/etc/cron.hourly、/etc/cron.daily、/etc/cron.weekly、/etc/cron.monthly</code>，各代表存放每小时、每天、每星期、每月执行一次的任务</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/09/18/linux-crontab/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-php-upload-download" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/11/php-upload-download/">php实现图片上传与下载</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/11/php-upload-download/">
+            <time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Php/">Php</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Php/">Php</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>本文接下来的内容讲的是如何通过<code>php</code>实现图片的上传与下载</p>
+<h4 id="构建上传文件前端页面"><a href="#构建上传文件前端页面" class="headerlink" title="构建上传文件前端页面"></a>构建上传文件前端页面</h4><hr>
+<p>这里我借助<code>bootstrap</code>前端框架以及<code>fontawesome</code>图标库，内容很简单就一个图片上传框以及一个提交按钮，代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!--form.php--&gt;</div><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;form action=&quot;upload_del.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; class=&quot;form-horizontal&quot;&gt;</div><div class="line">        &lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</div><div class="line">        &lt;div class=&quot;btn btn-success fileBox&quot;&gt;</div><div class="line">            &lt;span&gt;</div><div class="line">                &lt;i class=&quot;fa fa-file-image-o&quot;&gt;&lt;/i&gt;</div><div class="line">                上传图片</div><div class="line">            &lt;/span&gt;</div><div class="line">            &lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传&quot; class=&quot;btn btn-primary&quot;&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>其中:<br><code>&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</code>隐藏域主要是用来现在文件上传大小的，设置为<code>2M=&gt;2*1024*1024=&gt;2097152</code><br><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</code>设置接收文件类型为图片格式，可多张图片上传，注意<code>name</code>属性值为<code>file[]</code>时服务器可接收多图片<br></p>
+            <p class="article-more-link">
+                <a href="/2016/09/11/php-upload-download/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-arukas-create-ss" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/04/arukas-create-ss/">arukas.io免费docker搭建ss服务</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/04/arukas-create-ss/">
+            <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/SS/">SS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/SS/">SS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>之前 <a href="//blog.luckyw.cn/2016/01/08/chrome-plugin/">Chrome插件分享</a> 一文中文章最末分享过通过修改<code>hosts</code>文件科学上网，但其实还是有些网站无法通过此途径访问，那么只能通过付费SS服务、VPN等途径才可以，而本文将要介绍的日本免费<code>Docker</code>，简单搭建免费使用，何乐而不为了</p>
+<h4 id="搭建SS"><a href="#搭建SS" class="headerlink" title="搭建SS"></a>搭建SS</h4><hr>
+<p><a href="https://arukas.io">arukas.io</a>是岛国推出的<code>Docker</code>服务，开发者可以购买此服务，将代码部署在其中运行。我们从<a href="https://arukas.io/en/#pricing">服务价格</a>可以发现目前该服务处于测试阶段完全免费使用，而且我们可以创建多达10个应用，下面我们就开始搭建之旅吧<br><strong>注册</strong>:<br>官网地址: <a href="https://app.arukas.io/">https://app.arukas.io/</a> 进行用户注册，如果你有<code>github</code>账号的话推荐使用<code>github</code>进行登录绕过注册环节，如果没有，那你就还是老老实实注册吧<br><strong>创建app</strong>:<br>点击左侧控制面板的<code>Create</code>新建一个<code>app</code>，然后在右边的创建面板对应输入:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>App Name</strong></td>
+<td style="text-align:left">随便取</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Image</strong></td>
+<td style="text-align:left">oddrationale/docker-shadowsocks</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Instances</strong></td>
+<td style="text-align:left">不用管，默认1即可</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Memory</strong></td>
+<td style="text-align:left">512，免费的当然越大越好</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Endpoint</strong></td>
+<td style="text-align:left">不用管，不填写</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Port</strong></td>
+<td style="text-align:left">端口，8888</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ENV</strong></td>
+<td style="text-align:left">不用管，不勾选</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CMD</strong></td>
+<td style="text-align:left">ssserver -p 8888 -k luckywcn -m aes-256-cfb</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/09/04/arukas-create-ss/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-one-cmdline" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/28/one-cmdline/">一行代码系列</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/28/one-cmdline/">
+            <time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="1、一行代码可视化CSS盒子布局"><a href="#1、一行代码可视化CSS盒子布局" class="headerlink" title="1、一行代码可视化CSS盒子布局"></a>1、一行代码可视化CSS盒子布局</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[].forEach.call($$(&quot;*&quot;),function(a)&#123;a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toString(16)&#125;)</div></pre></td></tr></table></figure>
+<h4 id="源码解读"><a href="#源码解读" class="headerlink" title="源码解读"></a>源码解读</h4><hr>
+<p>首先我们把代码格式化一下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[].forEach.call($$(&quot;*&quot;),</div><div class="line">    function(a)&#123;</div><div class="line">        a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toString(16)</div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>1、选取页面所有<code>DOM</code>元素<br><code>$$()</code>相当于<code>document.querySelectorAll()</code>，返回的是一个<code>NodeList</code>对象数组，现代浏览器几乎都支持<br></p>
+            <p class="article-more-link">
+                <a href="/2016/08/28/one-cmdline/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-ubuntu-lamp" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/21/ubuntu-lamp/">Ubuntu16.04搭建LAMP环境</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/21/ubuntu-lamp/">
+            <time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/LAMP/">LAMP</a>, <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="LAMP简介"><a href="#LAMP简介" class="headerlink" title="LAMP简介"></a>LAMP简介</h4><hr>
+<blockquote>
+<p><strong>L</strong>:Linux操作系统<br><strong>A</strong>:Apache网页服务器<br><strong>M</strong>:Mysql数据库管理系统<br><strong>P</strong>:Php脚本语言</p>
+</blockquote>
+<p><strong>注:以下开始进行的是分步安装，如果你想一步安装请跳过，拉到页面底部，当然你得首先安装好自己的<code>Linux</code>系统</strong></p>
+<h4 id="安装Linux服务器"><a href="#安装Linux服务器" class="headerlink" title="安装Linux服务器"></a>安装Linux服务器</h4><hr>
+<p>如果你自己装过虚拟机或者有更好的安装技巧可跳过，这只是博主自己安装的方法<br>此安装方式操作的是<code>Ubuntu16.04</code>下通过<code>VirtualBox</code>虚拟机管理软件安装<code>Deepin 15.3</code>，其它系统基本类似，安装步骤如下:</p>
+<blockquote>
+<ol>
+<li>首先从深度系统官网下载<code>镜像文件iso</code>，<a href="https://www.deepin.org/">深度官网</a>，一个很不错的<code>debian</code>衍生版本，而且还是国产，必须得支持啊</li>
+<li>选择<code>新建</code>，名字随便取，类型选择<code>linux</code>，版本选择<code>Debian(64 bit)</code>，其它直接<code>下一步</code>，最后点击<code>创建</code>即可</li>
+<li>选择刚才新建的虚拟机，点击<code>设置</code>，在<code>显示</code>项把显存大小拉到最大，接着选择<code>存储</code>项，点击<code>控制器</code>下的<code>碟片图标</code>，在右侧<code>属性</code>栏中<code>分配光驱</code>的右侧的<code>碟片图标</code>点击出现下拉菜单，选择<code>选择一个虚拟光盘文件……</code>，此时选择你下载好的<code>镜像文件iso</code>，选择<code>网络</code>项，连接方式选择<code>桥接网卡</code>，点击<code>确定</code>按钮提交你的修改</li>
+<li>安装系统:选择新建的虚拟机，点击菜单栏的<code>启动</code>按钮，这时系统的安装就开始了，系统如何安装我就不赘述了，也是一步一步下一步，最后出现<code>安装成功，提示重启</code>的信息时，把步骤2中刚才加载的镜像文件从虚拟机<code>移出虚拟盘</code>，重新启动虚拟机，此时系统安装完成</li>
+</ol>
+</blockquote>
+<p>上一张安装好的美图:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f8qx14l7lbj30sg0lcdk9.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/08/21/ubuntu-lamp/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
+    </nav>
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

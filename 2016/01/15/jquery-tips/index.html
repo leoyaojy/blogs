@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>jQuery小技巧(译文) | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="jQuery,tips,技巧">
+    <meta name="description" content="回到顶部按钮
+利用jQuery里的animate和scrollTop方法，你便不需要使用插件创建简单的滚动到顶部动画1234$(&amp;apos;.top&amp;apos;).click(function (e) &amp;#123;    e.preventDefault();    $(&amp;apos;html, body&amp;apos;).animate(&amp;#123;scrollTop: 0&amp;#125;, 800);&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery小技巧(译文)">
+<meta property="og:url" content="https://blog.luckyw.cn/2016/01/15/jquery-tips/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="回到顶部按钮
+利用jQuery里的animate和scrollTop方法，你便不需要使用插件创建简单的滚动到顶部动画1234$(&amp;apos;.top&amp;apos;).click(function (e) &amp;#123;    e.preventDefault();    $(&amp;apos;html, body&amp;apos;).animate(&amp;#123;scrollTop: 0&amp;#125;, 800);&amp;">
+<meta property="og:updated_time" content="2016-10-26T11:18:17.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery小技巧(译文)">
+<meta name="twitter:description" content="回到顶部按钮
+利用jQuery里的animate和scrollTop方法，你便不需要使用插件创建简单的滚动到顶部动画1234$(&amp;apos;.top&amp;apos;).click(function (e) &amp;#123;    e.preventDefault();    $(&amp;apos;html, body&amp;apos;).animate(&amp;#123;scrollTop: 0&amp;#125;, 800);&amp;">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-jquery-tips" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            jQuery小技巧(译文)
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/01/15/jquery-tips/">
+            <time datetime="2016-01-14T16:00:00.000Z" itemprop="datePublished">2016-01-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JQuery/">JQuery</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="回到顶部按钮"><a href="#回到顶部按钮" class="headerlink" title="回到顶部按钮"></a>回到顶部按钮</h4><hr>
+<p>利用<code>jQuery</code>里的<code>animate</code>和<code>scrollTop</code>方法，你便不需要使用插件创建简单的滚动到顶部动画<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;.top&apos;).click(function (e) &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    $(&apos;html, body&apos;).animate(&#123;scrollTop: 0&#125;, 800);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>通过<code>scrollTop</code>的值来改变你想要滚动到的位置<br>其实你就是做了:在接下来的800毫秒中让页面滚动，直到它滚动到文档的顶部</p>
+<h4 id="图片预加载"><a href="#图片预加载" class="headerlink" title="图片预加载"></a>图片预加载</h4><hr>
+<p>如果你的网页使用了很多隐藏图片文件（例如：鼠标悬停展示的图片），那么图片的预加载是有意义的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.preloadImages = function () &#123;</div><div class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</div><div class="line">		$(&apos;&lt;img&gt;&apos;).attr(&apos;src&apos;, arguments[i]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">$.preloadImages(&apos;img/hover-on.png&apos;, &apos;img/hover-off.png&apos;);</div></pre></td></tr></table></figure></p>
+<h4 id="判断图片是否加载完"><a href="#判断图片是否加载完" class="headerlink" title="判断图片是否加载完"></a>判断图片是否加载完</h4><hr>
+<p>有时候你可能需要检查图像是否已经加载完成，以便于可以继续执行相应的<code>js</code>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;img&apos;).load(function () &#123;</div><div class="line">	console.log(&apos;image load successful&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>你还可以检查一个特定的图片是否加载完并且被带有<code>id</code>或者<code>class</code>的<code>&lt;img&gt;</code>标签代替。<br><a id="more"></a></p>
+<h4 id="自动修补破损图像"><a href="#自动修补破损图像" class="headerlink" title="自动修补破损图像"></a>自动修补破损图像</h4><hr>
+<p>如果你碰巧发现在你的网站上发现破损的图像链接，一个个去替代他们是痛苦的。这个简单的代码可以节省很多的麻烦:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;img&apos;).on(&apos;error&apos;, function () &#123;</div><div class="line">	if(!$(this).hasClass(&apos;broken-image&apos;)) &#123;</div><div class="line">		$(this).prop(&apos;src&apos;, &apos;img/broken.png&apos;).addClass(&apos;broken-image&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>即使你没有任何断开的链接，加入这代码也不会有任何影响</p>
+<h4 id="Hover切换class类"><a href="#Hover切换class类" class="headerlink" title="Hover切换class类"></a>Hover切换class类</h4><hr>
+<p>比方说，当用户将鼠标悬停在你页面上的元素时，你想改变其视觉效果。当用户鼠标悬停在元素上，你可以在该元素上添加一个<code>class</code>类，当鼠标停止悬停事件时移除此class类:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&apos;.btn&apos;).hover(function () &#123;</div><div class="line">		$(this).addClass(&apos;hover&apos;);</div><div class="line">	&#125;, function () &#123;</div><div class="line">		$(this).removeClass(&apos;hover&apos;)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>如果你想要一个更简单的方式使用<code>toggleClass</code>方法，则仅仅需要添加必要的<code>CSS</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;.btn&apos;).hover(function () &#123;</div><div class="line">	$(this).toggleClass(&apos;hover&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="禁用输入"><a href="#禁用输入" class="headerlink" title="禁用输入"></a>禁用输入</h4><hr>
+<p>有时你可能需要用表单的提交按钮或者某个输入框直到用户执行了某个动作（比如：检查“我已阅读条款”复选框）。在你的输入框上设置<code>disabled</code>属性，然后当你需要的时候启用该属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;input[type=&quot;submit&quot;]&apos;).prop(&apos;disabled&apos;, true);</div></pre></td></tr></table></figure></p>
+<p>你需要做的只是需要在输入框上再次运行<code>prop</code>方法，但设置的被禁用值是<code>false</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;input[type=&quot;submit&quot;]&apos;).prop(&apos;disabled&apos;, false);</div></pre></td></tr></table></figure></p>
+<h4 id="停止正在加载的链接"><a href="#停止正在加载的链接" class="headerlink" title="停止正在加载的链接"></a>停止正在加载的链接</h4><hr>
+<p>有时你不想链接到特定的网页或者重新载入页面；你可能想让他们做一些其他事情，如触发一些其他的脚本，这是防止违约行动的技巧:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;a.no-link&apos;).click(function (e) &#123;</div><div class="line">	e.preventDefault();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="toggle-fade-slide"><a href="#toggle-fade-slide" class="headerlink" title="toggle fade/slide"></a>toggle fade/slide</h4><hr>
+<p><strong>滑动</strong>和<strong>淡入/淡出</strong>是我们在<code>jQuery</code>中经常大量使用的动画。你可能仅仅想在用户做某些点击事件的时候显示一个元素，这时候需要淡入/淡出或者滑动方法。但是如果你需要那个元素在你第一次点击的时候出现，在第二次点击的时候消失，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// Fade</div><div class="line">$(&apos;.btn&apos;).click(function () &#123;</div><div class="line">	$(&apos;.element&apos;).fadeToggle(&apos;slow&apos;);</div><div class="line">&#125;);</div><div class="line">// Toggle</div><div class="line">$(&apos;.btn&apos;).click(function () &#123;</div><div class="line">	$(&apos;.element&apos;).slideToggle(&apos;slow&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="简单的手风琴"><a href="#简单的手风琴" class="headerlink" title="简单的手风琴"></a>简单的手风琴</h4><hr>
+<p>这是个简单快速的方法创建一个手风琴：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/ Close all panels</div><div class="line">$(&apos;#accordion&apos;).find(&apos;.content&apos;).hide();</div><div class="line">// Accordion</div><div class="line">$(&apos;#accordion&apos;).find(&apos;.accordion-header&apos;).click(function () &#123;</div><div class="line">	var next = $(this).next();</div><div class="line">	next.slideToggle(&apos;fast&apos;);</div><div class="line">	$(&apos;.content&apos;).not(next).slideUp(&apos;fast&apos;);</div><div class="line">	return false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>通过添加这个脚本，你需要做的则是必要的<code>HTML</code>操作在你的页面上。</p>
+<h4 id="使两个DIV同等高度"><a href="#使两个DIV同等高度" class="headerlink" title="使两个DIV同等高度"></a>使两个DIV同等高度</h4><hr>
+<p>有时你会想要两个<code>div</code>有相同的高度，无论他们都有什么内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;.div&apos;).css(&apos;min-height&apos;, $(&apos;.main-div&apos;).height());</div></pre></td></tr></table></figure></p>
+<p>这个例子设置了<code>div</code>的最小高度，这意味着它的高度只可以比这个设置的高度大而不能小。然而，一个更灵活的方法是循环的一组元素，并设置将最高元素的高度作为高度:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var $columns = $(&apos;.column&apos;);</div><div class="line">var height = 0;</div><div class="line">$columns.each(function () &#123;</div><div class="line">	if ($(this).height() &gt; height) &#123;</div><div class="line">		height = $(this).height();</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">$columns.height(height);</div></pre></td></tr></table></figure></p>
+<p>如果你想要所有的列有相同的高度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var $rows = $(&apos;.same-height-columns&apos;);</div><div class="line">$rows.each(function () &#123;</div><div class="line">	$(this).find(&apos;.column&apos;).height($(this).height());</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="在浏览器标签-新窗口打开外部链接"><a href="#在浏览器标签-新窗口打开外部链接" class="headerlink" title="在浏览器标签/新窗口打开外部链接"></a>在浏览器标签/新窗口打开外部链接</h4><hr>
+<p>在新的浏览器标签或窗口中打开外部链接，并确保在同一个标签或窗口中打开的是同一个源的链接:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;a[href^=&quot;http&quot;]&apos;).attr(&apos;target&apos;, &apos;_blank&apos;);</div><div class="line">$(&apos;a[href^=&quot;//&quot;]&apos;).attr(&apos;target&apos;, &apos;_blank&apos;);</div><div class="line">$(&apos;a[href^=&quot;&apos; + window.location.origin + &apos;&quot;]&apos;).attr(&apos;target&apos;, &apos;_self&apos;);</div></pre></td></tr></table></figure></p>
+<p>备注：<code>window.location.origin</code>在<code>IE10</code>不工作</p>
+<h4 id="根据文本获取元素"><a href="#根据文本获取元素" class="headerlink" title="根据文本获取元素"></a>根据文本获取元素</h4><hr>
+<p>通过<code>jQuery</code>中的<code>contains()</code>选择器，你能找到一个元素内的文本内容。如果文本不存在，则这个元素将被隐藏:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var search = $(&apos;#search&apos;).val();</div><div class="line">$(&apos;div:not(:contains(&quot;&apos; + search + &apos;&quot;))&apos;).hide();</div></pre></td></tr></table></figure></p>
+<h4 id="可见变化的触发"><a href="#可见变化的触发" class="headerlink" title="可见变化的触发"></a>可见变化的触发</h4><hr>
+<p>当用户不再聚焦或者重新聚焦一个标签时触发<code>javascript</code>脚本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(document).on(&apos;visibilitychange&apos;, function (e) &#123;</div><div class="line">	if (e.target.visibilityState === &quot;visible&quot;) &#123;</div><div class="line">		console.log(&apos;Tab is now in view!&apos;);</div><div class="line">	&#125; else if (e.target.visibilityState === &quot;hidden&quot;) &#123;</div><div class="line">		console.log(&apos;Tab is now hidden!&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Ajax调用错误处理"><a href="#Ajax调用错误处理" class="headerlink" title="Ajax调用错误处理"></a>Ajax调用错误处理</h4><hr>
+<p>当一个<code>Ajax</code>调用返回一个404或500的错误时，将执行该错误处理。如果该处理未定义，则其他<code>jQuery</code>代码便可能不会执行了。定义一个全局<code>Ajax</code>错误处理程序:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ajaxError(function (e, xhr, settings, error) &#123;</div><div class="line">	console.log(error);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="链式操作"><a href="#链式操作" class="headerlink" title="链式操作"></a>链式操作</h4><hr>
+<p><code>jQuery</code>允许通过链式操作来减轻反复查询<code>DOM</code>和创建多个<code>jQuery</code>对象的过程。比如下面是你的方法调用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#elem&apos;).show();</div><div class="line">$(&apos;#elem&apos;).html(&apos;bla&apos;);</div><div class="line">$(&apos;#elem&apos;).otherStuff();</div></pre></td></tr></table></figure></p>
+<p>这代码可以通过链式大大的提高：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#elem&apos;).show().html(&apos;bla&apos;).otherStuff();</div></pre></td></tr></table></figure></p>
+<p>另一个方法是在一个可变的元素缓存（$作为前置）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var $elem = $(&apos;#elem&apos;);</div><div class="line">$elem.hide();</div><div class="line">$elem.html(&apos;bla&apos;);</div><div class="line">$elem.otherStuff();</div></pre></td></tr></table></figure></p>
+<p>链式和<code>jQuery</code>缓存方法是最好的做法，导致更短、更快的代码<br>原文地址：<a href="https://github.com/AllThingsSmitty/jquery-tips-everyone-should-know#back-to-top-button" target="_blank" rel="external">https://github.com/AllThingsSmitty/jquery-tips-everyone-should-know#back-to-top-button</a></p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2016/01/15/jquery-tips/" target="_blank" title="jQuery小技巧(译文)">jQuery小技巧(译文)</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2016/01/15/jquery-tips/" target="_blank" title="jQuery小技巧(译文)">https://blog.luckyw.cn/2016/01/15/jquery-tips/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#回到顶部按钮"><span class="toc-number">1.</span> <span class="toc-text">回到顶部按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片预加载"><span class="toc-number">2.</span> <span class="toc-text">图片预加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断图片是否加载完"><span class="toc-number">3.</span> <span class="toc-text">判断图片是否加载完</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动修补破损图像"><span class="toc-number">4.</span> <span class="toc-text">自动修补破损图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hover切换class类"><span class="toc-number">5.</span> <span class="toc-text">Hover切换class类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#禁用输入"><span class="toc-number">6.</span> <span class="toc-text">禁用输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#停止正在加载的链接"><span class="toc-number">7.</span> <span class="toc-text">停止正在加载的链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toggle-fade-slide"><span class="toc-number">8.</span> <span class="toc-text">toggle fade/slide</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的手风琴"><span class="toc-number">9.</span> <span class="toc-text">简单的手风琴</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使两个DIV同等高度"><span class="toc-number">10.</span> <span class="toc-text">使两个DIV同等高度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在浏览器标签-新窗口打开外部链接"><span class="toc-number">11.</span> <span class="toc-text">在浏览器标签/新窗口打开外部链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据文本获取元素"><span class="toc-number">12.</span> <span class="toc-text">根据文本获取元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可见变化的触发"><span class="toc-number">13.</span> <span class="toc-text">可见变化的触发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax调用错误处理"><span class="toc-number">14.</span> <span class="toc-text">Ajax调用错误处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链式操作"><span class="toc-number">15.</span> <span class="toc-text">链式操作</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2016/01/24/node-mongodb-express/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    建站：Node+MongoDb+Express简单实例
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/01/08/chrome-plugin/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Chrome插件分享</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2016/01/15/jquery-tips/" data-title="jQuery小技巧(译文)" data-url="https://blog.luckyw.cn/2016/01/15/jquery-tips/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

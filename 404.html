@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content ="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>您找的页面跑的比博尔特好快:(</title>
+    <style>
+        body{
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to right bottom, green, greenyellow);
+            font-family: "DejaVu Sans Mono", serif, sans-serif, monospace;
+        }
+        .container{
+            width: 400px;
+            margin: 10vh auto;
+            text-align: center;
+        }
+        p{
+            font-size: 2.5em;
+            position: relative;
+        }
+        p:before,p:after{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        p:before{
+            left: 0;
+            top: 50%;
+            margin-top: -10px;
+        }
+        p:after{
+            right: 0;
+            top: 50%;
+            margin-top: -10px;
+        }
+        .info{
+            text-align: center;
+            font-size: 4em;
+        }
+        span{
+            font-size: 3em;
+            white-space: nowrap;
+        }
+        a{
+            display: inline-block;
+            margin-top: 5vh;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #00be3c;
+            color: #fff;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <p>ERROR</p>
+       <div class="info">
+           <span>404</span>
+       </div>
+       <hr>
+       <span>Page Not Found</span>
+       <a href="/">返回首页</a>
+   </div>
+</body>
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Linux常用命令 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="linux,cmd,命令,ls,cd,tar">
+    <meta name="description" content="废了一点时间，装了两次Ubuntu才真正装好，因为装的是双系统，主系统是win10，刚入手Ubuntu还对命令不是很熟悉，所以首先学习下Linux下的常用命令。说实在话，Ubuntu好用的不是一丁点，现在基本都不怎么使用win10了
+Terminal(终端)的使用技巧
+
+Up键: 可以调出历史执行记录，快速执行命令Down键: 配合Up键选择历史执行记录执行命令history: 显示历史执行记录H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="https://blog.luckyw.cn/2016/04/30/linux-cmd/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="废了一点时间，装了两次Ubuntu才真正装好，因为装的是双系统，主系统是win10，刚入手Ubuntu还对命令不是很熟悉，所以首先学习下Linux下的常用命令。说实在话，Ubuntu好用的不是一丁点，现在基本都不怎么使用win10了
+Terminal(终端)的使用技巧
+
+Up键: 可以调出历史执行记录，快速执行命令Down键: 配合Up键选择历史执行记录执行命令history: 显示历史执行记录H">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f7o8rk1y7nj305o05ojr9.jpg">
+<meta property="og:updated_time" content="2016-12-21T03:20:48.528Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令">
+<meta name="twitter:description" content="废了一点时间，装了两次Ubuntu才真正装好，因为装的是双系统，主系统是win10，刚入手Ubuntu还对命令不是很熟悉，所以首先学习下Linux下的常用命令。说实在话，Ubuntu好用的不是一丁点，现在基本都不怎么使用win10了
+Terminal(终端)的使用技巧
+
+Up键: 可以调出历史执行记录，快速执行命令Down键: 配合Up键选择历史执行记录执行命令history: 显示历史执行记录H">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f7o8rk1y7nj305o05ojr9.jpg">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-linux-cmd" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Linux常用命令
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/30/linux-cmd/">
+            <time datetime="2016-04-29T16:00:00.000Z" itemprop="datePublished">2016-04-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>废了一点时间，装了两次<code>Ubuntu</code>才真正装好，因为装的是双系统，主系统是<code>win10</code>，刚入手<code>Ubuntu</code>还对命令不是很熟悉，所以首先学习下<code>Linux</code>下的常用命令。说实在话，<code>Ubuntu</code>好用的不是一丁点，现在基本都不怎么使用<code>win10</code>了</p>
+<h4 id="Terminal-终端-的使用技巧"><a href="#Terminal-终端-的使用技巧" class="headerlink" title="Terminal(终端)的使用技巧"></a>Terminal(终端)的使用技巧</h4><hr>
+<blockquote>
+<p><code>Up键</code>: 可以调出历史执行记录，快速执行命令<br><code>Down键</code>: 配合Up键选择历史执行记录执行命令<br><code>history</code>: 显示历史执行记录<br><code>Home键</code>: 移动光标到本行开头<br><code>End键</code>: 移动光标到本行末尾<br><code>PaUp键</code>: 向上翻页<br><code>PaDn键</code>: 向下翻页<br><code>Ctrl+C组合键</code>: 终止当前程序，某些程序也可以用q键退出<br><code>Ctrl+L组合键</code>: 清屏，也可以在终端输入<code>clear</code><br><code>Ctrl+Shift+C组合键</code>: 复制<br><code>Ctrl+Shift+V组合键</code>: 粘贴<br><code>Tab键</code>: 自动补全命令或文件名，省时准确</p>
+</blockquote>
+<h4 id="查看帮助说明-man-info-help"><a href="#查看帮助说明-man-info-help" class="headerlink" title="查看帮助说明 man/info/help"></a>查看帮助说明 man/info/help</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">man ls</div><div class="line">info ls</div><div class="line">ls --help</div></pre></td></tr></table></figure>
+<h4 id="下载工具-wget"><a href="#下载工具-wget" class="headerlink" title="下载工具 wget"></a>下载工具 wget</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ wget http://luckyw.cn/img/1.jpg</div><div class="line">--2016-4-29 20:30:36--  http://luckyw.cn/img/1.jpg</div><div class="line">正在解析主机 luckyw.cn (luckyw.cn)... 166.62.28.80</div><div class="line">正在连接 luckyw.cn (luckyw.cn)|166.62.28.80|:80... 已连接。</div><div class="line">已发出 HTTP 请求，正在等待回应... 200 OK</div><div class="line">长度： 234838 (229K) [image/jpeg]</div><div class="line">正在保存至: “1.jpg”</div><div class="line"></div><div class="line">1.jpg               100%[===================&gt;] 229.33K   416KB/s    in 0.6s</div><div class="line"></div><div class="line">2016-4-29 20:30:40 (416 KB/s) - 已保存 “1.jpg” [234838/234838])</div></pre></td></tr></table></figure>
+<h4 id="查看当前所在的工作目录的全路径-pwd"><a href="#查看当前所在的工作目录的全路径-pwd" class="headerlink" title="查看当前所在的工作目录的全路径 pwd"></a>查看当前所在的工作目录的全路径 pwd</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ pwd</div><div class="line">/home/leo</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="查看当前系统的时间-date"><a href="#查看当前系统的时间-date" class="headerlink" title="查看当前系统的时间 date"></a>查看当前系统的时间 date</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ date</div><div class="line">2016年 04月 29日 星期五 20:39:49 CST</div><div class="line"></div><div class="line">leo@leo-PC:~$ date +%Y-%m-%d</div><div class="line">2016-04-29</div><div class="line"></div><div class="line">leo@leo-PC:~$ date +%Y-%m-%d --date=&quot;-1 day&quot;	//加减也可以 month | year</div><div class="line">2016-04-28</div><div class="line"></div><div class="line">leo@leo-PC:~$ sudo date -s &quot;2016-04-29 20:42:30&quot;	//修改时间</div><div class="line">2016年 04月 29日 星期五 20:42:30 CST</div></pre></td></tr></table></figure>
+<h4 id="查看当前登陆用户-who"><a href="#查看当前登陆用户-who" class="headerlink" title="查看当前登陆用户 who"></a>查看当前登陆用户 who</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#who查看当前在线</div><div class="line">leo@leo-PC:~$ who</div><div class="line">leo      tty7         2016-04-29 19:52 (:0)</div></pre></td></tr></table></figure>
+<h4 id="关机-重启-shutdown-reboot-poweroff"><a href="#关机-重启-shutdown-reboot-poweroff" class="headerlink" title="关机/重启 shutdown/reboot/poweroff"></a>关机/重启 shutdown/reboot/poweroff</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">shutdown -h now 	//立即关机</div><div class="line">shutdown -h +10 	//10分钟后关机</div><div class="line">shutdown -h 12:00:00	//定时关机(12点整)</div><div class="line">shutdown -r now		//立即重启</div><div class="line">reboot			//立即重启</div><div class="line">poweroff		//关机</div></pre></td></tr></table></figure>
+<h4 id="查看目录信息-ls"><a href="#查看目录信息-ls" class="headerlink" title="查看目录信息 ls"></a>查看目录信息 ls</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls	//列出当前目录下的子节点（不包括隐藏）信息</div><div class="line">ls -l 	//列出所有文件（不包括隐藏）的详细信息</div><div class="line">ls -al	//列出所有文件（包括隐藏）的详细信息</div></pre></td></tr></table></figure>
+<p>注:<code>Linux</code>中以<code>.</code>开头的文件或文件夹均为隐藏文件或隐藏文件夹</p>
+<h4 id="切换工作目录-cd"><a href="#切换工作目录-cd" class="headerlink" title="切换工作目录 cd"></a>切换工作目录 cd</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd /home/leo	//切换到用户主目录</div><div class="line">cd ~		//切换到用户主目录</div><div class="line">cd		//返回用户主目录</div><div class="line">cd -		//回退到上次所在的目录</div><div class="line">cd ..		//回退到上次所在的目录</div><div class="line">cd /etc/	//切换到etc目录</div></pre></td></tr></table></figure>
+<h4 id="创建文件夹-mkdir"><a href="#创建文件夹-mkdir" class="headerlink" title="创建文件夹 mkdir"></a>创建文件夹 mkdir</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir aaa	//当前目录下创建aaa目录，相对路径</div><div class="line">mkdir ~/bbb	//在主目录下创建bbb目录，绝对路径</div><div class="line">mkdir -p aaa/bbb/ccc	//级联创建目录</div></pre></td></tr></table></figure>
+<h4 id="删除文件夹-rm-rmdir"><a href="#删除文件夹-rm-rmdir" class="headerlink" title="删除文件夹 rm/rmdir"></a>删除文件夹 rm/rmdir</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">rmdir aaa	//删除aaa目录</div><div class="line">rm a.txt	//删除a.txt文件</div><div class="line">rm -i a.txt	//删除a.txt文件前提示</div><div class="line">rm -r aaa	//递归删除aaa目录及里面的文件及文件夹</div><div class="line">rm -rf aaa	//强制删除aaa目录</div><div class="line">rm -d aaa	//删除空文件夹</div></pre></td></tr></table></figure>
+<h4 id="移动文件或文件夹-mv"><a href="#移动文件或文件夹-mv" class="headerlink" title="移动文件或文件夹 mv"></a>移动文件或文件夹 mv</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mv a.txt bbb.txt	//将a.txt修改为b.txt</div><div class="line">mv aaa bbb		//将aaa移动到bbb目录下，完成后为bbb/aaa</div><div class="line">mv -i aaa bbb		//在移动时，若文件已存在则提示</div><div class="line">mv test.text aaa/	//将test.text移动到aaa目录下</div></pre></td></tr></table></figure>
+<h4 id="创建文件-touch"><a href="#创建文件-touch" class="headerlink" title="创建文件 touch"></a>创建文件 touch</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">touch  a.txt			//创建a.txt</div><div class="line">echo &quot;hello world&quot; &gt; a.txt	//将一条指令的输出结果写入到一个文件中，会覆盖原文件内容，如果指定的文件不存在，则会创建出来</div><div class="line">echo &quot;hello world&quot; &gt;&gt; a.txt	//将一条指令的输出结果追加到一个文件中，不会覆盖原文件内容</div></pre></td></tr></table></figure>
+<h4 id="拷贝-cp"><a href="#拷贝-cp" class="headerlink" title="拷贝 cp"></a>拷贝 cp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cp  a.txt ~	//将a.txt复制到主目录下</div><div class="line">cp aaa/* bbb	//将aaa下所有文件(不包含子文件夹中的所有文件)复制到bbb</div><div class="line">cp -r aaa bbb	//将aaa下所有文件(包含子文件夹中的所有文件)复制到bbb</div></pre></td></tr></table></figure>
+<h4 id="查看文件内容-cat-more-less-tail-head"><a href="#查看文件内容-cat-more-less-tail-head" class="headerlink" title="查看文件内容 cat/more/less/tail/head"></a>查看文件内容 cat/more/less/tail/head</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cat a.txt		//只能展示最后布满屏幕的内容</div><div class="line">more a.txt		//逐行显示内容</div><div class="line">more +100 a.txt	//从100行开始显示</div><div class="line">less a.txt		//上下滚动查看内容</div><div class="line">less +100 		//从100行开始显示</div><div class="line">tail -10 a.txt	//查看文件尾部的10行</div><div class="line">head -10 a.txt	//查看文件前10行</div></pre></td></tr></table></figure>
+<h4 id="查找命令-which-whereis"><a href="#查找命令-which-whereis" class="headerlink" title="查找命令 which/whereis"></a>查找命令 which/whereis</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">which ls	//查找可执行的命令所在的路径</div><div class="line">whereis ls	//查找可执行的命令和帮助的位置</div></pre></td></tr></table></figure>
+<h4 id="网络连通测试-ping"><a href="#网络连通测试-ping" class="headerlink" title="网络连通测试 ping"></a>网络连通测试 ping</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ ping luckyw.cn</div><div class="line">PING luckyw.cn (166.62.28.80) 56(84) bytes of data.</div><div class="line">64 bytes from ip-166-62-28-80.ip.secureserver.net (166.62.28.80): icmp_seq=1 ttl=45 time=107 ms</div><div class="line">64 bytes from ip-166-62-28-80.ip.secureserver.net (166.62.28.80): icmp_seq=2 ttl=45 time=112 ms</div><div class="line">64 bytes from ip-166-62-28-80.ip.secureserver.net (166.62.28.80): icmp_seq=3 ttl=45 time=110 ms</div><div class="line">64 bytes from ip-166-62-28-80.ip.secureserver.net (166.62.28.80): icmp_seq=4 ttl=45 time=108 ms</div><div class="line">^C</div><div class="line">--- luckyw.cn ping statistics ---</div><div class="line">4 packets transmitted, 4 received, 0% packet loss, time 3003ms</div><div class="line">rtt min/avg/max/mdev = 107.009/109.705/112.942/2.277 ms</div><div class="line">ping 166.62.28.80</div></pre></td></tr></table></figure>
+<h4 id="返回匹配的项目，支持正则-grep"><a href="#返回匹配的项目，支持正则-grep" class="headerlink" title="返回匹配的项目，支持正则 grep"></a>返回匹配的项目，支持正则 grep</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep hello a.txt	//返回a.txt中包含hello的行</div></pre></td></tr></table></figure>
+<h4 id="修改文件权限-chmod"><a href="#修改文件权限-chmod" class="headerlink" title="修改文件权限 chmod"></a>修改文件权限 chmod</h4><hr>
+<p><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f8vcqgxa7dj30cj05kgm4.jpg" alt=""><br>从左至右用0-9这些数字来表示<br>第0位确定文件类型，如果为<code>d</code>，则为目录，如果为<code>-</code>，表示为文件，如果为<code>l</code>，表示为链接<br><code>第1-3位</code>: 确定属主（该文件的所有者<code>owner</code>）拥有该文件的权限<br><code>第4-6位</code>: 确定属组（所有者的同组用户<code>group</code>）拥有该文件的权限<br><code>第7-9位</code>: 确定其他用户(<code>others</code>)拥有该文件的权限<br>其中，<code>第1、4、7位</code>表示读权限，如果用<code>r</code>字符表示，则有读权限，权限分为<code>4</code>，如果用<code>-</code>字符表示，则没有读权限<br><code>第2、5、8位</code>表示写权限，如果用<code>w</code>字符表示，则有写权限，权限分为<code>2</code>，如果用<code>-</code>字符表示没有写权限<br><code>第3、6、9位</code>表示可执行权限，如果用<code>x</code>字符表示，则有执行权限，权限分为<code>1</code>，如果用<code>-</code>字符表示，则没有执行权限<br>权限分举例:<code>rwxrw-r--</code>的权限分即为<code>764</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">chmod g-rw a.txt	//为group增加可读可写权限</div><div class="line">chmod o-rw a.txt	//为others增加可读可写权限</div><div class="line">chmod u+x a.txt		//为user(owner)增加可执行权限</div><div class="line">chmod a-x a.txt		//去除所有身份的可执行权限</div><div class="line">chmod 664 a.txt		//a.txt的权限就会修改为rw-rw-r--</div><div class="line">chmod -R 770 aaa/	//将aaa目录下的所有文件统一修改权限为770，即rwxrwx---</div></pre></td></tr></table></figure></p>
+<h4 id="修改文件所有权-chown"><a href="#修改文件所有权-chown" class="headerlink" title="修改文件所有权 chown"></a>修改文件所有权 chown</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chown leo  aaa		## 改变所属用户</div><div class="line">chown :leo  aaa		## 改变所属组</div><div class="line">chown leo:leo aaa/	## 同时修改所属用户和所属组</div></pre></td></tr></table></figure>
+<h4 id="添加一个用户-useradd"><a href="#添加一个用户-useradd" class="headerlink" title="添加一个用户 useradd"></a>添加一个用户 useradd</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">useradd luckyw	//添加一个名为luckyw的普通用户</div></pre></td></tr></table></figure>
+<h4 id="修改用户密码-passwd"><a href="#修改用户密码-passwd" class="headerlink" title="修改用户密码 passwd"></a>修改用户密码 passwd</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">passwd		//不带参数更改当前用户密码</div><div class="line">passwd luckyw	//更改luckyw用户密码</div></pre></td></tr></table></figure>
+<h4 id="压缩处理-tar"><a href="#压缩处理-tar" class="headerlink" title="压缩处理 tar"></a>压缩处理 tar</h4><hr>
+<p>参数解释:<br><code>-c</code>: 创建归档<br><code>-x</code>: 解压归档<br><code>-v</code>: 显示处理过程<br><code>-f</code>: 目标文件，其后必须紧跟目标文件<br><code>-j</code>: 调用<code>bzip2</code>进行解压缩<br><code>-z</code>: 调用<code>gzip</code>进行解压缩<br><code>-t</code>: 列出归档中的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">tar -cvf leo.tar .		//将当前目录所有文件归档，.表示当前目录</div><div class="line">tar -xvf leo.tar		//将leo.tar解压到当前目录中</div><div class="line">tar -cvjf leo.tar.bz2 .		//将当前目录所有文件用bzip2进行压缩</div><div class="line">tar -xvjf leo.tar.bz2		//将leo.tar.bz2用bzip2解压到当前目录</div><div class="line">tar -cvzf leo.tar.gz .		//将当前目录所有文件用gzip进行压缩</div><div class="line">tar -xvzf filename.tar.gz	//将leo.tar.gz用gzip解压到当前目录</div><div class="line">tar -tf leo.tar			//查看leo.tar中的文件</div></pre></td></tr></table></figure></p>
+<p>了解更多请参考:<a href="https://linux.luckyw.cn" target="_blank" rel="external">Linux命令查询</a></p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2016/04/30/linux-cmd/" target="_blank" title="Linux常用命令">Linux常用命令</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2016/04/30/linux-cmd/" target="_blank" title="Linux常用命令">https://blog.luckyw.cn/2016/04/30/linux-cmd/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminal-终端-的使用技巧"><span class="toc-number">1.</span> <span class="toc-text">Terminal(终端)的使用技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看帮助说明-man-info-help"><span class="toc-number">2.</span> <span class="toc-text">查看帮助说明 man/info/help</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载工具-wget"><span class="toc-number">3.</span> <span class="toc-text">下载工具 wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看当前所在的工作目录的全路径-pwd"><span class="toc-number">4.</span> <span class="toc-text">查看当前所在的工作目录的全路径 pwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看当前系统的时间-date"><span class="toc-number">5.</span> <span class="toc-text">查看当前系统的时间 date</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看当前登陆用户-who"><span class="toc-number">6.</span> <span class="toc-text">查看当前登陆用户 who</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关机-重启-shutdown-reboot-poweroff"><span class="toc-number">7.</span> <span class="toc-text">关机/重启 shutdown/reboot/poweroff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看目录信息-ls"><span class="toc-number">8.</span> <span class="toc-text">查看目录信息 ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#切换工作目录-cd"><span class="toc-number">9.</span> <span class="toc-text">切换工作目录 cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建文件夹-mkdir"><span class="toc-number">10.</span> <span class="toc-text">创建文件夹 mkdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除文件夹-rm-rmdir"><span class="toc-number">11.</span> <span class="toc-text">删除文件夹 rm/rmdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#移动文件或文件夹-mv"><span class="toc-number">12.</span> <span class="toc-text">移动文件或文件夹 mv</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建文件-touch"><span class="toc-number">13.</span> <span class="toc-text">创建文件 touch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拷贝-cp"><span class="toc-number">14.</span> <span class="toc-text">拷贝 cp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看文件内容-cat-more-less-tail-head"><span class="toc-number">15.</span> <span class="toc-text">查看文件内容 cat/more/less/tail/head</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查找命令-which-whereis"><span class="toc-number">16.</span> <span class="toc-text">查找命令 which/whereis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络连通测试-ping"><span class="toc-number">17.</span> <span class="toc-text">网络连通测试 ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回匹配的项目，支持正则-grep"><span class="toc-number">18.</span> <span class="toc-text">返回匹配的项目，支持正则 grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件权限-chmod"><span class="toc-number">19.</span> <span class="toc-text">修改文件权限 chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改文件所有权-chown"><span class="toc-number">20.</span> <span class="toc-text">修改文件所有权 chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加一个用户-useradd"><span class="toc-number">21.</span> <span class="toc-text">添加一个用户 useradd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改用户密码-passwd"><span class="toc-number">22.</span> <span class="toc-text">修改用户密码 passwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#压缩处理-tar"><span class="toc-number">23.</span> <span class="toc-text">压缩处理 tar</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2016/05/08/node-gulp/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    gulp构建前端自动化
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/04/24/js-prototype-ajax/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">原生JS写Ajax的请求函数</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2016/04/30/linux-cmd/" data-title="Linux常用命令" data-url="https://blog.luckyw.cn/2016/04/30/linux-cmd/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

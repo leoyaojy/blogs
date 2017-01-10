@@ -1,0 +1,418 @@
+* {
+    box-sizing: border-box;
+    font-family: "DejaVu Sans Mono", serif, sans-serif, monospace;
+}
+
+.left, .right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    min-height: 820px;
+    height: 100%;
+    border: 1px solid transparent;
+}
+
+/*左侧*/
+.left {
+    left: 0;
+}
+
+.phone {
+    position: relative;
+    margin: 10px auto;
+    width: 395px;
+    height: 813px;
+    background: url("/css/images/phone.png") no-repeat -395px 0;
+    background-size: 300% auto;
+}
+
+.content {
+    position: absolute;
+    top: 117px;
+    left: 37px;
+    width: 321px;
+    height: 569px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+}
+
+.changeBgImg {
+    background-position: -791px 0;
+}
+
+.title {
+    width: 100%;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    -webkit-animation: fadeInBottom 2s;
+    animation: fadeInBottom 2s;
+}
+
+.title:before, .title:after {
+    content: "";
+    width: 4px;
+    height: 16px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    background-color: #fff;
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+}
+
+.title:after {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+    -webkit-animation: rotateA 1s linear infinite;
+    animation: rotateA 1s linear infinite;
+}
+
+.avatar {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    border-radius: 50%;
+    animation: rollIn 4s linear infinite alternate;
+}
+
+h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    white-space: nowrap;
+    width: 200px;
+    margin-left: -100px;
+    font-size: 1.2em;
+    color: red;
+    -webkit-animation: scaleIn 1s ease;
+    animation: scaleIn 1s ease;
+}
+
+canvas {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    height: 300px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    -webkit-animation: fadeInUp 2s;
+    animation: fadeInUp 2s;
+}
+
+footer a {
+    width: 33.3%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    background-color: red;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+footer a:not(:last-child) {
+    border-right: 1px solid #fff;
+}
+
+footer a i {
+    margin-right: 3px;
+}
+
+/*右侧*/
+.right {
+    right: 0;
+    overflow-x: auto;
+    background-color: #272822;
+}
+
+.code ol {
+    color: #999;
+    padding-left: 60px;
+}
+
+.code ol li {
+    border-left: 1px solid #999;
+    padding-left: 10px;
+}
+
+pre {
+    margin: 0;
+    color: #fff;
+}
+
+/*tab size*/
+.tabTwo {
+    text-indent: 2em;
+}
+
+.tabFour {
+    text-indent: 4em;
+}
+
+.tabSix {
+    text-indent: 6em;
+}
+
+.tabEight {
+    text-indent: 8em;
+}
+
+/*code color*/
+.White {
+    color: #fff;
+}
+
+.Red {
+    color: red;
+}
+
+.Green {
+    color: green;
+}
+
+.Blue {
+    color: blue;
+}
+
+.Yellow {
+    color: yellow;
+}
+
+.one,
+.one > pre,
+.two,
+.two > pre,
+.three,
+.three > pre,
+.four,
+.four > pre,
+.five,
+.five > pre,
+.six,
+.six > pre,
+.seven,
+.seven > pre,
+.eight,
+.eight > pre,
+.nine,
+.nine > pre {
+    display: none;
+}
+
+/*keyframes*/
+@-webkit-keyframes rotate {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotateA {
+    from{
+        -webkit-transform: rotate(90deg);
+    }
+    to{
+        -webkit-transform: rotate(450deg);
+    }
+}
+@keyframes rotateA {
+    from{
+        transform: rotate(90deg);
+    }
+    to{
+        transform: rotate(450deg);
+    }
+}
+@-webkit-keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes rollIn {
+    from {
+        left: 0;
+        margin-left: 0;
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        left: 100%;
+        margin-left: -80px;
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rollIn {
+    from {
+        left: 0;
+        margin-left: 0;
+        transform: rotate(0deg);
+    }
+    to {
+        left: 100%;
+        margin-left: -80px;
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes scaleIn {
+    0% {
+        opacity: 0.3;
+        -webkit-transform: scale(0.7);
+    }
+    40% {
+        opacity: .5;
+        -webkit-transform: scale(1.1);
+    }
+    80% {
+        opacity: 0.8;
+        -webkit-transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+    40% {
+        opacity: .5;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 0.8;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*typeit*/
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.ti-container {
+    display: block;
+    font-size: inherit
+}
+
+.ti-text-container {
+    position: relative;
+    display: inline;
+    font-size: inherit
+}
+
+.ti-text-container:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    position: relative
+}
+
+.ti-text-container.active-container.ti-cursor:after {
+    display: inline
+}
+
+.ti-cursor:after {
+    display: none;
+    content: '|';
+    bottom: .05em;
+    right: -.25em;
+    position: absolute;
+    line-height: normal;
+    font-size: inherit;
+    -webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite
+}

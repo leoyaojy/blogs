@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>解决ubuntu下sublime无法输入中文问题 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="ubuntu,sublime,中文输入,注册码">
+    <meta name="description" content="系统环境
+系统:Ubuntu 16.04优麒麟 (应该大多数linux系统都试用)输入法:小企鹅输入法 fcitx 4.2.9.1Sublime Text版本:Sublime Text 3 Build 3114
+解决办法1、保存以下代码到sublime-imfix.c(位于～目录)1234567891011121314151617#include &amp;lt;gtk/gtkimcontext.h&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决ubuntu下sublime无法输入中文问题">
+<meta property="og:url" content="https://blog.luckyw.cn/2016/06/05/ubuntu-sublime-chinese-resolve/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="系统环境
+系统:Ubuntu 16.04优麒麟 (应该大多数linux系统都试用)输入法:小企鹅输入法 fcitx 4.2.9.1Sublime Text版本:Sublime Text 3 Build 3114
+解决办法1、保存以下代码到sublime-imfix.c(位于～目录)1234567891011121314151617#include &amp;lt;gtk/gtkimcontext.h&amp;gt">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f7o816rec7j3069068dfp.jpg">
+<meta property="og:updated_time" content="2016-11-20T11:09:23.538Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决ubuntu下sublime无法输入中文问题">
+<meta name="twitter:description" content="系统环境
+系统:Ubuntu 16.04优麒麟 (应该大多数linux系统都试用)输入法:小企鹅输入法 fcitx 4.2.9.1Sublime Text版本:Sublime Text 3 Build 3114
+解决办法1、保存以下代码到sublime-imfix.c(位于～目录)1234567891011121314151617#include &amp;lt;gtk/gtkimcontext.h&amp;gt">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f7o816rec7j3069068dfp.jpg">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-ubuntu-sublime-chinese-resolve" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            解决ubuntu下sublime无法输入中文问题
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/05/ubuntu-sublime-chinese-resolve/">
+            <time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Sublime/">Sublime</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h4><hr>
+<p>系统:<code>Ubuntu 16.04</code>优麒麟 (应该大多数<code>linux</code>系统都试用)<br>输入法:小企鹅输入法 <code>fcitx 4.2.9.1</code><br><code>Sublime Text</code>版本:<code>Sublime Text 3 Build 3114</code></p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p><strong>1、保存以下代码到sublime-imfix.c(位于～目录)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include &lt;gtk/gtkimcontext.h&gt;</div><div class="line">void gtk_im_context_set_client_window (GtkIMContext *context,</div><div class="line">         GdkWindow    *window)</div><div class="line">&#123;</div><div class="line"> GtkIMContextClass *klass;</div><div class="line"> g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line"> klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"> if (klass-&gt;set_client_window)</div><div class="line">   klass-&gt;set_client_window (context, window);</div><div class="line"> g_object_set_data(G_OBJECT(context),&quot;window&quot;,window);</div><div class="line"> if(!GDK_IS_WINDOW (window))</div><div class="line">   return;</div><div class="line"> int width = gdk_window_get_width(window);</div><div class="line"> int height = gdk_window_get_height(window);</div><div class="line"> if(width != 0 &amp;&amp; height !=0)</div><div class="line">   gtk_im_context_focus_in(context);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>2、安装 C/C++ 的编译环境和 gtk libgtk2.0-dev</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential</div><div class="line">sudo apt-get install libgtk2.0-dev</div></pre></td></tr></table></figure></p>
+<p><strong>3、编译成共享库<code>libsublime-imfix.so</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -shared -o libsublime-imfix.so sublime-imfix.c `pkg-config --libs --cflags gtk+-2.0` -fPIC</div></pre></td></tr></table></figure></p>
+<p><strong>4、设置<code>LD_PRELOAD</code>并启动Sublime</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LD_PRELOAD=./libsublime-imfix.so subl</div></pre></td></tr></table></figure></p>
+<p><strong>5、移动共享库到<code>/opt/sublime_text</code>目录下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mv libsublime-imfix.so /opt/sublime_text</div></pre></td></tr></table></figure></p>
+<p><strong>6、管理员权限打开<code>/usr/share/applications/sublime_text.desktop</code>并修改对应的Exec值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">[...]</div><div class="line">Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text %F</div><div class="line">[...]</div><div class="line"></div><div class="line">[Desktop Action Window]</div><div class="line">[...]</div><div class="line">Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n</div><div class="line">[...]</div><div class="line"></div><div class="line">[Desktop Action Document]</div><div class="line">[...]</div><div class="line">Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text --command new_file</div><div class="line">[...]</div></pre></td></tr></table></figure></p>
+<p><strong>7、管理员权限打开并修改<code>/usr/bin/subl</code>文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">export LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so</div><div class="line">exec /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="There-are-no-packages-available-for-installation-解决办法"><a href="#There-are-no-packages-available-for-installation-解决办法" class="headerlink" title="There are no packages available for installation 解决办法"></a>There are no packages available for installation 解决办法</h4><hr>
+<p><strong>修改hosts</strong><br>打开终端执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo echo &quot;50.116.34.243 sublime.wbond.net&quot; &gt;&gt; /etc/hosts</div></pre></td></tr></table></figure></p>
+<p>其他系统类似，在对应的<code>hosts</code>文件里加上这么一行即可:<code>50.116.34.243    sublime.wbond.net</code></p>
+<h4 id="注册码"><a href="#注册码" class="headerlink" title="注册码"></a>注册码</h4><hr>
+<p><strong>1. Sublime Text 3.x(Bulid 309X 之前版本)</strong><br>适用于3065 / 3083 等低于 309x 的版本</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Andrew Weber<br>Single User License<br>EA7E-855605<br>813A03DD 5E4AD9E6 6C0EEB94 BC99798F<br>942194A6 02396E98 E62C9979 4BB979FE<br>91424C9D A45400BF F6747D88 2FB88078<br>90F5CC94 1CDC92DC 8457107A F151657B<br>1D22E383 A997F016 42397640 33F41CFC<br>E1D0AE85 A0BBD039 0E9C8D55 E1B89D5D<br>5CDB7036 E56DE1C0 EFCC0840 650CD3A6<br>B98FC99C 8FAC73EE D2B95564 DF450523<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>K-20<br>Single User License<br>EA7E-940129<br>3A099EC1 C0B5C7C5 33EBF0CF BE82FE3B<br>EAC2164A 4F8EC954 4E87F1E5 7E4E85D6<br>C5605DE6 DAB003B4 D60CA4D0 77CB1533<br>3C47F579 FB3E8476 EB3AA9A7 68C43CD9<br>8C60B563 80FE367D 8CAD14B3 54FB7A9F<br>4123FFC4 D63312BA 141AF702 F6BBA254<br>B094B9C0 FAA4B04C 06CC9AFC FD412671<br>82E3AEE0 0F0FAAA7 8FA773C9 383A9E18<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>J2TeaM<br>2 User License<br>EA7E-940282<br>45CB0D8F 09100037 7D1056EB A1DDC1A2<br>39C102C5 DF8D0BF0 FC3B1A94 4F2892B4<br>0AEE61BA 65758D3B 2EED551F A3E3478C<br>C1C0E04E CA4E4541 1FC1A2C1 3F5FB6DB<br>CFDA1551 51B05B5D 2D3C8CFE FA8B4285<br>051750E3 22D1422A 7AE3A8A1 3B4188AC<br>346372DA 37AA8ABA 6EB30E41 781BC81F<br>B5CA66E3 A09DBD3A 3FE85BBD 69893DBD<br>—— END LICENSE ——</p>
+</blockquote>
+<p><strong>2. Sublime Text 3.X(Bulid 309x之后版本)</strong><br>适用于 3103 等高于 309x 的版本</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Michael Barnes<br>Single User License<br>EA7E-821385<br>8A353C41 872A0D5C DF9B2950 AFF6F667<br>C458EA6D 8EA3C286 98D1D650 131A97AB<br>AA919AEC EF20E143 B361B1E7 4C8B7F04<br>B085E65E 2F5F5360 8489D422 FB8FC1AA<br>93F6323C FD7F7544 3F39C318 D95E6480<br>FCCC7561 8A4A1741 68FA4223 ADCEDE07<br>200C25BE DBBC4855 C4CFB774 C5EC138C<br>0FEC1CEF D9DCECEC D3A5DAD1 01316C36<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Free Communities Consultoria em Informática Ltda<br>Single User License<br>EA7E-801302<br>C154C122 4EFA4415 F1AAEBCC 315F3A7D<br>2580735A 7955AA57 850ABD88 72A1DDD8<br>8D2CE060 CF980C29 890D74F2 53131895<br>281E324E 98EA1FEF 7FF69A12 17CA7784<br>490862AF 833E133D FD22141D D8C89B94<br>4C10A4D2 24693D70 AE37C18F 72EF0BE5<br>1ED60704 651BC71F 16CA1B77 496A0B19<br>463EDFF9 6BEB1861 CA5BAD96 89D0118E<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Nicolas Hennion<br>Single User License<br>EA7E-866075<br>8A01AA83 1D668D24 4484AEBC 3B04512C<br>827B0DE5 69E9B07A A39ACCC0 F95F5410<br>729D5639 4C37CECB B2522FB3 8D37FDC1<br>72899363 BBA441AC A5F47F08 6CD3B3FE<br>CEFB3783 B2E1BA96 71AAF7B4 AFB61B1D<br>0CC513E7 52FF2333 9F726D2C CDE53B4A<br>810C0D4F E1F419A3 CDA0832B 8440565A<br>35BF00F6 4CA9F869 ED10E245 469C233E<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Anthony Sansone<br>Single User License<br>EA7E-878563<br>28B9A648 42B99D8A F2E3E9E0 16DE076E<br>E218B3DC F3606379 C33C1526 E8B58964<br>B2CB3F63 BDF901BE D31424D2 082891B5<br>F7058694 55FA46D8 EFC11878 0868F093<br>B17CAFE7 63A78881 86B78E38 0F146238<br>BAE22DBB D4EC71A1 0EC2E701 C7F9C648<br>5CF29CA3 1CB14285 19A46991 E9A98676<br>14FD4777 2D8A0AB6 A444EE0D CA009B54<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Alexey Plutalov<br>Single User License<br>EA7E-860776<br>3DC19CC1 134CDF23 504DC871 2DE5CE55<br>585DC8A6 253BB0D9 637C87A2 D8D0BA85<br>AAE574AD BA7D6DA9 2B9773F2 324C5DEF<br>17830A4E FBCF9D1D 182406E9 F883EA87<br>E585BBA1 2538C270 E2E857C2 194283CA<br>7234FF9E D0392F93 1D16E021 F1914917<br>63909E12 203C0169 3F08FFC8 86D06EA8<br>73DDAEF0 AC559F30 A6A67947 B60104C6<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Peter Halliday<br>Single User License<br>EA7E-855988<br>3997BFF0 2856413A 7A555954 67069B78<br>06D8CE12 63EAF079 AD039757 79E16D13<br>C555AD90 465CBE53 10F6DFC4 D3A3C611<br>411106F8 0CFEB15F 0A7BB891 111F5ED2<br>C6AA8429 77913528 FA6291A9 B88D4550<br>F1D6AB13 BF9153BC 91B4DFFE D296CFE0<br>C1D8EB22 13D5F14E 75A699EC 49EDDC23<br>D89D0F9B D240B10A A3712467 09DE7870<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Fred Zirdung<br>Single User License<br>EA7E-844672<br>6089C0EC 22936E1A 1EADEBE2 B8654BBA<br>5C98FFA6 C0FD1599 0364779B 071C74FB<br>EEFE9EAB 92B3D867 CD1B32FE D190269F<br>6FC08F8F 8D24191D 32828465 942CE58E<br>AECE5307 08B62229 D788560A 6E0AAC4B<br>48A2D9EE 24FD8CAA 07BEBDF2 28EA86D4<br>CCB96084 6C34CAD2 E8A04F39 3B5A3CBC<br>3B668BB7 C94D0B4B 847D6D7F 4BC07375<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Wixel<br>Single User License<br>EA7E-848235<br>103D2969 8700C7ED 8173CF61 537000C0<br>EB3C7ECB 5E750F17 6B42B67C A190090B<br>7669164F C6F371A8 5A1D88D5 BDD0DA70<br>C065892B 7CC1BB2B 1C8B8C7C F08E7789<br>7C2A5241 35F86328 4C8F70D9 C023D7C2<br>11245C36 59A730DB 72BDB9A7 D5B20304<br>90E90E72 9F08CA25 73F49C20 179D938E<br>5BC8BEDA 13457A69 39E6265F 233767F9<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Daniel Russel<br>Single User License<br>EA7E-917420<br>9327EC62 44020C2A 45172A68 12FE13F1<br>1D22245B 680892EE F551F8EB C183D032<br>8B4EDB4B 479CB7E4 07E42EDD A780021D<br>56BADF42 AC05238B 023B47B1 EBA1B7DE<br>6DF9A383 159F32AE 04EBE100 1278B1D2<br>52E81B60 C68AA2E8 F84A20BE FE7990EB<br>5D44E4B6 16369263 1DDAACBC 280FF19E<br>86CF4319 0B8615A8 4FF0512E B123B8EC<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Peter Eriksson<br>Single User License<br>EA7E-890068<br>8E107C71 3100D6FC 2AC805BF 9E627C77<br>72E710D7 43392469 D06A2F5B F9304FBD<br>F5AB4DB2 7A95F172 FE68E300 42745819<br>E94AB2DF C1893094 ECABADC8 71FEE764<br>20224821 3EABF931 745AF882 87AD0A4B<br>33C6E377 0210D712 CD2B1178 82601542<br>C7FD8098 F45D2824 BC7DFB38 F1EBD38A<br>D7A3AFE0 96F938EA 2D90BD72 9E34CDF0<br>—— END LICENSE ——</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–<br>Ryan Clark<br>Single User License<br>EA7E-812479<br>2158A7DE B690A7A3 8EC04710 006A5EEB<br>34E77CA3 9C82C81F 0DB6371B 79704E6F<br>93F36655 B031503A 03257CCC 01B20F60<br>D304FA8D B1B4F0AF 8A76C7BA 0FA94D55<br>56D46BCE 5237A341 CD837F30 4D60772D<br>349B1179 A996F826 90CDB73C 24D41245<br>FD032C30 AD5E7241 4EAA66ED 167D91FB<br>55896B16 EA125C81 F550AF6B A6820916<br>—— END LICENSE ——</p>
+</blockquote>
+<h4 id="我的配置文件"><a href="#我的配置文件" class="headerlink" title="我的配置文件"></a>我的配置文件</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;color_scheme&quot;: &quot;Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme&quot;,</div><div class="line">	&quot;theme&quot;: &quot;Material-Theme-Darker.sublime-theme&quot;,</div><div class="line">	&quot;auto_find_in_selection&quot;: true,			//在选定范围搜索</div><div class="line">	&quot;bold_folder_labels&quot;: true,			//加粗文件夹名称</div><div class="line">	&quot;font_size&quot;: 16,				//字体大小</div><div class="line">	&quot;highlight_line&quot;: true,				//高亮编辑行</div><div class="line">	&quot;save_on_focus_lost&quot;: true,			//失焦自动保存</div><div class="line">	&quot;show_encoding&quot;: true,				//显示文件编码</div><div class="line">	&quot;trim_trailing_white_space_on_save&quot;: true,	//去除每行文本最后空格</div><div class="line">	&quot;highlight_modified_tabs&quot;: true,		//文件修改，标签高亮显示</div><div class="line">	&quot;word_wrap&quot;: &quot;true&quot;,				//自动换行</div><div class="line">	&quot;ignored_packages&quot;:</div><div class="line">	[</div><div class="line">		&quot;Vintage&quot;</div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2016/06/05/ubuntu-sublime-chinese-resolve/" target="_blank" title="解决ubuntu下sublime无法输入中文问题">解决ubuntu下sublime无法输入中文问题</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2016/06/05/ubuntu-sublime-chinese-resolve/" target="_blank" title="解决ubuntu下sublime无法输入中文问题">https://blog.luckyw.cn/2016/06/05/ubuntu-sublime-chinese-resolve/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#系统环境"><span class="toc-number">1.</span> <span class="toc-text">系统环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-number">2.</span> <span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#There-are-no-packages-available-for-installation-解决办法"><span class="toc-number">3.</span> <span class="toc-text">There are no packages available for installation 解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册码"><span class="toc-number">4.</span> <span class="toc-text">注册码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#我的配置文件"><span class="toc-number">5.</span> <span class="toc-text">我的配置文件</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2016/06/10/grub-rescue-solve/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Grub Rescue解决办法
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/06/01/chrome-console/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Chrome Console命令</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2016/06/05/ubuntu-sublime-chinese-resolve/" data-title="解决ubuntu下sublime无法输入中文问题" data-url="https://blog.luckyw.cn/2016/06/05/ubuntu-sublime-chinese-resolve/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

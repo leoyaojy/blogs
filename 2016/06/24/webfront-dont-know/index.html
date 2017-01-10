@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>前端冷知识课堂 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="前端开发,冷知识,自动解析">
+    <meta name="description" content="HTML篇
+浏览器地址栏运行JS代码在浏览器地址栏可以直接运行JS代码，做法是以javascript:开头后跟要执行的语句。比如:1javascript:alert(&amp;apos;alert from the address bar :)&amp;apos;);
+将以上代码贴到浏览器地址栏回车后执行，alert弹出一个窗口
+
+需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端冷知识课堂">
+<meta property="og:url" content="https://blog.luckyw.cn/2016/06/24/webfront-dont-know/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="HTML篇
+浏览器地址栏运行JS代码在浏览器地址栏可以直接运行JS代码，做法是以javascript:开头后跟要执行的语句。比如:1javascript:alert(&amp;apos;alert from the address bar :)&amp;apos;);
+将以上代码贴到浏览器地址栏回车后执行，alert弹出一个窗口
+
+需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f7ov90zxo0j308c06t0t4.jpg">
+<meta property="og:updated_time" content="2016-11-20T11:52:21.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端冷知识课堂">
+<meta name="twitter:description" content="HTML篇
+浏览器地址栏运行JS代码在浏览器地址栏可以直接运行JS代码，做法是以javascript:开头后跟要执行的语句。比如:1javascript:alert(&amp;apos;alert from the address bar :)&amp;apos;);
+将以上代码贴到浏览器地址栏回车后执行，alert弹出一个窗口
+
+需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f7ov90zxo0j308c06t0t4.jpg">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-webfront-dont-know" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            前端冷知识课堂
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/24/webfront-dont-know/">
+            <time datetime="2016-06-23T16:00:00.000Z" itemprop="datePublished">2016-06-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/WEB/">WEB</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WEB/">WEB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="HTML篇"><a href="#HTML篇" class="headerlink" title="HTML篇"></a>HTML篇</h3><hr>
+<h4 id="浏览器地址栏运行JS代码"><a href="#浏览器地址栏运行JS代码" class="headerlink" title="浏览器地址栏运行JS代码"></a>浏览器地址栏运行JS代码</h4><p>在浏览器地址栏可以直接运行JS代码，做法是以<code>javascript:</code>开头后跟要执行的语句。比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(&apos;alert from the address bar :)&apos;);</div></pre></td></tr></table></figure></p>
+<p>将以上代码贴到浏览器地址栏回车后执行，<code>alert</code>弹出一个窗口</p>
+<blockquote>
+<p>需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉代码开头的<code>javascript:</code>，所以需要手动添加起来才能正确执行，而Firefox中虽然不会自动去掉，但它根本就不支持在地址栏运行<code>JS</code>代码，so :(</p>
+</blockquote>
+<h4 id="浏览器地址栏运行HTML代码"><a href="#浏览器地址栏运行HTML代码" class="headerlink" title="浏览器地址栏运行HTML代码"></a>浏览器地址栏运行HTML代码</h4><hr>
+<p>在非IE内核的浏览器地址栏可以直接运行<code>HTML</code>代码，比如在地址栏输入以下代码然后回车运行，会出现指定的页面内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如下:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7otaez542j30j102iweq.jpg" alt=""></p>
+<h4 id="浏览器变成编辑器"><a href="#浏览器变成编辑器" class="headerlink" title="浏览器变成编辑器"></a>浏览器变成编辑器</h4><hr>
+<p>将以下代码贴到地址栏运行后浏览器变成了一个原始而简单的编辑器，跟<code>windows</code>记事本效果一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html, &lt;html contenteditable&gt;</div></pre></td></tr></table></figure></p>
+<p>主要是因为<code>HTML5</code>中新加了<code>contenteditable</code>属性，当元素指定了该属性后，元素的内容成为可编辑状态。举一反三，将以下代码在控制台执行后，整个页面变成可编辑状态，肆意玩耍吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.contentEditable=&apos;true&apos;;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="利用a标签自动解析URL"><a href="#利用a标签自动解析URL" class="headerlink" title="利用a标签自动解析URL"></a>利用a标签自动解析URL</h4><hr>
+<p>如果我们有从一个<code>URL</code>中提取域名、查询关键字、变量参数值等的需求，就需要写正则去对查询<code>url</code>进行获取，而浏览器却可以很方便地帮我们完成这一任务。<code>JS</code>代码里先创建一个<code>a</code>标签然后将需要解析的<code>URL</code>赋值给<code>a</code>的<code>href</code>属性，然后就可以很简单的得到我们想要的了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = document.createElement(&apos;a&apos;);</div><div class="line">a.href = &apos;https://blog.h5demo.xyz/2016/06/24/webfront-dont-know/&apos;;</div><div class="line">console.log(a.host);</div></pre></td></tr></table></figure></p>
+<p>效果如下:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f7otm8m603j30fe020mxf.jpg" alt=""><br>利用这一原理，稍微进行一下扩展，就可以获得一个解析<code>URL</code>各部分的通用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function parseURL(url) &#123;</div><div class="line">    var a =  document.createElement(&apos;a&apos;);</div><div class="line">    a.href = url;</div><div class="line">    return &#123;</div><div class="line">        source: url,</div><div class="line">        protocol: a.protocol.replace(&apos;:&apos;,&apos;&apos;),</div><div class="line">        host: a.hostname,</div><div class="line">        port: a.port,</div><div class="line">        query: a.search,</div><div class="line">        params: (function()&#123;</div><div class="line">            var ret = &#123;&#125;,</div><div class="line">                seg = a.search.replace(/^\?/,&apos;&apos;).split(&apos;&amp;&apos;),</div><div class="line">                len = seg.length, i = 0, s;</div><div class="line">            for (;i&lt;len;i++) &#123;</div><div class="line">                if (!seg[i]) &#123; continue; &#125;</div><div class="line">                s = seg[i].split(&apos;=&apos;);</div><div class="line">                ret[s[0]] = s[1];</div><div class="line">            &#125;</div><div class="line">            return ret;</div><div class="line">        &#125;)(),</div><div class="line">        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [,&apos;&apos;])[1],</div><div class="line">        hash: a.hash.replace(&apos;#&apos;,&apos;&apos;),</div><div class="line">        path: a.pathname.replace(/^([^\/])/,&apos;/$1&apos;),</div><div class="line">        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [,&apos;&apos;])[1],</div><div class="line">        segments: a.pathname.replace(/^\//,&apos;&apos;).split(&apos;/&apos;)</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果如下:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7otpk0on7j30ki06qq4r.jpg" alt=""></p>
+<h4 id="页面拥有ID的元素会创建全局变量"><a href="#页面拥有ID的元素会创建全局变量" class="headerlink" title="页面拥有ID的元素会创建全局变量"></a>页面拥有ID的元素会创建全局变量</h4><hr>
+<p>在一个<code>HTML</code>页面中，所有设置了<code>ID</code>属性的元素会在<code>JS</code>的执行环境中创建对应的全局变量，这意味着<code>document.getElementById</code>显得多余了，但实际项目中还是该怎么写就怎么写，这样出错的概率就小的多，比如<a href="http://www.h5demo.xyz" target="_blank" rel="external">我的主页</a>中有一个<code>id</code>为<code>fancyBox</code>的<code>a</code>元素，我们可以这么获取<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f7otu7an49j30d901wq2z.jpg" alt=""></p>
+<h4 id="加载CDN文件时，可以省掉HTTP前缀"><a href="#加载CDN文件时，可以省掉HTTP前缀" class="headerlink" title="加载CDN文件时，可以省掉HTTP前缀"></a>加载CDN文件时，可以省掉HTTP前缀</h4><hr>
+<p>现在很流行的<code>CDN</code>即从专门的服务器加载一些通用的<code>JS</code>和<code>CSS</code>文件，出于安全考虑有的<code>CDN</code>服务器使用<code>HTTPS</code>方式连接，而有的是传统的<code>HTTP</code>，其实我们在使用时可以忽略掉这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;//cdn.domain.com/path/of/script.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="利用script标签保存任意信息"><a href="#利用script标签保存任意信息" class="headerlink" title="利用script标签保存任意信息"></a>利用script标签保存任意信息</h4><hr>
+<p>将<code>script</code>标签设置为<code>type=&#39;text&#39;</code>，然后就可以在里面保存任意信息，之后可以在<code>JS</code>代码中很方便地获取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text&quot; id=&quot;template&quot;&gt;</div><div class="line">	&lt;h1&gt;Hello World!&lt;/h1&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">var text = document.getElementById(&apos;template&apos;).innerHTML</div></pre></td></tr></table></figure></p>
+<h3 id="CSS篇"><a href="#CSS篇" class="headerlink" title="CSS篇"></a>CSS篇</h3><hr>
+<h4 id="CSS恶作剧"><a href="#CSS恶作剧" class="headerlink" title="CSS恶作剧"></a>CSS恶作剧</h4><hr>
+<p>相信你看了以下代码，应该知道接下来会发生什么 :)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">    cursor: none!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="简单的文字模糊效果"><a href="#简单的文字模糊效果" class="headerlink" title="简单的文字模糊效果"></a>简单的文字模糊效果</h4><hr>
+<p>以下两行简单的<code>CSS</code>代码可达到将文字模糊化的效果，有点像使用<code>PS</code>的滤镜，it’s awesome！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    color: transparent;</div><div class="line">    text-shadow: #111 0 0 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果图:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f7ou5ome26j30iy0fp0uc.jpg" alt=""></p>
+<h4 id="多重边框"><a href="#多重边框" class="headerlink" title="多重边框"></a>多重边框</h4><hr>
+<p>利用重复指定<code>box-shadow</code>来达到多个边框的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);</div><div class="line">    height: 200px;</div><div class="line">    margin: 50px auto;</div><div class="line">    width: 400px</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果图:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7ou7w0ldkj30cp0740ss.jpg" alt=""></p>
+<h4 id="实时编辑CSS"><a href="#实时编辑CSS" class="headerlink" title="实时编辑CSS"></a>实时编辑CSS</h4><hr>
+<p>通过设置<code>style</code>标签的<code>display:block</code>样式可以让页面的<code>style</code>标签显示出来，并且加上<code>contentEditable</code>属性后可以让样式成为可编辑状态，更改后的样式效果也是实时更新呈现的,不过此技巧在IE下无效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;style style=&quot;display:block&quot; contentEditable&gt;</div><div class="line">            body &#123; color: red &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="CSS中也可以做简单运算"><a href="#CSS中也可以做简单运算" class="headerlink" title="CSS中也可以做简单运算"></a>CSS中也可以做简单运算</h4><hr>
+<p>通过<code>CSS</code>中的<code>calc</code>方法可以进行一些简单的运算，从而达到动态指定元素样式的目的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    width: calc(100% - 50px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注:减号前后有两个空格</p>
+<h3 id="JS篇"><a href="#JS篇" class="headerlink" title="JS篇"></a>JS篇</h3><hr>
+<h4 id="生成随机字符串"><a href="#生成随机字符串" class="headerlink" title="生成随机字符串"></a>生成随机字符串</h4><hr>
+<p>利用<code>Math.random</code>和<code>toString</code>生成随机字符串，这里的技巧是利用了<code>toString</code>方法可以接收一个基数作为参数的原理，这个基数取值为2到36，如果不指定，默认基数是10，表示十进制<br>效果图:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7oufbfu30j30c4013mx2.jpg" alt=""></p>
+<h4 id="整数的操作"><a href="#整数的操作" class="headerlink" title="整数的操作"></a>整数的操作</h4><hr>
+<p><code>JS</code>中是没有整型概念的，但利用好<strong>位操作符</strong>可以轻松处理，同时获得效率上的提升,<code>|0</code>和<code>~~</code>是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的<code>parseInt</code>、<code>Math.round</code>要高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var foo = (13.14 / 5.20) | 0;//结果为2</div><div class="line">var bar = ~~(13.14 / 5.20);//结果为2</div></pre></td></tr></table></figure></p>
+<p>注意:请谨慎使用，具体原因请参考<a href="http://www.jstips.co/zh_cn/rounding-the-fast-way/" target="_blank" rel="external">快速（但危险）的取整方法</a><br>顺便说句，<code>!!</code>将一个值方便快速转化为布尔值<code>!!window===true</code></p>
+<h4 id="重写原生方法以实现新功能"><a href="#重写原生方法以实现新功能" class="headerlink" title="重写原生方法以实现新功能"></a>重写原生方法以实现新功能</h4><hr>
+<p>下面的代码通过重写<code>alert</code>让它可以记录弹窗的次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">    var oldAlert = window.alert,</div><div class="line">        count = 0;</div><div class="line">    window.alert = function(a) &#123;</div><div class="line">        count++;</div><div class="line">        oldAlert(a + &quot;\n 天啊！你已经弹窗&quot; + count + &quot; 次了，别再弹了，ok？&quot;);</div><div class="line">    &#125;;</div><div class="line">&#125;)();</div><div class="line">alert(&quot;Hello World&quot;);</div></pre></td></tr></table></figure></p>
+<h4 id="console恶作剧"><a href="#console恶作剧" class="headerlink" title="console恶作剧"></a>console恶作剧</h4><hr>
+<p>Chrome的<code>console.log</code>是支持对文字添加样式的，甚至图片都可以，我们可以重写掉默认的<code>log</code>方法，把将要<code>log</code>的文字应用<code>CSS</code>的模糊效果，这样当有人试图调用<code>console.log()</code>的时候，<code>log</code>出来的是模糊不清的文字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var _log = console.log;</div><div class="line">console.log = function() &#123;</div><div class="line">  _log.call(console, &apos;%c&apos; + [].slice.call(arguments).join(&apos; &apos;), &apos;color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);&apos;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>效果图:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f7ouqh8ik2j30p402pgm2.jpg" alt=""></p>
+<h4 id="不声明第三个变量的值交换"><a href="#不声明第三个变量的值交换" class="headerlink" title="不声明第三个变量的值交换"></a>不声明第三个变量的值交换</h4><hr>
+<p>交换两个变量值的常规做法，那就是声明一个中间变量来暂存,而不声明第三个变量的值交换的方法如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a=1,b=2;a=[b,b=a][0];</div></pre></td></tr></table></figure></p>
+<h4 id="JS一切皆对象"><a href="#JS一切皆对象" class="headerlink" title="JS一切皆对象"></a>JS一切皆对象</h4><hr>
+<p><code>JS</code>的世界，一切皆对象。除了<code>null</code>和<code>undefined</code>，其他基本类型数字、字符串和布尔值都有对应有包装对象。对象的一个特征是你可以在它身上直接调用方法，对于数字基本类型，当试图在其身上调用<code>toString</code>方法会失败，但用括号括起来后再调用就不会失败了，内部实现是用相应的包装对象将基本类型转为对象。所以<code>(1).toString()</code>相当于<code>new Number(1).toString()</code>。因此，你的确可以把基本类型数字、字符串、布尔等当对象使用，只是需要注意语法要得体。<br>同时我们知道，<code>JS</code>中数字是不分浮点型和整型的，所有数字其实均是浮点类型，只是把小数点省略了而以，比如你看到的1可以写成1.，这也就是为什么当你试图<code>1.toString()</code>时会报错，所以正确的写法应该是这样：<code>1..toString()</code>，或者如上面所述加上括号，这里括号的作用是纠正<code>JS</code>解析器，不要把1后面的点当成小数点。内部实现如上面所述，是将<code>1.</code>用包装对象转成对象再调用方法</p>
+<h4 id="If语句的变形"><a href="#If语句的变形" class="headerlink" title="If语句的变形"></a>If语句的变形</h4><hr>
+<p>当你需要写一个<code>if</code>语句的时候，不妨尝试用<code>JS</code>中的逻辑运算符来代替<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var day=(new Date).getDay()===0;</div><div class="line">//传统if语句</div><div class="line">if (day) &#123;</div><div class="line">	alert(&apos;Today is Sunday!&apos;);</div><div class="line">&#125;;</div><div class="line">//运用逻辑与代替if</div><div class="line">day&amp;&amp;alert(&apos;Today is Sunday!&apos;);</div></pre></td></tr></table></figure></p>
+<p>比如上面的代码，首先得到今天的日期，如果是星期天，则弹窗，否则什么也不做。我们知道逻辑操作存在短路的情况，对于逻辑与表达式，只有两者都真才结果才为真，如果前面的day变量被判断为假了，那么对于整个与表达式来说结果就是假，所以就不会继续去执行后面的<code>alert</code>了，如果前面day为真，则还要继续执行后面的代码来确定整个表达式的真假。利用这点达到了<code>if</code>的效果。<br>对于传统的<code>if</code>语句，如果执行体代码超过了1条语句，则需要加花括号，而利用逗号表达式，可以执行任意条代码而不用加花括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if(conditoin) alert(1),alert(2),console.log(3);</div></pre></td></tr></table></figure></p>
+<p>上面<code>if</code>语句中，如果条件成立则执行三个操作，但我们不需要用花括号将这三句代码括起来。当然，这是不推荐的，这里是冷知识课堂:)</p>
+<h4 id="禁止别人以iframe加载你的页面"><a href="#禁止别人以iframe加载你的页面" class="headerlink" title="禁止别人以iframe加载你的页面"></a>禁止别人以iframe加载你的页面</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if (window.location != window.parent.location) window.parent.location = window.location;</div></pre></td></tr></table></figure>
+<h4 id="console-table"><a href="#console-table" class="headerlink" title="console.table"></a>console.table</h4><hr>
+<p>Chrome党的<code>console</code>方法，可以将<code>JS</code>关联数组以表格形式输出到浏览器控制台，效果很赞，界面美观<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var data = [&#123;&apos;水果名&apos;: &apos;苹果&apos;, &apos;数量&apos;: 20&#125;, &#123;&apos;水果名&apos;: &apos;梨子&apos;, &apos;数量&apos;: 40&#125;];</div><div class="line">console.table(data);</div></pre></td></tr></table></figure></p>
+<p>效果图:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f7ov0008p6j30y703d74n.jpg" alt=""></p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2016/06/24/webfront-dont-know/" target="_blank" title="前端冷知识课堂">前端冷知识课堂</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2016/06/24/webfront-dont-know/" target="_blank" title="前端冷知识课堂">https://blog.luckyw.cn/2016/06/24/webfront-dont-know/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML篇"><span class="toc-number">1.</span> <span class="toc-text">HTML篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器地址栏运行JS代码"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器地址栏运行JS代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器地址栏运行HTML代码"><span class="toc-number">1.2.</span> <span class="toc-text">浏览器地址栏运行HTML代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器变成编辑器"><span class="toc-number">1.3.</span> <span class="toc-text">浏览器变成编辑器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用a标签自动解析URL"><span class="toc-number">1.4.</span> <span class="toc-text">利用a标签自动解析URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面拥有ID的元素会创建全局变量"><span class="toc-number">1.5.</span> <span class="toc-text">页面拥有ID的元素会创建全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载CDN文件时，可以省掉HTTP前缀"><span class="toc-number">1.6.</span> <span class="toc-text">加载CDN文件时，可以省掉HTTP前缀</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用script标签保存任意信息"><span class="toc-number">1.7.</span> <span class="toc-text">利用script标签保存任意信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS篇"><span class="toc-number">2.</span> <span class="toc-text">CSS篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS恶作剧"><span class="toc-number">2.1.</span> <span class="toc-text">CSS恶作剧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的文字模糊效果"><span class="toc-number">2.2.</span> <span class="toc-text">简单的文字模糊效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多重边框"><span class="toc-number">2.3.</span> <span class="toc-text">多重边框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实时编辑CSS"><span class="toc-number">2.4.</span> <span class="toc-text">实时编辑CSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS中也可以做简单运算"><span class="toc-number">2.5.</span> <span class="toc-text">CSS中也可以做简单运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS篇"><span class="toc-number">3.</span> <span class="toc-text">JS篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生成随机字符串"><span class="toc-number">3.1.</span> <span class="toc-text">生成随机字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整数的操作"><span class="toc-number">3.2.</span> <span class="toc-text">整数的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重写原生方法以实现新功能"><span class="toc-number">3.3.</span> <span class="toc-text">重写原生方法以实现新功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#console恶作剧"><span class="toc-number">3.4.</span> <span class="toc-text">console恶作剧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不声明第三个变量的值交换"><span class="toc-number">3.5.</span> <span class="toc-text">不声明第三个变量的值交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS一切皆对象"><span class="toc-number">3.6.</span> <span class="toc-text">JS一切皆对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#If语句的变形"><span class="toc-number">3.7.</span> <span class="toc-text">If语句的变形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#禁止别人以iframe加载你的页面"><span class="toc-number">3.8.</span> <span class="toc-text">禁止别人以iframe加载你的页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#console-table"><span class="toc-number">3.9.</span> <span class="toc-text">console.table</span></a></li></ol></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2016/06/30/common-reg-expression/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    常用正则表达式汇总
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/06/15/ubuntu-install-node/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">在ubuntu上安装最新稳定版本的node及npm</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2016/06/24/webfront-dont-know/" data-title="前端冷知识课堂" data-url="https://blog.luckyw.cn/2016/06/24/webfront-dont-know/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

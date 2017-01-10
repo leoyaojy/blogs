@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>Flexbox布局 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="css,弹性布局,FlexBox">
+    <meta name="description" content="Flexbox Layout，W3C官方称为CSS弹性盒子布局，是在CSS3中定义的一种新的布局模式。Flexbox可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间Flex布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flexbox布局">
+<meta property="og:url" content="https://blog.luckyw.cn/2016/03/28/css-flexbox/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="Flexbox Layout，W3C官方称为CSS弹性盒子布局，是在CSS3中定义的一种新的布局模式。Flexbox可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间Flex布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9ypldwna8j30yv0ci0u8.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yqrq1nn9j30jg0120sw.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yqwq1rn7j308v035747.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yqxdajo2j30jg010jrg.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9yqxwmt9rj308w09wq3g.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9yqybxnfjj30kc01r74l.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yr2yk528j308l0adwf5.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yr3eox41j30kb012aaa.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yr3w821xj308m0aa3zd.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yr4ccf45j30mg01ut93.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yr4uif7jj30jg025dfr.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9yr6gd2lqj30jg01t3yi.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yr74gcbrj30jg02laac.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yr7jug8lj30jg01wglp.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yr7xvxupj30kp01174i.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yr8ipma8j30jh0bbjsr.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9yr8xpsbbj30am01dwee.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yr9gqsdij30gu01emx5.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yrcnxk5mj30ei04fwep.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yrd1jtp9j30jg0hx0v8.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yrewp3cvj30mf06z762.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww2.sinaimg.cn/large/0062vBsDgw1f9yrfppv25j30gk073myx.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww4.sinaimg.cn/large/0062vBsDgw1f9yrg5k1yzj30dh08odhk.jpg">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/large/0062vBsDgw1f9yrgl02nbj30yf0hq43v.jpg">
+<meta property="og:updated_time" content="2016-11-20T10:43:05.897Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flexbox布局">
+<meta name="twitter:description" content="Flexbox Layout，W3C官方称为CSS弹性盒子布局，是在CSS3中定义的一种新的布局模式。Flexbox可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间Flex布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww3.sinaimg.cn/large/0062vBsDgw1f9ypldwna8j30yv0ci0u8.jpg">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                81
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                29
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-css-flexbox" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Flexbox布局
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/28/css-flexbox/">
+            <time datetime="2016-03-27T16:00:00.000Z" itemprop="datePublished">2016-03-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><code>Flexbox Layout</code>，<code>W3C</code>官方称为<code>CSS弹性盒子布局</code>，是在<code>CSS3</code>中定义的一种新的布局模式。<code>Flexbox</code>可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间<br><code>Flex</code>布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方式去填充可用空间（主要是去适应不同的设备跟分辨率）。一个<code>Flex</code>弹性盒子能让子元素填充可用空间或者为了阻止子元素超出区域而进行收缩<br><code>Flexbox</code>布局常用于小的应用程序组件之中，而<code>CSS Grid</code>布局模块将应用于大规模的布局之中<br>下面就用<code>codepen</code>代码演示的方式来先简单介绍<code>Flex</code>属性的原理，不同的属性是怎么样使用以及如何影响控制元素的布局的:</p>
+<h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><hr>
+<p><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9ypldwna8j30yv0ci0u8.jpg" alt=""><br>在开始这部分知识介绍之前，我们先来看上面的这张图，简单了解一下<code>Flex</code>布局的盒子模型以及相关的术语:<br><code>flex</code>盒子模型由容器<code>flex container</code>以及容器的直接子元素<code>flex item</code>组成<br>以容器<code>flex container</code>定义，有主坐标<code>main axis</code>以及纵坐标<code>cross axis</code>，主坐标为默认横向，默认从左到右，纵坐标默认为纵向，默认从上到下（当布局排列方式变化的时候，<code>main axis</code>跟<code>cross axis</code>的方向也会跟着变化）<br>子元素（<code>flex item</code>）在<code>main axis</code>方向的尺寸为<code>main size</code>，在<code>cross axis</code>方向的尺寸为<code>cross size</code><br>如果你想了解有关这方面更详细的信息，可以阅读<a href="http://www.w3.org/TR/css-flexbox/#box-model" target="_blank" rel="external">W3C官方中有关于Flexbox模块的相关资料。</a><br><a id="more"></a></p>
+<h4 id="使用方法（属性介绍）"><a href="#使用方法（属性介绍）" class="headerlink" title="使用方法（属性介绍）"></a>使用方法（属性介绍）</h4><hr>
+<p>这里我们将<code>Flex</code>盒子模型拆分为容器<code>flex container</code>和子项<code>flex item</code>来分别介绍其拥有的属性，以及使用<code>codepen</code>代码演示的方式来具体介绍<code>flex</code>布局的使用方法<br><strong>容器（flex container）：</strong><br><strong>1.display：</strong><br>该属性定义定义了容器是以块状（<code>flex</code>）还是行内元素（<code>inline-flex</code>）的方式显示，改属性的设置能让其子项具有弹性上下文的属性:<br><strong>注:在使用flexbox弹性布局的时候此属性的设置很重要，必不可少</strong></p>
+<iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/LNWbQO/?height=400&theme-id=0&default-tab=result"></iframe><br><strong>2.flex-direction:</strong><br>改属性主要决定子项<code>flex item</code>在容器内的排列方式：<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yqrq1nn9j30jg0120sw.jpg" alt=""><br>- <strong>row</strong>,表示<code>flex items</code>以横向且从左到右的方式排列<br>- <strong>row-reverse</strong>,表示<code>flex items</code>以横向且从右到左的方式排列<br>- <strong>column</strong>,表示<code>flex items</code>以纵向且从上到下的方式排列<br>- <strong>column-reverse</strong>,表示<code>flex items</code>以纵向且从下到上的方式排列<br><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/JXWbVp/?height=400&theme-id=0&default-tab=result"></iframe>
+
+<p><strong> 3.flex-wrap</strong><br>默认情况下会让容器内的子项<code>flex item</code>保持在一行内，但你可以通过这个属性来设置让容器内的子项是否换行（/列），这个属性结合着<code>flex-direction</code>属性可以决定换行后新的一行或一列的排序方式<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yqwq1rn7j308v035747.jpg" alt=""><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yqxdajo2j30jg010jrg.jpg" alt=""><br>这个属性对应属性值跟文本是否换行的属性值一致(但这里对应的是换行后新的一行跟上一行的排序方式):</p>
+<ul>
+<li><strong>nowrap</strong>，表示容器内的子项<code>flex items</code>保持在一行或一列（当<code>flex-direction</code>为<code>column</code>或<code>column-reverse</code>的时候）不换行（/列）</li>
+<li><strong>wrap</strong>，跟<code>nowrap</code>相反，表示<code>flex items</code>换行或换列，但以默认（左到右或上到下）的方式排列</li>
+<li><strong>wrap-reverse</strong>，表示<code>flex items</code>换行且反向排列（右到左或下到上）</li>
+</ul>
+<iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/JXWbVp/?height=400&theme-id=0&default-tab=result"></iframe>
+
+<p><strong>4.flex-flow</strong><br>该属性是上面两个属性<code>flex-direction</code>和<code>flex-wrap</code>属性的简写形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-flow:flex-direction flex-wrap</div></pre></td></tr></table></figure></p>
+<p><strong>5.justify-content</strong><br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9yqxwmt9rj308w09wq3g.jpg" alt=""><br>这个属性定义了子项<code>flex item</code>在横轴方向的对齐方式，当<code>flex item</code>的尺寸在横轴方向都是不变的或者达到最大尺寸的情况下，用来分配额外剩余的可用空间，或者当<code>flex item</code>在横轴排布要超出容器的时候，进行压缩控制：<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9yqybxnfjj30kc01r74l.jpg" alt=""></p>
+<ul>
+<li><strong>flex-start(默认值)</strong>，子项在<code>main</code>轴开始方向对齐</li>
+<li><strong>flex-end</strong>,子项在<code>main</code>轴结尾方向对齐</li>
+<li><strong>center</strong>，子项在<code>main</code>轴居中对齐</li>
+<li><strong>space-between</strong>，子项始终保持在一行，<code>main</code>轴两端对齐</li>
+<li><strong>space-around</strong>，子项等间距对齐，但第一个元素距离容器左边的间隔是跟下一个元素间隔的二分之一，因为第一个元素右边有一个单元的间隔，第二个元素左边也有一个单元的间隔</li>
+</ul>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/MypJym/?height=400&theme-id=0&default-tab=result"></iframe><br>注:这里的开始结尾方向，如果你设置的<code>justify-content</code>值为<code>flex-start</code>，但你的<code>flex-direction</code>值为<code>row-reverse</code>的话，因为子项是从右到左排列的，所以开始方向是在右边，所以<code>flex-start</code>的对齐方式应该是右对齐。<code>flex-end</code>的结尾方向也一样，受<code>flex-direction</code>值的影响。结合着<code>flex-wrap</code>属性的话，换行后的元素对齐方式跟第一行一致<br><strong>6.align-items</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yr2yk528j308l0adwf5.jpg" alt=""><br> 该属性定义了子项在纵轴方向的对齐方式，可以把它想象为<code>justify-content</code>在纵轴方向的定义：<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yr3eox41j30kb012aaa.jpg" alt=""></p>
+<ul>
+<li><strong>flex-start</strong>，子项在<code>cross</code>轴方向以开始方向对齐；</li>
+<li><strong>flex-end</strong>，子项在<code>cross</code>轴方向以结尾方向对齐；</li>
+<li><strong>center</strong>，子项在<code>cross</code>轴方向居中对齐（该属性值能很方便地让元素在容器内垂直居中对齐）</li>
+<li><strong>baseline</strong>，子项在<code>cross</code>轴方向以其文本的基准线对齐</li>
+<li><strong>stretch（默认值）</strong>，子项在<code>cross</code>轴方向填满整个容器（当固定尺寸的时候该属性不生效）</li>
+</ul>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/MypJym/?height=400&amp;theme-id=0&amp;default-tab=result"></iframe><br>上面这个实例中的第一个跟第五个我用了<code>column</code>的排列方向来验证<code>flex-direction</code>值对<code>align-items</code>属性的影响<br><strong> 7.align-content</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yr3w821xj308m0aa3zd.jpg" alt=""><br>该属性定义的是多行（/多列）的情况下，所有行/列在<code>cross axis</code>方向的对齐方式，跟<code>justify-content</code>（或<code>align-items</code>）对子项对齐方式的定义类似，不过<code>justify-content</code>（或<code>align-items</code>）是针对子项对齐，而该属性对应的是多行/多列的对齐方式<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yr4ccf45j30mg01ut93.jpg" alt=""></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/qZrRez/?height=400&theme-id=0&default-tab=result"></iframe><br>注:<code>justify-content</code>属性跟<code>align-items</code>属性的时候，我没有直接说<code>justify-content</code>是<code>flex items</code>在横轴方向的对齐方式，而是在m<code>ain axi</code>s方向的对齐方向，也没有说<code>align-items</code>是<code>flex items</code>在纵轴方向的对齐方式（或<code>align-content</code>是对多行元素在纵轴方向的对齐方式），同样也是说是在<code>cross axis</code>方向的对齐方式。这是因为当<code>flex-direction</code>是<code>row</code>的时候，<code>main axis</code>是横向的，而当该值为<code>cloumn</code>的时候，<code>main axis</code>则是纵向的。所以<code>justify-content</code>和<code>align-items</code>以及<code>align-content</code>属性对<code>flex items</code>对齐方式的也同样受<code>flex-direction</code>值的影响。上面这个实例中的第五个我用了<code>column</code>的排列方向来验证<code>flex-direction</code>值对<code>align-content</code>属性的影响<br>好了，到这为止，对容器属性的所有介绍就结束了，下边就是对子项属性的介绍了<br><strong>子项（flex item）：</strong><br><strong>1）order</strong><br>该属性接收一个整数值（负数也生效），数值越小的子项排在越前：<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yr4uif7jj30jg025dfr.jpg" alt=""></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/ONppyp/?height=400&theme-id=0&default-tab=result"></iframe><br><strong>2)flex-grow</strong><br>该属性定义了子项在有需要的时候进行尺寸扩展，接收一个无单位的数值作为比例（负数值无效），他决定了该子项占用多少容器内可用的空间。<br>当所有的子项都是设置了该属性为1的时候，容器内剩余的可用空间就平分给每个子项，当某个子项的<code>flex-grow</code>值为2的时候，该子项就占用两倍于其他子项的可用空间。<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9yr6gd2lqj30jg01t3yi.jpg" alt=""></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/pyeeyK/?height=400&theme-id=0&default-tab=result"></iframe><br><strong>3）flex-shrink</strong><br>该属性定义了该子项在必要时候的收缩属性，跟<code>flex-grow</code>的效果相反，使用方法一致，负数值无效</p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/XdMMKO/?height=400&theme-id=0&default-tab=result"></iframe><br><strong> 4）flex-basis</strong><br>定义该子项默认的初始尺寸，它可以是一个长度值也可以是一个关键词，跟<code>width</code>和<code>height</code>属性相同，用来指定子项初始的尺寸值。默认值为<code>auto</code>，但取值为<code>auto</code>的时候，有个待解决的问题:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yr74gcbrj30jg02laac.jpg" alt=""><br><strong>  5）flex</strong><br>该属性是<code>flex-grow</code>，<code>flex-shrink</code>，<code>flex-basis</code>三个值的简写形式，默认值为<code>0 1 auto</code>，其中第二三个属性<code>flex-shrink</code>和<code>flex-basis</code>值是可选的:<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yr7jug8lj30jg01wglp.jpg" alt=""><br><strong>6）align-self</strong><br>对比<code>align-items</code>属性，我们知道这个是针对某个子项在<code>cross axis</code>方向的对齐方式定义，该属性可以覆盖对容器上定义的<code>align-items</code>属性:<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yr7xvxupj30kp01174i.jpg" alt=""><br>注:在<code>flexbox</code>布局中，<code>float,clear,vertical-align</code>属性对子项均无效<br>这里有个工具可以让大家能够可视化地去调试<code>Flexbox</code>的各个参数，以及生成对应的代码:简单调试<code>Flexbox</code>属性，以及生成相应的代码工具<br>好了，终于对子项的所有属性也介绍完了，下边我们就将结合了简单的实例来看看<code>flexbox</code>具体能怎么用，有什么用？</p>
+<h4 id="Flexbox布局的简单应用"><a href="#Flexbox布局的简单应用" class="headerlink" title="Flexbox布局的简单应用"></a>Flexbox布局的简单应用</h4><hr>
+<p><strong>1、让一个元素在容器内完美居中：</strong></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/happyTIME-2/embed/JXWWro/?height=400&theme-id=0&default-tab=result"></iframe><br>在以前我们为了垂直居中用尽各种奇淫技巧的案例，当我们用<code>flexbox</code>布局的时候，简单的几行代码，实现了完美的居中，不管是在水平还是垂直方向，不管是在已知元素尺寸还是未知元素尺寸的情况下，简直就是”完美”。<br>居中的这个在我们实际的需求中有个常见的场景就是在做移动端页面的时候，一个要求水平且垂直居中的浮层：<br><strong>2、实现一个简单的响应式导航栏</strong><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yr8ipma8j30jh0bbjsr.jpg" alt=""></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/HugoGiraudel/embed/pkwqH/?height=268&theme-id=0&default-tab=result"></iframe><br>这个例子是大家可以在不同尺寸的屏幕下看到不同的布局方式，在大屏幕下是右对齐在容器的右方，在稍微小一点的屏幕的时候（比如平板），导航居中显示，在更小的屏幕（比如是手机），导航则是每个子项100%的宽度，一个项占一行的方式显示：<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9yr8xpsbbj30am01dwee.jpg" alt=""><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yr9gqsdij30gu01emx5.jpg" alt=""><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yrcnxk5mj30ei04fwep.jpg" alt=""><br><strong> 3、实现一个简单的页面布局方式</strong><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yrd1jtp9j30jg0hx0v8.jpg" alt=""></p>
+<p><iframe height="400px" width="100%" src="https://codepen.io/HugoGiraudel/embed/qIAwr/?height=400&theme-id=0&default-tab=result"></iframe><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yrewp3cvj30mf06z762.jpg" alt=""><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yrfppv25j30gk073myx.jpg" alt=""><br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yrg5k1yzj30dh08odhk.jpg" alt=""></p>
+<h4 id="浏览器支持情况："><a href="#浏览器支持情况：" class="headerlink" title="浏览器支持情况："></a>浏览器支持情况：</h4><hr>
+<p>因为这个属性最早在2009年就被提出了，到现在为止经历了各种不同的版本，所以浏览器对不同版本的<code>flexbox</code>支持情况也不一样：<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yrgl02nbj30yf0hq43v.jpg" alt=""><br>1表示只支持旧的文档而且不支持wrapping<br>2表示只支持2012的语法规范<br>3表示不支持flex-wrap或flex-flow属性<br>4表示由于有很多的bug而只是部分支持</p>
+<h4 id="关于Flexbox的一下bug或一些坑"><a href="#关于Flexbox的一下bug或一些坑" class="headerlink" title="关于Flexbox的一下bug或一些坑"></a>关于Flexbox的一下bug或一些坑</h4><hr>
+<p>关于flexbox在使用的时候，是否要注意一些东西，或者会遇到一些bug，可以参考下边的这些资料：<br><a href="https://github.com/philipwalton/flexbugs" target="_blank" rel="external">https://github.com/philipwalton/flexbugs</a><br><a href="http://www.zhihu.com/question/29924791" target="_blank" rel="external">使用Flexbox碰到了什么样的坑？</a><br>转自:<a href="http://tgideas.qq.com/webplat/info/news_version3/804/7104/7106/m5723/201603/443362.shtml" target="_blank" rel="external">TGideas</a></p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2016/03/28/css-flexbox/" target="_blank" title="Flexbox布局">Flexbox布局</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2016/03/28/css-flexbox/" target="_blank" title="Flexbox布局">https://blog.luckyw.cn/2016/03/28/css-flexbox/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用方法（属性介绍）"><span class="toc-number">2.</span> <span class="toc-text">使用方法（属性介绍）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flexbox布局的简单应用"><span class="toc-number">3.</span> <span class="toc-text">Flexbox布局的简单应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器支持情况："><span class="toc-number">4.</span> <span class="toc-text">浏览器支持情况：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于Flexbox的一下bug或一些坑"><span class="toc-number">5.</span> <span class="toc-text">关于Flexbox的一下bug或一些坑</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/03/front-knowledge-collect/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    前端知识资源整合
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/03/20/js-window/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">JS Window对象</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <div class="ds-thread" data-thread-key="2016/03/28/css-flexbox/" data-title="Flexbox布局" data-url="https://blog.luckyw.cn/2016/03/28/css-flexbox/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
+                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
+                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
+                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
+                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    <script src="//luckyw.cn/js/duoshuo.js"></script>
+
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
