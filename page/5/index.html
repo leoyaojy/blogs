@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                81
+                85
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                30
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,268 @@
 
             
             <section id="main">
+    <article id="post-ubuntu-webstorm-problems" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/09/ubuntu-webstorm-problems/">解决Ubuntu下Webstorm系列问题</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/09/ubuntu-webstorm-problems/">
+            <time datetime="2016-05-08T16:00:00.000Z" itemprop="datePublished">2016-05-09</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>, <a class="tag-link" href="/tags/Webstorm/">Webstorm</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="中文输入问题"><a href="#中文输入问题" class="headerlink" title="中文输入问题"></a>中文输入问题</h4><hr>
+<p><strong>解决办法：</strong><br>在<code>Webstorm</code>安装目录的<code>bin</code>目录下找到<code>webstorm.sh</code>，然后打开之后在前面加上如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export XMODIFIERS=@im=fcitx</div><div class="line">export QT_IM_MODULE=fcitxubun</div></pre></td></tr></table></figure></p>
+<h4 id="注册："><a href="#注册：" class="headerlink" title="注册："></a>注册：</h4><hr>
+<blockquote>
+<p><strong>License Server :</strong><br><a href="http://idea.lanyus.com/" target="_blank" rel="external">http://idea.lanyus.com/</a><br><a href="http://15.idea.lanyus.com/" target="_blank" rel="external">http://15.idea.lanyus.com/</a><br><a href="http://121.42.190.89:1025" target="_blank" rel="external">http://121.42.190.89:1025</a><br><a href="http://idea.qinxi1992.cn/" target="_blank" rel="external">http://idea.qinxi1992.cn/</a><br><a href="http://114.215.133.70:41017" target="_blank" rel="external">http://114.215.133.70:41017</a><br><strong>上面的已失效，下面几个暂时可用</strong><br><a href="http://idea.imsxm.com/" target="_blank" rel="external">http://idea.imsxm.com/</a><br><a href="http://jetbrains.tencent.click" target="_blank" rel="external">http://jetbrains.tencent.click</a><br><strong>注册码</strong><br>因注册码过长，所以，你懂得～～ <a href="http://demo.luckyw.cn/webstorm_code.txt" target="_blank" rel="external">点击获取注册码</a></p>
+</blockquote>
+<h4 id="NodeJS代码提示"><a href="#NodeJS代码提示" class="headerlink" title="NodeJS代码提示"></a>NodeJS代码提示</h4><hr>
+<blockquote>
+<p><strong>2016-8-18更新</strong></p>
+</blockquote>
+<p>每当编写<code>Node</code>代码时，总是没有代码提示，其他语言的基本都有，而众所周知为什么<code>WebStorm</code>这么流行的原因就在于它的代码提示功能相当强大，那为什么没有提示了？</p>
+<ol>
+<li>我们需要开启<code>NodeJs</code>代码提示，那么请点击<code>File -&gt; Settings -&gt; Language &amp;&amp; FrameWork -&gt; Node.js and NPM -&gt; Enable</code>即可，如下图所示:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f8yr1udsiuj30m00473z5.jpg" alt=""></li>
+<li>或者更简单的方式就是鼠标点击<code>Node</code>的核心模块高亮处，按组合键<code>Alt+Enter</code>，弹出下拉菜单，最后敲<code>Enter</code>开启代码提示功能，如下图<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f8yr41o165j30lc04n40d.jpg" alt=""></li>
+</ol>
+
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-node-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/08/node-gulp/">gulp构建前端自动化</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/08/node-gulp/">
+            <time datetime="2016-05-07T16:00:00.000Z" itemprop="datePublished">2016-05-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Node/">Node</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Node/Gulp/">Gulp</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Gulp/">Gulp</a>, <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>目前最知名的构建工具： <code>Gulp</code>、<code>Grunt</code>、<code>NPM + Webpack</code>；</p>
+<blockquote>
+<p><code>grunt</code>是前端工程化的先驱<br><code>gulp</code>更自然基于流的方式连接任务<br><code>Webpack</code>最年轻，擅长用于依赖管理，配置稍较复杂<br>推荐使用<code>Gulp</code>，<code>Gulp</code>基于<code>nodejs</code>中<code>stream</code>，效率更好语法更自然,不需要编写复杂的配置文件</p>
+</blockquote>
+<p><strong>基础安装</strong><br><code>Gulp</code>是基于<code>Node.js</code>的，需要要安装<code>Node.js</code><br>1、为了确保依赖环境正确，我们先执行几个简单的命令检查。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-HP-Pavilion-dv4-Notebook-PC:~$ node -v</div><div class="line">v4.2.6</div></pre></td></tr></table></figure></p>
+<p><code>Node</code>是一个基于<code>Google V8</code>引擎建立的一个解释器<br>检测<code>Node</code>是否已经安装，如果正确安装的话你会看到所安装的<code>Node</code>的版本号<br>2、接下来看看<code>npm</code>，它是<code>node</code>的包管理工具，可以利用它安装<code>gulp</code>所需的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-HP-Pavilion-dv4-Notebook-PC:~$ npm -v</div><div class="line">3.5.2</div></pre></td></tr></table></figure></p>
+<p>这同样能得到<code>npm</code>的版本号，装<code>Node</code>时已经自动安装了<code>npm</code><br></p>
+            <p class="article-more-link">
+                <a href="/2016/05/08/node-gulp/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-linux-cmd" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/30/linux-cmd/">Linux常用命令</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/30/linux-cmd/">
+            <time datetime="2016-04-29T16:00:00.000Z" itemprop="datePublished">2016-04-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>废了一点时间，装了两次<code>Ubuntu</code>才真正装好，因为装的是双系统，主系统是<code>win10</code>，刚入手<code>Ubuntu</code>还对命令不是很熟悉，所以首先学习下<code>Linux</code>下的常用命令。说实在话，<code>Ubuntu</code>好用的不是一丁点，现在基本都不怎么使用<code>win10</code>了</p>
+<h4 id="Terminal-终端-的使用技巧"><a href="#Terminal-终端-的使用技巧" class="headerlink" title="Terminal(终端)的使用技巧"></a>Terminal(终端)的使用技巧</h4><hr>
+<blockquote>
+<p><code>Up键</code>: 可以调出历史执行记录，快速执行命令<br><code>Down键</code>: 配合Up键选择历史执行记录执行命令<br><code>history</code>: 显示历史执行记录<br><code>Home键</code>: 移动光标到本行开头<br><code>End键</code>: 移动光标到本行末尾<br><code>PaUp键</code>: 向上翻页<br><code>PaDn键</code>: 向下翻页<br><code>Ctrl+C组合键</code>: 终止当前程序，某些程序也可以用q键退出<br><code>Ctrl+L组合键</code>: 清屏，也可以在终端输入<code>clear</code><br><code>Ctrl+Shift+C组合键</code>: 复制<br><code>Ctrl+Shift+V组合键</code>: 粘贴<br><code>Tab键</code>: 自动补全命令或文件名，省时准确</p>
+</blockquote>
+<h4 id="查看帮助说明-man-info-help"><a href="#查看帮助说明-man-info-help" class="headerlink" title="查看帮助说明 man/info/help"></a>查看帮助说明 man/info/help</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">man ls</div><div class="line">info ls</div><div class="line">ls --help</div></pre></td></tr></table></figure>
+<h4 id="下载工具-wget"><a href="#下载工具-wget" class="headerlink" title="下载工具 wget"></a>下载工具 wget</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ wget http://luckyw.cn/img/1.jpg</div><div class="line">--2016-4-29 20:30:36--  http://luckyw.cn/img/1.jpg</div><div class="line">正在解析主机 luckyw.cn (luckyw.cn)... 166.62.28.80</div><div class="line">正在连接 luckyw.cn (luckyw.cn)|166.62.28.80|:80... 已连接。</div><div class="line">已发出 HTTP 请求，正在等待回应... 200 OK</div><div class="line">长度： 234838 (229K) [image/jpeg]</div><div class="line">正在保存至: “1.jpg”</div><div class="line"></div><div class="line">1.jpg               100%[===================&gt;] 229.33K   416KB/s    in 0.6s</div><div class="line"></div><div class="line">2016-4-29 20:30:40 (416 KB/s) - 已保存 “1.jpg” [234838/234838])</div></pre></td></tr></table></figure>
+<h4 id="查看当前所在的工作目录的全路径-pwd"><a href="#查看当前所在的工作目录的全路径-pwd" class="headerlink" title="查看当前所在的工作目录的全路径 pwd"></a>查看当前所在的工作目录的全路径 pwd</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ pwd</div><div class="line">/home/leo</div></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2016/04/30/linux-cmd/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-prototype-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/24/js-prototype-ajax/">原生JS写Ajax的请求函数</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/24/js-prototype-ajax/">
+            <time datetime="2016-04-23T16:00:00.000Z" itemprop="datePublished">2016-04-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="JS原生ajax"><a href="#JS原生ajax" class="headerlink" title="JS原生ajax"></a>JS原生ajax</h4><hr>
+<p><code>ajax</code>:一种请求数据的方式，不需要刷新整个页面<br><code>ajax</code>的技术核心是<code>XMLHttpRequest</code>对象<br><code>ajax</code>请求过程:创建<code>XMLHttpRequest</code>对象、连接服务器、发送请求、接收响应数据<br>下面简单封装一个函数，之后稍作解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">ajax(&#123;</div><div class="line">    url: &quot;./TestXHR.aspx&quot;,//请求地址</div><div class="line">    type: &quot;POST&quot;,//请求方式</div><div class="line">    data: &#123;name: &quot;super&quot;, age: 20&#125;,//请求参数</div><div class="line">    dataType: &quot;json&quot;,</div><div class="line">    success: function (response, xml) &#123;</div><div class="line">		//此处放成功后执行的代码</div><div class="line">    &#125;,</div><div class="line">    fail: function (status) &#123;</div><div class="line">		//此处放失败后执行的代码</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">function ajax(options) &#123;</div><div class="line">    options = options || &#123;&#125;;</div><div class="line">    options.type = (options.type || &quot;GET&quot;).toUpperCase();</div><div class="line">    options.dataType = options.dataType || &quot;json&quot;;</div><div class="line">    var params = formatParams(options.data);</div><div class="line">	//创建 - IE6 - 第一步</div><div class="line">    if (window.XMLHttpRequest) &#123;</div><div class="line">        var xhr = new XMLHttpRequest();</div><div class="line">    &#125; else &#123;//IE6及其以下版本浏览器</div><div class="line">        var xhr = new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);</div><div class="line">    &#125;</div><div class="line">	//连接和发送 - 第二步</div><div class="line">    if (options.type == &quot;GET&quot;) &#123;</div><div class="line">        xhr.open(&quot;GET&quot;, options.url + &quot;?&quot; + params, true);</div><div class="line">        xhr.send(null);</div><div class="line">    &#125; else if (options.type == &quot;POST&quot;) &#123;</div><div class="line">        xhr.open(&quot;POST&quot;, options.url, true);</div><div class="line">		//设置表单提交时的内容类型</div><div class="line">        xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);</div><div class="line">        xhr.send(params);</div><div class="line">    &#125;</div><div class="line">	//接收 - 第三步</div><div class="line">    xhr.onreadystatechange = function () &#123;</div><div class="line">        if (xhr.readyState == 4) &#123;</div><div class="line">            var status = xhr.status;</div><div class="line">            if (status &gt;= 200 &amp;&amp; status &lt; 300) &#123;</div><div class="line">                options.success &amp;&amp; options.success(xhr.responseText, xhr.responseXML);</div><div class="line">            &#125; else &#123;</div><div class="line">                options.fail &amp;&amp; options.fail(status);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//格式化参数</div><div class="line">function formatParams(data) &#123;</div><div class="line">    var arr = [];</div><div class="line">    for (var name in data) &#123;</div><div class="line">        arr.push(encodeURIComponent(name) + &quot;=&quot; + encodeURIComponent(data[name]));</div><div class="line">    &#125;</div><div class="line">    arr.push((&quot;v=&quot; + Math.random()).replace(&quot;.&quot;, &quot;&quot;));</div><div class="line">    return arr.join(&quot;&amp;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/04/24/js-prototype-ajax/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-git-list-all" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -411,7 +673,7 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><p><code>Flexbox Layout</code>，<code>W3C</code>官方称为<code>CSS弹性盒子布局</code>，是在<code>CSS3</code>中定义的一种新的布局模式。<code>Flexbox</code>可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间<br><code>Flex</code>布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方式去填充可用空间（主要是去适应不同的设备跟分辨率）。一个<code>Flex</code>弹性盒子能让子元素填充可用空间或者为了阻止子元素超出区域而进行收缩<br><code>Flexbox</code>布局常用于小的应用程序组件之中，而<code>CSS Grid</code>布局模块将应用于大规模的布局之中<br>下面就用<code>codepen</code>代码演示的方式来先简单介绍<code>Flex</code>属性的原理，不同的属性是怎么样使用以及如何影响控制元素的布局的:</p>
+            <p><p><a href="http://codepen.io/enxaneta/pen/adLPwv">Flexbox playground</a><br><code>Flexbox Layout</code>，<code>W3C</code>官方称为<code>CSS弹性盒子布局</code>，是在<code>CSS3</code>中定义的一种新的布局模式。<code>Flexbox</code>可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间<br><code>Flex</code>布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方式去填充可用空间（主要是去适应不同的设备跟分辨率）。一个<code>Flex</code>弹性盒子能让子元素填充可用空间或者为了阻止子元素超出区域而进行收缩<br><code>Flexbox</code>布局常用于小的应用程序组件之中，而<code>CSS Grid</code>布局模块将应用于大规模的布局之中<br>下面就用<code>codepen</code>代码演示的方式来先简单介绍<code>Flex</code>属性的原理，不同的属性是怎么样使用以及如何影响控制元素的布局的:</p>
 <h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><hr>
 <p><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9ypldwna8j30yv0ci0u8.jpg" alt=""><br>在开始这部分知识介绍之前，我们先来看上面的这张图，简单了解一下<code>Flex</code>布局的盒子模型以及相关的术语:<br><code>flex</code>盒子模型由容器<code>flex container</code>以及容器的直接子元素<code>flex item</code>组成<br>以容器<code>flex container</code>定义，有主坐标<code>main axis</code>以及纵坐标<code>cross axis</code>，主坐标为默认横向，默认从左到右，纵坐标默认为纵向，默认从上到下（当布局排列方式变化的时候，<code>main axis</code>跟<code>cross axis</code>的方向也会跟着变化）<br>子元素（<code>flex item</code>）在<code>main axis</code>方向的尺寸为<code>main size</code>，在<code>cross axis</code>方向的尺寸为<code>cross size</code><br>如果你想了解有关这方面更详细的信息，可以阅读<a href="http://www.w3.org/TR/css-flexbox/#box-model">W3C官方中有关于Flexbox模块的相关资料。</a><br></p>
             <p class="article-more-link">
@@ -693,297 +955,6 @@
 
 
 
-    <article id="post-js-array-usage" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/12/js-array-usage/">JS数组操作汇总</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/12/js-array-usage/">
-            <time datetime="2016-03-11T16:00:00.000Z" itemprop="datePublished">2016-03-12</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JS/">JS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JS/">JS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="如何定义一个数组"><a href="#如何定义一个数组" class="headerlink" title="如何定义一个数组"></a>如何定义一个数组</h4><hr>
-<p>定义数组有三种方法：<br>1、常规方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var names = new Array();</div><div class="line">names[0] = &quot;CSS&quot;;</div><div class="line">names[1] = &quot;JS&quot;;</div><div class="line">names[2] = &quot;PHP&quot;;</div></pre></td></tr></table></figure></p>
-<p>2、简洁方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div></pre></td></tr></table></figure></p>
-<p>3、字面量方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = [&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;];</div></pre></td></tr></table></figure></p>
-<h4 id="如何访问数组元素"><a href="#如何访问数组元素" class="headerlink" title="如何访问数组元素"></a>如何访问数组元素</h4><hr>
-<p>通过下标的方式访问，注意：下标以<code>0</code>开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div><div class="line">alert(names[0]);//CSS</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/03/12/js-array-usage/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-js-array" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/06/js-array/">JS数组对象</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/06/js-array/">
-            <time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JS/">JS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JS/">JS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="什么是数组"><a href="#什么是数组" class="headerlink" title="什么是数组?"></a>什么是数组?</h4><hr>
-<p>数组对象是使用单独的变量名来存储一系列的值。<br>如果你有一组数据（例如：车名字），存在单独变量如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var car1=&quot;Saab&quot;;</div><div class="line">var car2=&quot;Volvo&quot;;</div><div class="line">var car3=&quot;BMW&quot;;</div></pre></td></tr></table></figure></p>
-<p>然而，如果你想从中找出某一辆车？并且不是3辆，而是300辆呢？这将不是一件容易的事！<br>最好的方法就是用数组。<br>数组可以用一个变量名存储所有的值，并且可以用变量名访问任何一个值。<br>数组中的每个元素都有自己的的ID，以便它可以很容易地被访问到<br></p>
-            <p class="article-more-link">
-                <a href="/2016/03/06/js-array/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-ie6-bug" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/03/ie6-bug/">总结下IE6的BUG及解决办法</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/03/ie6-bug/">
-            <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/ie/">ie</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ie/">ie</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="双倍边距问题"><a href="#双倍边距问题" class="headerlink" title="双倍边距问题"></a>双倍边距问题</h4><hr>
-<p>在IE6中，如果有两个并行的漂浮元素并且用了<code>margin</code>的话，会出现双倍<code>margin</code>值的问题</p>
-<ol>
-<li>给漂浮元素设置样式<code>display:inline</code></li>
-<li>为IE6<code>hack</code>一下：<code>margin-left:10px;_margin-left:5px;</code></li>
-<li>在<code>DOM</code>结构允许的情况下，左边的用<code>float:left</code>，右边的用<code>float:right</code>;</li>
-</ol>
-<h4 id="固定定位fix"><a href="#固定定位fix" class="headerlink" title="固定定位fix"></a>固定定位fix</h4><hr>
-<p><code>position:fixed</code>这个样式有时候作用很大，尤其是在有浮动栏的时候，但是IE6中并不支持固定定位</p>
-<h4 id="默认高度问题"><a href="#默认高度问题" class="headerlink" title="默认高度问题"></a>默认高度问题</h4><hr>
-<p>在IE6中，如果我们设置一个空白的<code>div</code>，会发现这个<code>div</code>会有一个默认的高度，因为IE6中有一个默认的字体大小，大致在<code>12-14px</code>之间，IE6会认为这个层的高度不应该小于字体的行高，所以会出现这个问题。解决方法：<code>font-size:0;</code></p>
-<h4 id="图片下方出现空白间隙"><a href="#图片下方出现空白间隙" class="headerlink" title="图片下方出现空白间隙"></a>图片下方出现空白间隙</h4><hr>
-<ol>
-<li>设置图片为块级元素：<code>img{display:block;}</code></li>
-<li>把父元素的字体大小设置为0：<code>font-size:0</code></li>
-<li>设置图片的垂直对齐方式：<code>vertical-align:top</code></li>
-</ol></p>
-            <p class="article-more-link">
-                <a href="/2016/03/03/ie6-bug/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-js-document" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/02/25/js-document/">JS Document对象属性及方法</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/02/25/js-document/">
-            <time datetime="2016-02-24T16:00:00.000Z" itemprop="datePublished">2016-02-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JS/">JS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JS/">JS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="Document-对象"><a href="#Document-对象" class="headerlink" title="Document 对象"></a>Document 对象</h4><hr>
-<p>每个载入浏览器的<code>HTML</code>文档都会成为<code>Document</code>对象<br><code>Document</code>对象使我们可以从脚本中对<code>HTML</code>页面中的所有元素进行访问<br><code>Document</code>对象是<code>Window</code>对象的一部分，可通过<code>window.document</code>属性对其进行访问，也可以直接通过<code>document</code>对象访问</p>
-<h4 id="Document-对象集合"><a href="#Document-对象集合" class="headerlink" title="Document 对象集合"></a>Document 对象集合</h4><hr>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">属性</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">all[]</td>
-<td style="text-align:left">提供对文档中所有 HTML 元素的访问</td>
-</tr>
-<tr>
-<td style="text-align:left">anchors[]</td>
-<td style="text-align:left">返回对文档中所有 Anchor 对象的引用</td>
-</tr>
-<tr>
-<td style="text-align:left">applets</td>
-<td style="text-align:left">返回对文档中所有 Applet 对象的引用</td>
-</tr>
-<tr>
-<td style="text-align:left">forms[]</td>
-<td style="text-align:left">返回对文档中所有 Form 对象引用</td>
-</tr>
-<tr>
-<td style="text-align:left">images[]</td>
-<td style="text-align:left">返回对文档中所有 Image 对象引用</td>
-</tr>
-<tr>
-<td style="text-align:left">links[]</td>
-<td style="text-align:left">返回对文档中所有 Area 和 Link 对象引用</td>
-</tr>
-</tbody>
-</table></p>
-            <p class="article-more-link">
-                <a href="/2016/02/25/js-document/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
     </nav>
@@ -996,6 +967,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1301,82 +1348,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
-                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
-                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
-                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
-                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
-                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
-                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1387,7 +1358,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1491,8 +1462,7 @@
 </footer>
 
         
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-
+    
     <script type="text/javascript">
     var duoshuoQuery = {short_name:'leoyaojy'};
     (function() {
@@ -1505,6 +1475,7 @@
     })();
     </script>
 
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
 
 
 

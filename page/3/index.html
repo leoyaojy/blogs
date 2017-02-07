@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                81
+                85
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                30
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,304 @@
 
             
             <section id="main">
+    <article id="post-php-upload-download" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/11/php-upload-download/">php实现图片上传与下载</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/11/php-upload-download/">
+            <time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Php/">Php</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Php/">Php</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>本文接下来的内容讲的是如何通过<code>php</code>实现图片的上传与下载</p>
+<h4 id="构建上传文件前端页面"><a href="#构建上传文件前端页面" class="headerlink" title="构建上传文件前端页面"></a>构建上传文件前端页面</h4><hr>
+<p>这里我借助<code>bootstrap</code>前端框架以及<code>fontawesome</code>图标库，内容很简单就一个图片上传框以及一个提交按钮，代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!--form.php--&gt;</div><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;form action=&quot;upload_del.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; class=&quot;form-horizontal&quot;&gt;</div><div class="line">        &lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</div><div class="line">        &lt;div class=&quot;btn btn-success fileBox&quot;&gt;</div><div class="line">            &lt;span&gt;</div><div class="line">                &lt;i class=&quot;fa fa-file-image-o&quot;&gt;&lt;/i&gt;</div><div class="line">                上传图片</div><div class="line">            &lt;/span&gt;</div><div class="line">            &lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传&quot; class=&quot;btn btn-primary&quot;&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>其中:<br><code>&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</code>隐藏域主要是用来现在文件上传大小的，设置为<code>2M=&gt;2*1024*1024=&gt;2097152</code><br><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</code>设置接收文件类型为图片格式，可多张图片上传，注意<code>name</code>属性值为<code>file[]</code>时服务器可接收多图片<br></p>
+            <p class="article-more-link">
+                <a href="/2016/09/11/php-upload-download/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-arukas-create-ss" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/04/arukas-create-ss/">arukas.io免费docker搭建ss服务</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/04/arukas-create-ss/">
+            <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/SS/">SS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/SS/">SS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>之前 <a href="//blog.luckyw.cn/2016/01/08/chrome-plugin/">Chrome插件分享</a> 一文中文章最末分享过通过修改<code>hosts</code>文件科学上网，但其实还是有些网站无法通过此途径访问，那么只能通过付费SS服务、VPN等途径才可以，而本文将要介绍的日本免费<code>Docker</code>，简单搭建免费使用，何乐而不为了</p>
+<h4 id="搭建SS"><a href="#搭建SS" class="headerlink" title="搭建SS"></a>搭建SS</h4><hr>
+<p><a href="https://arukas.io">arukas.io</a>是岛国推出的<code>Docker</code>服务，开发者可以购买此服务，将代码部署在其中运行。我们从<a href="https://arukas.io/en/#pricing">服务价格</a>可以发现目前该服务处于测试阶段完全免费使用，而且我们可以创建多达10个应用，下面我们就开始搭建之旅吧<br><strong>注册</strong>:<br>官网地址: <a href="https://app.arukas.io/">https://app.arukas.io/</a> 进行用户注册，如果你有<code>github</code>账号的话推荐使用<code>github</code>进行登录绕过注册环节，如果没有，那你就还是老老实实注册吧<br><strong>创建app</strong>:<br>点击左侧控制面板的<code>Create</code>新建一个<code>app</code>，然后在右边的创建面板对应输入:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>App Name</strong></td>
+<td style="text-align:left">随便取</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Image</strong></td>
+<td style="text-align:left">oddrationale/docker-shadowsocks</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Instances</strong></td>
+<td style="text-align:left">不用管，默认1即可</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Memory</strong></td>
+<td style="text-align:left">512，免费的当然越大越好</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Endpoint</strong></td>
+<td style="text-align:left">不用管，不填写</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Port</strong></td>
+<td style="text-align:left">端口，8888</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ENV</strong></td>
+<td style="text-align:left">不用管，不勾选</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CMD</strong></td>
+<td style="text-align:left">ssserver -p 8888 -k luckywcn -m aes-256-cfb</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/09/04/arukas-create-ss/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-one-cmdline" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/28/one-cmdline/">一行代码系列</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/28/one-cmdline/">
+            <time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="1、一行代码可视化CSS盒子布局"><a href="#1、一行代码可视化CSS盒子布局" class="headerlink" title="1、一行代码可视化CSS盒子布局"></a>1、一行代码可视化CSS盒子布局</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[].forEach.call($$(&quot;*&quot;),function(a)&#123;a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toString(16)&#125;)</div></pre></td></tr></table></figure>
+<h4 id="源码解读"><a href="#源码解读" class="headerlink" title="源码解读"></a>源码解读</h4><hr>
+<p>首先我们把代码格式化一下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[].forEach.call($$(&quot;*&quot;),</div><div class="line">    function(a)&#123;</div><div class="line">        a.style.outline=&quot;1px solid #&quot;+(~~(Math.random()*(1&lt;&lt;24))).toString(16)</div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>1、选取页面所有<code>DOM</code>元素<br><code>$$()</code>相当于<code>document.querySelectorAll()</code>，返回的是一个<code>NodeList</code>对象数组，现代浏览器几乎都支持<br></p>
+            <p class="article-more-link">
+                <a href="/2016/08/28/one-cmdline/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-ubuntu-lamp" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/21/ubuntu-lamp/">Ubuntu16.04搭建LAMP环境</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/21/ubuntu-lamp/">
+            <time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/LAMP/">LAMP</a>, <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="LAMP简介"><a href="#LAMP简介" class="headerlink" title="LAMP简介"></a>LAMP简介</h4><hr>
+<blockquote>
+<p><strong>L</strong>:Linux操作系统<br><strong>A</strong>:Apache网页服务器<br><strong>M</strong>:Mysql数据库管理系统<br><strong>P</strong>:Php脚本语言</p>
+</blockquote>
+<p><strong>注:以下开始进行的是分步安装，如果你想一步安装请跳过，拉到页面底部，当然你得首先安装好自己的<code>Linux</code>系统</strong></p>
+<h4 id="安装Linux服务器"><a href="#安装Linux服务器" class="headerlink" title="安装Linux服务器"></a>安装Linux服务器</h4><hr>
+<p>如果你自己装过虚拟机或者有更好的安装技巧可跳过，这只是博主自己安装的方法<br>此安装方式操作的是<code>Ubuntu16.04</code>下通过<code>VirtualBox</code>虚拟机管理软件安装<code>Deepin 15.3</code>，其它系统基本类似，安装步骤如下:</p>
+<blockquote>
+<ol>
+<li>首先从深度系统官网下载<code>镜像文件iso</code>，<a href="https://www.deepin.org/">深度官网</a>，一个很不错的<code>debian</code>衍生版本，而且还是国产，必须得支持啊</li>
+<li>选择<code>新建</code>，名字随便取，类型选择<code>linux</code>，版本选择<code>Debian(64 bit)</code>，其它直接<code>下一步</code>，最后点击<code>创建</code>即可</li>
+<li>选择刚才新建的虚拟机，点击<code>设置</code>，在<code>显示</code>项把显存大小拉到最大，接着选择<code>存储</code>项，点击<code>控制器</code>下的<code>碟片图标</code>，在右侧<code>属性</code>栏中<code>分配光驱</code>的右侧的<code>碟片图标</code>点击出现下拉菜单，选择<code>选择一个虚拟光盘文件……</code>，此时选择你下载好的<code>镜像文件iso</code>，选择<code>网络</code>项，连接方式选择<code>桥接网卡</code>，点击<code>确定</code>按钮提交你的修改</li>
+<li>安装系统:选择新建的虚拟机，点击菜单栏的<code>启动</code>按钮，这时系统的安装就开始了，系统如何安装我就不赘述了，也是一步一步下一步，最后出现<code>安装成功，提示重启</code>的信息时，把步骤2中刚才加载的镜像文件从虚拟机<code>移出虚拟盘</code>，重新启动虚拟机，此时系统安装完成</li>
+</ol>
+</blockquote>
+<p>上一张安装好的美图:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f8qx14l7lbj30sg0lcdk9.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/08/21/ubuntu-lamp/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-mm" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -551,327 +849,6 @@
 
 
 
-    <article id="post-css-triangle" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/10/css-triangle/">CSS制作小三角</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/10/css-triangle/">
-            <time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><hr>
-<p><strong>CSS盒模型</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f7ui3zyktgj30cn09gjru.jpg" alt=""></p>
-<blockquote>
-<ol>
-<li>盒模型 = <code>Margin + Border + Padding + Content</code></li>
-<li>上下左右边框交界处出呈现平滑的斜线. 利用这个特点, 通过设置不同的上下左右边框宽度或者颜色可以得到小三角, 小梯形等</li>
-<li>调整宽度大小可以调节三角形形状</li>
-</ol>
-</blockquote></p>
-            <p class="article-more-link">
-                <a href="/2016/07/10/css-triangle/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-http-status-code" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/04/http-status-code/">http状态码汇总</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/04/http-status-code/">
-            <time datetime="2016-07-03T16:00:00.000Z" itemprop="datePublished">2016-07-04</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/WEB/">WEB</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WEB/">WEB</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="1XX-信息"><a href="#1XX-信息" class="headerlink" title="1XX 信息"></a>1XX 信息</h4><hr>
-<p>这一类型的状态码，代表请求已被接受，需要继续处理</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">状态码</th>
-<th style="text-align:left">状态文本</th>
-<th style="text-align:left">信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">100</td>
-<td style="text-align:left">Continue</td>
-<td style="text-align:left">客户端应当继续发送请求</td>
-</tr>
-<tr>
-<td style="text-align:center">101</td>
-<td style="text-align:left">Switching Protocols</td>
-<td style="text-align:left">服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求</td>
-</tr>
-</tbody>
-</table>
-<h4 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h4><hr>
-<p>这一类型的状态码，代表请求已成功被服务器接收、理解、并接受</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">状态码</th>
-<th style="text-align:left">状态文本</th>
-<th style="text-align:left">信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">200</td>
-<td style="text-align:left">OK</td>
-<td style="text-align:left">请求已成功，请求所希望的响应头或数据体将随此响应返回</td>
-</tr>
-<tr>
-<td style="text-align:center">201</td>
-<td style="text-align:left">Created</td>
-<td style="text-align:left">请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回</td>
-</tr>
-<tr>
-<td style="text-align:center">202</td>
-<td style="text-align:left">Accepted</td>
-<td style="text-align:left">服务器已接受请求，但尚未处理</td>
-</tr>
-<tr>
-<td style="text-align:center">203</td>
-<td style="text-align:left">Non-Authoritative Information</td>
-<td style="text-align:left">服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝</td>
-</tr>
-<tr>
-<td style="text-align:center">204</td>
-<td style="text-align:left">No Content</td>
-<td style="text-align:left">服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息</td>
-</tr>
-<tr>
-<td style="text-align:center">205</td>
-<td style="text-align:left">Reset Content</td>
-<td style="text-align:left">服务器成功处理了请求，且没有返回任何内容</td>
-</tr>
-<tr>
-<td style="text-align:center">206</td>
-<td style="text-align:left">Partial Content</td>
-<td style="text-align:left">服务器已经成功处理了部分GET请求</td>
-</tr>
-</tbody>
-</table></p>
-            <p class="article-more-link">
-                <a href="/2016/07/04/http-status-code/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-common-reg-expression" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/30/common-reg-expression/">常用正则表达式汇总</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/30/common-reg-expression/">
-            <time datetime="2016-06-29T16:00:00.000Z" itemprop="datePublished">2016-06-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/REG/">REG</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/REG/">REG</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>正则表达式是web开发必备的一项基本技能，熟练掌握使用正则表达式，能使你的开发效率得到大幅度的提升，尤其是在对网络爬虫爬取页面内容进行分析方面有巨大的作用，下面就来介绍一些常用的正则表达式，希望对大家能有所帮助<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f7pi31lalmj30m71br15a.jpg" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2016/06/30/common-reg-expression/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-webfront-dont-know" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/24/webfront-dont-know/">前端冷知识课堂</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/24/webfront-dont-know/">
-            <time datetime="2016-06-23T16:00:00.000Z" itemprop="datePublished">2016-06-24</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/WEB/">WEB</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WEB/">WEB</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h3 id="HTML篇"><a href="#HTML篇" class="headerlink" title="HTML篇"></a>HTML篇</h3><hr>
-<h4 id="浏览器地址栏运行JS代码"><a href="#浏览器地址栏运行JS代码" class="headerlink" title="浏览器地址栏运行JS代码"></a>浏览器地址栏运行JS代码</h4><p>在浏览器地址栏可以直接运行JS代码，做法是以<code>javascript:</code>开头后跟要执行的语句。比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(&apos;alert from the address bar :)&apos;);</div></pre></td></tr></table></figure></p>
-<p>将以上代码贴到浏览器地址栏回车后执行，<code>alert</code>弹出一个窗口</p>
-<blockquote>
-<p>需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉代码开头的<code>javascript:</code>，所以需要手动添加起来才能正确执行，而Firefox中虽然不会自动去掉，但它根本就不支持在地址栏运行<code>JS</code>代码，so :(</p>
-</blockquote>
-<h4 id="浏览器地址栏运行HTML代码"><a href="#浏览器地址栏运行HTML代码" class="headerlink" title="浏览器地址栏运行HTML代码"></a>浏览器地址栏运行HTML代码</h4><hr>
-<p>在非IE内核的浏览器地址栏可以直接运行<code>HTML</code>代码，比如在地址栏输入以下代码然后回车运行，会出现指定的页面内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure></p>
-<p>效果如下:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7otaez542j30j102iweq.jpg" alt=""></p>
-<h4 id="浏览器变成编辑器"><a href="#浏览器变成编辑器" class="headerlink" title="浏览器变成编辑器"></a>浏览器变成编辑器</h4><hr>
-<p>将以下代码贴到地址栏运行后浏览器变成了一个原始而简单的编辑器，跟<code>windows</code>记事本效果一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html, &lt;html contenteditable&gt;</div></pre></td></tr></table></figure></p>
-<p>主要是因为<code>HTML5</code>中新加了<code>contenteditable</code>属性，当元素指定了该属性后，元素的内容成为可编辑状态。举一反三，将以下代码在控制台执行后，整个页面变成可编辑状态，肆意玩耍吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.contentEditable=&apos;true&apos;;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/06/24/webfront-dont-know/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
     </nav>
@@ -884,6 +861,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1189,82 +1242,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
-                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
-                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
-                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
-                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
-                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
-                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1275,7 +1252,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1379,8 +1356,7 @@
 </footer>
 
         
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-
+    
     <script type="text/javascript">
     var duoshuoQuery = {short_name:'leoyaojy'};
     (function() {
@@ -1393,6 +1369,7 @@
     })();
     </script>
 
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
 
 
 

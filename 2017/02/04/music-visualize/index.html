@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>音乐可视化 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="Html5,Audio,音乐可视化">
+    <meta name="description" content="本文是在慕课网学习了HTML5音乐可视化之后产生的，老师讲解的很详细，建议你先去看一看，我新增了播放控制列表、文件上传大小限制、重复上传文件检测、自动播放下一首，效果图如下:在线体验地址: https://demo.luckyw.cn/code.html?path=music-visualize源码地址: https://github.com/leoyaojy/demo/blob/master/s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="音乐可视化">
+<meta property="og:url" content="https://blog.luckyw.cn/2017/02/04/music-visualize/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="本文是在慕课网学习了HTML5音乐可视化之后产生的，老师讲解的很详细，建议你先去看一看，我新增了播放控制列表、文件上传大小限制、重复上传文件检测、自动播放下一首，效果图如下:在线体验地址: https://demo.luckyw.cn/code.html?path=music-visualize源码地址: https://github.com/leoyaojy/demo/blob/master/s">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys">
+<meta property="og:updated_time" content="2017-02-07T12:50:48.305Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="音乐可视化">
+<meta name="twitter:description" content="本文是在慕课网学习了HTML5音乐可视化之后产生的，老师讲解的很详细，建议你先去看一看，我新增了播放控制列表、文件上传大小限制、重复上传文件检测、自动播放下一首，效果图如下:在线体验地址: https://demo.luckyw.cn/code.html?path=music-visualize源码地址: https://github.com/leoyaojy/demo/blob/master/s">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                85
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                30
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-music-visualize" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            音乐可视化
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/02/04/music-visualize/">
+            <time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Html5/">Html5</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Html5/">Html5</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>本文是在慕课网学习了<a href="http://www.imooc.com/learn/299" target="_blank" rel="external">HTML5音乐可视化</a>之后产生的，老师讲解的很详细，建议你先去看一看，我新增了播放控制列表、文件上传大小限制、重复上传文件检测、自动播放下一首，效果图如下:<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fci4oyl6ggj311y0i840v" alt=""><br>在线体验地址: <a href="https://demo.luckyw.cn/code.html?path=music-visualize" target="_blank" rel="external">https://demo.luckyw.cn/code.html?path=music-visualize</a><br>源码地址: <a href="https://github.com/leoyaojy/demo/blob/master/src/music-visualize/index.html" target="_blank" rel="external">https://github.com/leoyaojy/demo/blob/master/src/music-visualize/index.html</a></p>
+<h4 id="Audio-API"><a href="#Audio-API" class="headerlink" title="Audio API"></a>Audio API</h4><hr>
+<p>我将要介绍的<code>HTML5 Audio API</code>与<code>Audio</code>标签是不一样的，<code>Audio标签</code>只是<code>HTML5</code>更语义化的一个表现，而<code>HTML5 Audio API</code>则让我们可以在代码中直接操作原始的音频流数据，对其进行任意加工再造，这里我只涉及到对音频流的分析，从而实现音乐的可视化<br>一段音频在到达扬声器播放之前，我们可以对其进行拦截得到音频流数据，本文涉及到的是对音量的控制以及对音频流数据的分析，这一切都是基于<code>AudioContext</code>对象来的，所以我们需要创建这个对象，再从这个对象去创建其他音频节点。目前仅<code>Chrome</code>和<code>Firefox</code>对其提供了支持，所以我们仅能在<code>Chrome</code>和<code>Firefox</code>下才能看到效果，为了能同时在这两种浏览器下工作，我们需要做下兼容写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h4><hr>
+<p>我采用的是左右两侧布局，左侧播放列表固定宽度300，右侧音乐可视化区域自适应宽度，并在左侧区域添加了控制面板，可以添加音乐、暂停、播放、上一首和下一首歌曲的切换，添加音乐其实是通过一个<code>label</code>标签的<code>for</code>属性指向一个<code>type</code>为<code>file</code>的<code>input</code>文本框，这样更美观，指定<code>multiple</code>这样可以多选文件进行上传，并通过绑定<code>input</code>文本框的<code>onchange</code>事件把选择的音乐文件添加到播放列表中，获取目前的播放状态，如果正在播放，则只单单把音乐添加到播放列表，否则并播放第一首音乐</p>
+<h4 id="FileReader读取文件播放"><a href="#FileReader读取文件播放" class="headerlink" title="FileReader读取文件播放"></a>FileReader读取文件播放</h4><hr>
+<p>创建一个<code>FileReader</code>对象，从保存音乐文件列表<code>files</code>中以<code>ArrayBuffer</code>读取音频文件，然后监听它的<code>onload</code>事件获取它解析出来的数据<code>result</code>，创建音量控制节点<code>gainNode</code>以及音频分析节点<code>analyser</code>。<code>AudioContext</code>通过解码<code>result</code>数据得到一个<code>buffer</code>数据，然后创建一个<code>bufferSourceNode</code>节点，并设置它的<code>buffer</code>属性为解码之后的<code>buffer</code>，并把它连接到音频分析节点，然后音频分析节点连接到音量控制节点，音量控制节点最后连接到<code>AudioContext</code>的<code>destination</code>上，再通过<code>bufferSourceNode</code>的<code>start</code>方法进行播放，音乐可视化的难点就在于理解这里。最后把这个<code>bufferSourceNode</code>保存到<code>source</code>变量中，设置它的<code>onended</code>事件也即播放结束事件，可以看下下面的图理解下:<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fci6ifxkddj30wh0egwlj" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var fr = new FileReader();</div><div class="line">fr.onload = function (e) &#123;</div><div class="line">    var result = e.target.result;</div><div class="line">    gainNode = ac[ac.createGain ? &quot;createGain&quot; : &quot;createGainNode&quot;]();</div><div class="line">    gainNode.connect(ac.destination);</div><div class="line">    analyser = ac.createAnalyser();</div><div class="line">    analyser.fftSize = size;</div><div class="line">    analyser.connect(gainNode);</div><div class="line">    ac.decodeAudioData(result, function (buffer) &#123;</div><div class="line">        var bs = ac.createBufferSource();</div><div class="line">        bs.buffer = buffer;</div><div class="line">        bs.connect(analyser);</div><div class="line">        bs[bs.start ? &quot;start&quot; : &quot;noteOn&quot;]();</div><div class="line">        source = bs;</div><div class="line">    &#125;, function (err) &#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;);</div><div class="line">&#125;;</div><div class="line">fr.readAsArrayBuffer(files[currIndex]);</div></pre></td></tr></table></figure></p>
+<h4 id="绘制音频图谱"><a href="#绘制音频图谱" class="headerlink" title="绘制音频图谱"></a>绘制音频图谱</h4><hr>
+<p>我们需要创建一个长度为<code>analyser.frequencyBinCount</code>的<code>Uint8Array</code>的数组，然后把实时得到的音频数据赋值给它<code>analyser.getByteFrequencyData(arr)</code>，然后调用<code>draw</code>方法绘制到<code>canvas</code>上，大致就是这样，好好理解之后难度不大</p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2017/02/04/music-visualize/" target="_blank" title="音乐可视化">音乐可视化</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2017/02/04/music-visualize/" target="_blank" title="音乐可视化">https://blog.luckyw.cn/2017/02/04/music-visualize/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Audio-API"><span class="toc-number">1.</span> <span class="toc-text">Audio API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面布局"><span class="toc-number">2.</span> <span class="toc-text">页面布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FileReader读取文件播放"><span class="toc-number">3.</span> <span class="toc-text">FileReader读取文件播放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绘制音频图谱"><span class="toc-number">4.</span> <span class="toc-text">绘制音频图谱</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/21/canvas-easy-game/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">canvas写个简单的小游戏</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/02/04/music-visualize/" data-title="音乐可视化" data-url="https://blog.luckyw.cn/2017/02/04/music-visualize/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

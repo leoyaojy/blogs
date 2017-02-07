@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                81
+                85
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                30
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,297 @@
 
             
             <section id="main">
+    <article id="post-js-array-usage" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/12/js-array-usage/">JS数组操作汇总</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/12/js-array-usage/">
+            <time datetime="2016-03-11T16:00:00.000Z" itemprop="datePublished">2016-03-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="如何定义一个数组"><a href="#如何定义一个数组" class="headerlink" title="如何定义一个数组"></a>如何定义一个数组</h4><hr>
+<p>定义数组有三种方法：<br>1、常规方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var names = new Array();</div><div class="line">names[0] = &quot;CSS&quot;;</div><div class="line">names[1] = &quot;JS&quot;;</div><div class="line">names[2] = &quot;PHP&quot;;</div></pre></td></tr></table></figure></p>
+<p>2、简洁方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div></pre></td></tr></table></figure></p>
+<p>3、字面量方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = [&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;];</div></pre></td></tr></table></figure></p>
+<h4 id="如何访问数组元素"><a href="#如何访问数组元素" class="headerlink" title="如何访问数组元素"></a>如何访问数组元素</h4><hr>
+<p>通过下标的方式访问，注意：下标以<code>0</code>开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div><div class="line">alert(names[0]);//CSS</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/03/12/js-array-usage/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-array" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/06/js-array/">JS数组对象</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/06/js-array/">
+            <time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="什么是数组"><a href="#什么是数组" class="headerlink" title="什么是数组?"></a>什么是数组?</h4><hr>
+<p>数组对象是使用单独的变量名来存储一系列的值。<br>如果你有一组数据（例如：车名字），存在单独变量如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var car1=&quot;Saab&quot;;</div><div class="line">var car2=&quot;Volvo&quot;;</div><div class="line">var car3=&quot;BMW&quot;;</div></pre></td></tr></table></figure></p>
+<p>然而，如果你想从中找出某一辆车？并且不是3辆，而是300辆呢？这将不是一件容易的事！<br>最好的方法就是用数组。<br>数组可以用一个变量名存储所有的值，并且可以用变量名访问任何一个值。<br>数组中的每个元素都有自己的的ID，以便它可以很容易地被访问到<br></p>
+            <p class="article-more-link">
+                <a href="/2016/03/06/js-array/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-ie6-bug" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/03/ie6-bug/">总结下IE6的BUG及解决办法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/03/ie6-bug/">
+            <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/ie/">ie</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ie/">ie</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="双倍边距问题"><a href="#双倍边距问题" class="headerlink" title="双倍边距问题"></a>双倍边距问题</h4><hr>
+<p>在IE6中，如果有两个并行的漂浮元素并且用了<code>margin</code>的话，会出现双倍<code>margin</code>值的问题</p>
+<ol>
+<li>给漂浮元素设置样式<code>display:inline</code></li>
+<li>为IE6<code>hack</code>一下：<code>margin-left:10px;_margin-left:5px;</code></li>
+<li>在<code>DOM</code>结构允许的情况下，左边的用<code>float:left</code>，右边的用<code>float:right</code>;</li>
+</ol>
+<h4 id="固定定位fix"><a href="#固定定位fix" class="headerlink" title="固定定位fix"></a>固定定位fix</h4><hr>
+<p><code>position:fixed</code>这个样式有时候作用很大，尤其是在有浮动栏的时候，但是IE6中并不支持固定定位</p>
+<h4 id="默认高度问题"><a href="#默认高度问题" class="headerlink" title="默认高度问题"></a>默认高度问题</h4><hr>
+<p>在IE6中，如果我们设置一个空白的<code>div</code>，会发现这个<code>div</code>会有一个默认的高度，因为IE6中有一个默认的字体大小，大致在<code>12-14px</code>之间，IE6会认为这个层的高度不应该小于字体的行高，所以会出现这个问题。解决方法：<code>font-size:0;</code></p>
+<h4 id="图片下方出现空白间隙"><a href="#图片下方出现空白间隙" class="headerlink" title="图片下方出现空白间隙"></a>图片下方出现空白间隙</h4><hr>
+<ol>
+<li>设置图片为块级元素：<code>img{display:block;}</code></li>
+<li>把父元素的字体大小设置为0：<code>font-size:0</code></li>
+<li>设置图片的垂直对齐方式：<code>vertical-align:top</code></li>
+</ol></p>
+            <p class="article-more-link">
+                <a href="/2016/03/03/ie6-bug/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-document" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/02/25/js-document/">JS Document对象属性及方法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/02/25/js-document/">
+            <time datetime="2016-02-24T16:00:00.000Z" itemprop="datePublished">2016-02-25</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="Document-对象"><a href="#Document-对象" class="headerlink" title="Document 对象"></a>Document 对象</h4><hr>
+<p>每个载入浏览器的<code>HTML</code>文档都会成为<code>Document</code>对象<br><code>Document</code>对象使我们可以从脚本中对<code>HTML</code>页面中的所有元素进行访问<br><code>Document</code>对象是<code>Window</code>对象的一部分，可通过<code>window.document</code>属性对其进行访问，也可以直接通过<code>document</code>对象访问</p>
+<h4 id="Document-对象集合"><a href="#Document-对象集合" class="headerlink" title="Document 对象集合"></a>Document 对象集合</h4><hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">all[]</td>
+<td style="text-align:left">提供对文档中所有 HTML 元素的访问</td>
+</tr>
+<tr>
+<td style="text-align:left">anchors[]</td>
+<td style="text-align:left">返回对文档中所有 Anchor 对象的引用</td>
+</tr>
+<tr>
+<td style="text-align:left">applets</td>
+<td style="text-align:left">返回对文档中所有 Applet 对象的引用</td>
+</tr>
+<tr>
+<td style="text-align:left">forms[]</td>
+<td style="text-align:left">返回对文档中所有 Form 对象引用</td>
+</tr>
+<tr>
+<td style="text-align:left">images[]</td>
+<td style="text-align:left">返回对文档中所有 Image 对象引用</td>
+</tr>
+<tr>
+<td style="text-align:left">links[]</td>
+<td style="text-align:left">返回对文档中所有 Area 和 Link 对象引用</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/02/25/js-document/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-js-math" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -327,51 +618,51 @@
 <tbody>
 <tr>
 <td style="text-align:left">时钟一</td>
-<td style="text-align:left">//demo.luckyw.cn/src/canvas-clock/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-clock/">https://demo.luckyw.cn/src/canvas-clock/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">时钟二</td>
-<td style="text-align:left">//demo.luckyw.cn/src/canvas-clock2/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-clock2/">https://demo.luckyw.cn/src/canvas-clock2/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">时钟三</td>
-<td style="text-align:left">//demo.luckyw.cn/src/clock/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clock/">https://demo.luckyw.cn/src/clock/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">酷炫粒子时钟</td>
-<td style="text-align:left">//demo.luckyw.cn/src/cool-clock/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/cool-clock/">https://demo.luckyw.cn/src/cool-clock/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">七彩酷炫粒子</td>
-<td style="text-align:left">//demo.luckyw.cn/src/dots-animate/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/dots-animate/">https://demo.luckyw.cn/src/dots-animate/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">图片模糊</td>
-<td style="text-align:left">//demo.luckyw.cn/src/blur-img/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/blur-img/">https://demo.luckyw.cn/src/blur-img/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">心形动画</td>
-<td style="text-align:left">//demo.luckyw.cn/src/canvas-heart/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-heart/">https://demo.luckyw.cn/src/canvas-heart/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">刮刮卡</td>
-<td style="text-align:left">//demo.luckyw.cn/src/clip-card/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clip-card/">https://demo.luckyw.cn/src/clip-card/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">图片橡皮擦</td>
-<td style="text-align:left">//demo.luckyw.cn/src/clip-img/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clip-img/">https://demo.luckyw.cn/src/clip-img/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">彩色球沿轨迹运动</td>
-<td style="text-align:left">//demo.luckyw.cn/src/color-ball-canvas/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/color-ball-canvas/">https://demo.luckyw.cn/src/color-ball-canvas/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">图像处理</td>
-<td style="text-align:left">//demo.luckyw.cn/src/image-process/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/image-process/">https://demo.luckyw.cn/src/image-process/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">手写字</td>
-<td style="text-align:left">//demo.luckyw.cn/src/learn-to-write-a-word/</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/learn-to-write-a-word/">https://demo.luckyw.cn/src/learn-to-write-a-word/</a></td>
 </tr>
 </tbody>
 </table>
@@ -710,273 +1001,6 @@
 
 
 
-    <article id="post-jquery-tips" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/15/jquery-tips/">jQuery小技巧(译文)</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/15/jquery-tips/">
-            <time datetime="2016-01-14T16:00:00.000Z" itemprop="datePublished">2016-01-15</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JQuery/">JQuery</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="回到顶部按钮"><a href="#回到顶部按钮" class="headerlink" title="回到顶部按钮"></a>回到顶部按钮</h4><hr>
-<p>利用<code>jQuery</code>里的<code>animate</code>和<code>scrollTop</code>方法，你便不需要使用插件创建简单的滚动到顶部动画<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;.top&apos;).click(function (e) &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    $(&apos;html, body&apos;).animate(&#123;scrollTop: 0&#125;, 800);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>通过<code>scrollTop</code>的值来改变你想要滚动到的位置<br>其实你就是做了:在接下来的800毫秒中让页面滚动，直到它滚动到文档的顶部</p>
-<h4 id="图片预加载"><a href="#图片预加载" class="headerlink" title="图片预加载"></a>图片预加载</h4><hr>
-<p>如果你的网页使用了很多隐藏图片文件（例如：鼠标悬停展示的图片），那么图片的预加载是有意义的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.preloadImages = function () &#123;</div><div class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</div><div class="line">		$(&apos;&lt;img&gt;&apos;).attr(&apos;src&apos;, arguments[i]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">$.preloadImages(&apos;img/hover-on.png&apos;, &apos;img/hover-off.png&apos;);</div></pre></td></tr></table></figure></p>
-<h4 id="判断图片是否加载完"><a href="#判断图片是否加载完" class="headerlink" title="判断图片是否加载完"></a>判断图片是否加载完</h4><hr>
-<p>有时候你可能需要检查图像是否已经加载完成，以便于可以继续执行相应的<code>js</code>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;img&apos;).load(function () &#123;</div><div class="line">	console.log(&apos;image load successful&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>你还可以检查一个特定的图片是否加载完并且被带有<code>id</code>或者<code>class</code>的<code>&lt;img&gt;</code>标签代替。<br></p>
-            <p class="article-more-link">
-                <a href="/2016/01/15/jquery-tips/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-chrome-plugin" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/08/chrome-plugin/">Chrome插件分享</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/08/chrome-plugin/">
-            <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Chrome/">Chrome</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="uBlock-Origin"><a href="#uBlock-Origin" class="headerlink" title="uBlock Origin"></a>uBlock Origin</h4><hr>
-<p>一款高效的网络请求过滤工具，占用极低的内存和<code>CPU</code>，用于过滤垃圾广告</p>
-<h4 id="Chrono下载管理器"><a href="#Chrono下载管理器" class="headerlink" title="Chrono下载管理器"></a>Chrono下载管理器</h4><hr>
-<p>比原生<code>Chrome</code>下载管理器有更多的功能，支持断点续传</p>
-<h4 id="User-Agent-Switcher-for-Chrome"><a href="#User-Agent-Switcher-for-Chrome" class="headerlink" title="User-Agent Switcher for Chrome"></a>User-Agent Switcher for Chrome</h4><hr>
-<p>能将<code>Chrome</code>伪装成各种不同的浏览器</p>
-<h4 id="Prism-Pretty"><a href="#Prism-Pretty" class="headerlink" title="Prism Pretty"></a>Prism Pretty</h4><hr>
-<p>一个<code>Chrome</code>扩展用于格式化/突出/预览<code>HTML、JS、CSS、Markdown</code>代码，堪称神器</p>
-<h4 id="右键搜"><a href="#右键搜" class="headerlink" title="右键搜"></a>右键搜</h4><hr>
-<p>通过它可以直接进行图片搜索及百度翻译等功能</p>
-<h4 id="谷歌翻译"><a href="#谷歌翻译" class="headerlink" title="谷歌翻译"></a>谷歌翻译</h4><hr>
-<p>翻译神器，在此不赘述</p>
-<h4 id="WEB前端助手-FeHelper"><a href="#WEB前端助手-FeHelper" class="headerlink" title="WEB前端助手 : FeHelper"></a>WEB前端助手 : FeHelper</h4><hr>
-<p>前端开发必备插件，包含一些前端实用的工具,如字符串编解码、代码美化、JSON格式化查看、二维码生成器、编码规范检测、栅格规范检测、网页性能检测等</p>
-<h4 id="PostMan"><a href="#PostMan" class="headerlink" title="PostMan"></a>PostMan</h4><hr>
-<p>一款功能强大的网页调试与发送网页<code>HTTP</code>请求的<code>Chrome</code>插件<br></p>
-            <p class="article-more-link">
-                <a href="/2016/01/08/chrome-plugin/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-front-study-tools" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/02/front-study-tools/">前端学习资料工具整理</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/02/front-study-tools/">
-            <time datetime="2016-01-01T16:00:00.000Z" itemprop="datePublished">2016-01-02</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/WEB/">WEB</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WEB/">WEB</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="教程类网站："><a href="#教程类网站：" class="headerlink" title="教程类网站："></a>教程类网站：</h4><hr>
-<blockquote>
-<p>菜鸟教程：<a href="http://www.runoob.com/">http://www.runoob.com/</a><br>CSS88:<a href="http://www.css88.com/">http://www.css88.com/</a><br>前端网：<a href="http://www.w3cfuns.com/">http://www.w3cfuns.com/</a><br>前端导航网：<a href="http://jsdig.com/">http://jsdig.com/</a><br>W3CPLUS:<a href="http://www.w3cplus.com/">http://www.w3cplus.com/</a><br>码农网：<a href="http://www.codeceo.com/">http://www.codeceo.com/</a><br>开源中国：<a href="http://www.oschina.net/">http://www.oschina.net/</a><br>WP菜鸟教程：<a href="http://www.wpnoob.cn/">http://www.wpnoob.cn/</a><br>网络技术：<a href="http://googlo.me/web">http://googlo.me/web</a><br>Mozilla开发者网络：<a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
-</blockquote>
-<h4 id="视频学习类网站："><a href="#视频学习类网站：" class="headerlink" title="视频学习类网站："></a>视频学习类网站：</h4><hr>
-<blockquote>
-<p>慕课网：<a href="http://www.imooc.com/">http://www.imooc.com/</a><br>极客学院：<a href="http://www.jikexueyuan.com/">http://www.jikexueyuan.com/</a><br>极客标签：<a href="http://www.gbtags.com/">http://www.gbtags.com/</a></p>
-</blockquote></p>
-            <p class="article-more-link">
-                <a href="/2016/01/02/front-study-tools/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-mobile-web-front-source" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/12/25/mobile-web-front-source/">移动WEB前端开发资源整合</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/12/25/mobile-web-front-source/">
-            <time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/WEB/">WEB</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WEB/">WEB</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h3 id="meta篇"><a href="#meta篇" class="headerlink" title="meta篇"></a>meta篇</h3><hr>
-<h4 id="视窗宽度"><a href="#视窗宽度" class="headerlink" title="视窗宽度"></a>视窗宽度</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;/&gt;</div></pre></td></tr></table></figure>
-<p>其中 <code>width=device-width</code> 是设置视窗宽度为设备视窗宽度，还可以设置固定宽度，例如： <code>width=640</code> 则是设置<code>640px</code>的固定宽度<br><code>initial-scale=1.0</code>：设置初始缩放比例为<code>1.0</code><br><code>minimum-scale=1.0</code> 和 <code>maximum-scale=1.0</code> ：最小缩放比例和最大缩放比例<br><code>user-scalable=no</code> ：禁止用户自由缩放，<code>user-scalable</code> 默认值为<code>yes</code><br>提示：上面那个是带全部参数的，一般设置了<code>user-scalable=no</code>就不需要再使用<code>minimum-scale=1.0</code>和<code>maximum-scale=1.0</code>来强制禁止缩放了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="自动识别格式"><a href="#自动识别格式" class="headerlink" title="自动识别格式"></a>自动识别格式</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;/&gt;</div></pre></td></tr></table></figure>
-<p><code>content</code>里面的参数:<br><code>telephone=no</code>:禁止浏览器自动识别手机号码<br><code>email=no</code>:禁止浏览器自动识别Email<br><code>address=no</code>:禁止浏览器自动识别地址<br><code>date=no</code>:禁止浏览器自动识别日期<br></p>
-            <p class="article-more-link">
-                <a href="/2015/12/25/mobile-web-front-source/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">下一页 &raquo;</a>
     </nav>
@@ -989,6 +1013,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1294,82 +1394,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
-                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
-                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
-                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
-                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
-                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
-                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1380,7 +1404,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1484,8 +1508,7 @@
 </footer>
 
         
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-
+    
     <script type="text/javascript">
     var duoshuoQuery = {short_name:'leoyaojy'};
     (function() {
@@ -1498,6 +1521,7 @@
     })();
     </script>
 
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
 
 
 

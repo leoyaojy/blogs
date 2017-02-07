@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                81
+                85
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                30
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,252 @@
 
             
             <section id="main">
+    <article id="post-music-visualize" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/02/04/music-visualize/">音乐可视化</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/02/04/music-visualize/">
+            <time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Html5/">Html5</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Html5/">Html5</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>本文是在慕课网学习了<a href="http://www.imooc.com/learn/299">HTML5音乐可视化</a>之后产生的，老师讲解的很详细，建议你先去看一看，我新增了播放控制列表、文件上传大小限制、重复上传文件检测、自动播放下一首，效果图如下:<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fci4oyl6ggj311y0i840v" alt=""><br>在线体验地址: <a href="https://demo.luckyw.cn/code.html?path=music-visualize">https://demo.luckyw.cn/code.html?path=music-visualize</a><br>源码地址: <a href="https://github.com/leoyaojy/demo/blob/master/src/music-visualize/index.html">https://github.com/leoyaojy/demo/blob/master/src/music-visualize/index.html</a></p>
+<h4 id="Audio-API"><a href="#Audio-API" class="headerlink" title="Audio API"></a>Audio API</h4><hr>
+<p>我将要介绍的<code>HTML5 Audio API</code>与<code>Audio</code>标签是不一样的，<code>Audio标签</code>只是<code>HTML5</code>更语义化的一个表现，而<code>HTML5 Audio API</code>则让我们可以在代码中直接操作原始的音频流数据，对其进行任意加工再造，这里我只涉及到对音频流的分析，从而实现音乐的可视化<br>一段音频在到达扬声器播放之前，我们可以对其进行拦截得到音频流数据，本文涉及到的是对音量的控制以及对音频流数据的分析，这一切都是基于<code>AudioContext</code>对象来的，所以我们需要创建这个对象，再从这个对象去创建其他音频节点。目前仅<code>Chrome</code>和<code>Firefox</code>对其提供了支持，所以我们仅能在<code>Chrome</code>和<code>Firefox</code>下才能看到效果，为了能同时在这两种浏览器下工作，我们需要做下兼容写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2017/02/04/music-visualize/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-canvas-easy-game" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/21/canvas-easy-game/">canvas写个简单的小游戏</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/21/canvas-easy-game/">
+            <time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Html5/">Html5</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Html5/">Html5</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>之前在<a href="https://blog.luckyw.cn/2016/02/15/html5-canvas/">HTML5 Canvas属性和方法汇总</a>一文中，介绍过<code>Canvas</code>的各种属性以及方法的说明，并列举了自己写的一些<code>Canvas demo</code>，接下来开始写一个简单的小游戏吧，有多简单，这么说吧，代码不到100行，先上效果图:<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fci1rt8q2dj30m80go0su" alt=""><br>左侧为我们控制的控制板，右侧为假想的电脑控制的控制板<br>体验小游戏链接: <a href="https://demo.luckyw.cn/code.html?path=tennis-game">https://demo.luckyw.cn/code.html?path=tennis-game</a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><hr>
+<p>首先在<code>html</code>页面中添加中添加一个<code>canvas</code>元素，并给出一个<code>id</code>用于在<code>js</code>代码中获取该元素并对其进行操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p>
+<p>然后就是对各种参数，注释中都有给出，我就不多说了，直接看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//获取canvas元素以及2d绘图环境c，以及设置canvas宽高为800x600</div><div class="line">var canvas = document.getElementById(&quot;canvas&quot;),</div><div class="line">    c = canvas.getContext(&quot;2d&quot;),</div><div class="line">    W = canvas.width = 800,</div><div class="line">    H = canvas.height = 600;</div><div class="line">var ballX = W / 2, ballY = H / 2, ballR = 10, ballVx = 10, ballVy = 2,	//球的位置、半径以及在X轴及Y轴的速度</div><div class="line">    panelW = 10, panelH = 100, panel1Y = (H - panelH) / 2, panel2Y = (H - panelH) / 2,	//控制板的宽高以及初始位置</div><div class="line">    player1Score = 0, player2Score = 0, winnerScore = 3,	//记录玩家的分数以及得了多少分算赢</div><div class="line">    isEnd = 0;	//判断是否比赛结束的变量，0为未结束，1为已结束</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2017/01/21/canvas-easy-game/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-music-share" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/14/music-share/">个人码代码时喜欢听的音乐分享</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/14/music-share/">
+            <time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Music/">Music</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Music/">Music</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>不知道各位吃瓜群众在编程码代码的过程中喜欢什么样的音乐，就我个人而言，比较喜欢韩国女团的歌曲，比如少女时代、Tara，又或者是粤语歌曲等等其他类型。之前有听过酷狗的电台、百度的随心听，但是我觉得网易云音乐就做的特别好，它会根据你的音乐口味每天给你生成一个每日推荐歌曲列表，你如果喜欢每日推荐歌曲列表中的某一首歌，可以在歌曲那里打心标记为喜欢，这样网易云音乐就会加以分析得到你喜欢的歌曲类型然后再推荐给你，更贴近你想听的</p>
+<h4 id="下载网易云音乐"><a href="#下载网易云音乐" class="headerlink" title="下载网易云音乐"></a>下载网易云音乐</h4><hr>
+<p>如果你还不知道网易云音乐的话，建议<a href="http://music.163.com/" target="_blank" rel="external">点此</a>了解了解，保证你爱不释手，下载<a href="http://music.163.com/#/download" target="_blank" rel="external">点此</a>，可以看到它涵盖了各个平台，<code>Linux</code>也有，比之某企的社交软件某Q来说好太多了，直接放弃了开发，<code>Ubuntu</code>上只能使用好多年前的国际版结合<code>Wine</code>一起使用，让人好不蛋疼</p>
+<h4 id="我的歌单分享"><a href="#我的歌单分享" class="headerlink" title="我的歌单分享"></a>我的歌单分享</h4><hr>
+<p>网易云音乐上有很多歌单，但不一定里面全会是你所喜欢听的，所以还是需要自己把喜欢的音乐收藏起来，整理成一个歌单更好一些，下面就是我的歌单，如果你喜欢，欢迎收藏</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=592771649&auto=1&height=430"></iframe>
+
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-you-must-know-github" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/07/you-must-know-github/">你不可不知的github</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/07/you-must-know-github/">
+            <time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Github/">Github</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Github/">Github</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="使用Github-Pages搭建自己的静态网站、博客"><a href="#使用Github-Pages搭建自己的静态网站、博客" class="headerlink" title="使用Github Pages搭建自己的静态网站、博客"></a>使用Github Pages搭建自己的静态网站、博客</h4><hr>
+<p>链接:<a href="https://pages.github.com">https://pages.github.com</a><br>可参考我的这篇文章<a href="https://blog.luckyw.cn/2015/09/05/github-hexo/">github上搭建hexo博客</a>教你如何使用<code>hexo</code>以及<code>Github Pages</code>搭建个人博客</p>
+<h4 id="Github短网址生成"><a href="#Github短网址生成" class="headerlink" title="Github短网址生成"></a>Github短网址生成</h4><hr>
+<p>链接:<a href="https://git.io">https://git.io</a><br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fcdkci8hl8j30ma02bdft" alt=""><br>注意:只能使用<code>github.com</code>域名下的网址</p>
+<h4 id="Github简历"><a href="#Github简历" class="headerlink" title="Github简历"></a>Github简历</h4><hr>
+<p>链接:<a href="https://resume.github.io">https://resume.github.io</a><br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fcdkswffhvj30pw09kt9c" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2017/01/07/you-must-know-github/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-chrome-plugin-dev" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -534,267 +780,6 @@
 
 
 
-    <article id="post-vps-website-build-website" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/20/vps-website-build-website/">手把手教你近乎免费搭建VPS和网站——.me域名</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/20/vps-website-build-website/">
-            <time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/建站/">建站</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/建站/">建站</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="注册-me域名"><a href="#注册-me域名" class="headerlink" title="注册.me域名"></a>注册.me域名</h4><hr>
-<p>先看下图优惠码:<br><img src="//ww4.sinaimg.cn/large/0062vBsDjw1fabffymo3vj30pv09jgnx.jpg" alt=""><br>图①:<code>SSL证书</code>申请地址，价值$9/年，点击之后会进入类似购物车的页面，在<code>Promo Code</code>输入优惠码，点<code>Apply</code>即可免费使用了<br>图②:<code>.me域名</code>申请地址，价值$18.99/年，点击之后会出现一个需要<code>github</code>进行认证的页面，点击<code>Login With Github</code>成功认证通过之后就会进入<code>.me域名</code>搜索注册页面，之后添加进购物车购买即可，难度在于英语要好</p>
-<h4 id="转移DNS服务到DNSPod"><a href="#转移DNS服务到DNSPod" class="headerlink" title="转移DNS服务到DNSPod"></a>转移DNS服务到DNSPod</h4><hr>
-<p>为什么转移到<code>DNSPod</code>？，老实说就是我之前的几个域名都是<code>DNSPod</code>进行管理的，如果你用其他的(比如:<code>digitalocean</code>)，可仿照此步骤进行。登录到<a href="https://www.namecheap.com/" target="_blank" rel="external">namecheap</a>(PS:怎么注册我就略过了)，输入用户名、密码登录成功之后进入到控制面板<code>Dashboard</code>，选择左侧<code>Domain List</code>，选择右侧域名后的<code>Manage</code>按钮，鼠标滑动到<code>NAMESERVERS</code>选项，右侧选择第三项<code>Custom DNS</code>，<code>ADD NAMESERVER</code>两条记录(<code>f1g1ns1.dnspod.net</code>、<code>f1g1ns2.dnspod.net</code>)，之后等48小时全球DNS更新即可，如下图所示:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1fac6y4zmv3j30ji04umxj.jpg" alt=""></p>
-
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-vps-website-build-vps" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/13/vps-website-build-vps/">手把手教你近乎免费搭建VPS和网站——VPS服务器</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/13/vps-website-build-vps/">
-            <time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/建站/">建站</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/建站/">建站</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="购置VPS服务器"><a href="#购置VPS服务器" class="headerlink" title="购置VPS服务器"></a>购置VPS服务器</h4><hr>
-<p><img src="//ww3.sinaimg.cn/large/0062vBsDgw1fab8166fg7j30po0710u8.jpg" alt=""><br>点击图中所示区域或者直接点这<a href="https://m.do.co/c/7e83c86e99aa">注册</a>，进入注册页面，点击页面右上角<code>Sign Up</code>按钮之后输入<code>邮箱</code>、<code>密码</code>进行注册(自己任意邮箱即可)，之后网站会向你的邮箱发送一封验证邮件，你进邮箱验证成功之后就是第二步验证了，需要你有一张<code>信用卡</code>或<code>贷记卡</code>或者<code>PayPal</code>(本人穷屌丝一枚，没有信用卡也没有贷记卡，只有几个银行的借记卡，如果你和我一样的话，直接注册一个<code>PayPal</code>好了<a href="https://www.paypal.com/">注册链接</a>)，注册好了之后选择<code>PayPal</code>验证，需要支付5美金人民币也就35块左右吧；第三步是创建一个<code>VPS</code>，网站称之为<code>Droplets</code>的东西，看自己情况进行选购，之后也就验证成功了<br>我的配置为:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">标题</th>
-<th style="text-align:center">选择</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Choose an image</td>
-<td style="text-align:center">Ubuntu 16.04.1 x64</td>
-</tr>
-<tr>
-<td style="text-align:center">Choose a size</td>
-<td style="text-align:center">$5/mo $0.007/hour</td>
-</tr>
-<tr>
-<td style="text-align:center">Choose a datacenter region</td>
-<td style="text-align:center">Singapore</td>
-</tr>
-</tbody>
-</table></p>
-            <p class="article-more-link">
-                <a href="/2016/11/13/vps-website-build-vps/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-vps-website-build-edumail" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/06/vps-website-build-edumail/">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/06/vps-website-build-edumail/">
-            <time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/建站/">建站</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/建站/">建站</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="注册edu邮箱"><a href="#注册edu邮箱" class="headerlink" title="注册edu邮箱"></a>注册edu邮箱</h4><hr>
-<p>先说下为什么要注册<code>edu</code>邮箱，因为<code>github</code>提供的学生包顾名思义是给学生使用的，如果你不是学生的话，那么就无法使用。那么<code>github</code>怎么知道你是不是学生的了，简单的说就是检测你注册<code>github</code>的邮箱是不是<code>edu</code>邮箱<br>如果你是大学生或者你有亲戚朋友的孩子是大学生的话，那么你可以直接注册你大学的<code>edu</code>邮箱或者借你亲戚朋友孩子的<code>edu</code>邮箱使用下。如果你和我一样，恰好刚毕业几年，那么就错过了这么好的服务了，请直接参考:<a href="http://www.sgld.org/2015/02/11/1054">http://www.sgld.org/2015/02/11/1054</a></p>
-<h4 id="注册github并激活"><a href="#注册github并激活" class="headerlink" title="注册github并激活"></a>注册github并激活</h4><hr>
-<p>注册<code>github</code>我就不说了，每个码农都懂的，邮箱使用你上一步获取的<code>edu</code>邮箱，然后<code>github</code>会对你刚才用来注册的<code>edu</code>邮箱发送验证邮件，大概可能要等个10来分钟左右邮箱才能收到，验证成功之后进到<code>github</code><a href="https://education.github.com/">学生包申请页面</a>，点击<code>GET YOUR PACK</code>按钮申请，进入到申请页面，信息正常填写即可，只要是<code>edu</code>邮箱很容易通过的，通过之后我们就可以获取我们所需要的优惠码了<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1faahj3yd54j30jn0fz40a.jpg" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2016/11/06/vps-website-build-edumail/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-vps-website-build-background" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/10/30/vps-website-build-background/">手把手教你近乎免费搭建VPS和网站——背景介绍</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/30/vps-website-build-background/">
-            <time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/建站/">建站</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/建站/">建站</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h4><hr>
-<p>由于国内的网络政策，购买服务器必须备案，而备案就差不多要等半个月左右才能弄好。而我是个急性子的人，等不了那么久，没办法只好另辟蹊径<br>首先是在<a href="https://www.godaddy.com/">godaddy</a>购买了一个虚拟主机，大概百来块的样子(PS:我是不会告诉你有优惠码的，自寻)，而且还送了一个免费顶级域名，算起来还是蛮划算的，服务器在新加坡，速度也还是可以的，但是唯一不足的是和<code>VPS</code>相比差距蛮大的<br>后来又在性价比超高的<a href="https://bwh1.net">搬瓦工</a>(号称翻墙神器)上买了一台洛杉矶直连中国线路的，价值<code>$19.99</code>(PS:我也不会告诉你优惠码可以省1美元左右的，自寻，不会找的右键查看源代码，顶部就有)，上面可以一键搭建<code>SS</code>、一键搭建<code>OpenVPN</code>，唯一不足的是速度太慢了，洛杉矶直连中国的<code>ping</code>还在三、四百左右，但是又没有办法，毕竟是个穷B，只能慢慢忍受蜗牛般的速度，每次在终端敲命令得好一会才能返回结果，着实令人抓狂<br></p>
-            <p class="article-more-link">
-                <a href="/2016/10/30/vps-website-build-background/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -807,6 +792,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1112,82 +1173,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
-                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
-                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
-                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
-                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
-                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
-                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1198,7 +1183,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1302,8 +1287,7 @@
 </footer>
 
         
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-
+    
     <script type="text/javascript">
     var duoshuoQuery = {short_name:'leoyaojy'};
     (function() {
@@ -1316,6 +1300,7 @@
     })();
     </script>
 
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
 
 
 

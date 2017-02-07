@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                81
+                85
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                30
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,327 @@
 
             
             <section id="main">
+    <article id="post-css-triangle" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/10/css-triangle/">CSS制作小三角</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/10/css-triangle/">
+            <time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><hr>
+<p><strong>CSS盒模型</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f7ui3zyktgj30cn09gjru.jpg" alt=""></p>
+<blockquote>
+<ol>
+<li>盒模型 = <code>Margin + Border + Padding + Content</code></li>
+<li>上下左右边框交界处出呈现平滑的斜线. 利用这个特点, 通过设置不同的上下左右边框宽度或者颜色可以得到小三角, 小梯形等</li>
+<li>调整宽度大小可以调节三角形形状</li>
+</ol>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/07/10/css-triangle/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-http-status-code" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/04/http-status-code/">http状态码汇总</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/04/http-status-code/">
+            <time datetime="2016-07-03T16:00:00.000Z" itemprop="datePublished">2016-07-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/WEB/">WEB</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WEB/">WEB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="1XX-信息"><a href="#1XX-信息" class="headerlink" title="1XX 信息"></a>1XX 信息</h4><hr>
+<p>这一类型的状态码，代表请求已被接受，需要继续处理</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态码</th>
+<th style="text-align:left">状态文本</th>
+<th style="text-align:left">信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:left">Continue</td>
+<td style="text-align:left">客户端应当继续发送请求</td>
+</tr>
+<tr>
+<td style="text-align:center">101</td>
+<td style="text-align:left">Switching Protocols</td>
+<td style="text-align:left">服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h4><hr>
+<p>这一类型的状态码，代表请求已成功被服务器接收、理解、并接受</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态码</th>
+<th style="text-align:left">状态文本</th>
+<th style="text-align:left">信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:left">OK</td>
+<td style="text-align:left">请求已成功，请求所希望的响应头或数据体将随此响应返回</td>
+</tr>
+<tr>
+<td style="text-align:center">201</td>
+<td style="text-align:left">Created</td>
+<td style="text-align:left">请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回</td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td style="text-align:left">Accepted</td>
+<td style="text-align:left">服务器已接受请求，但尚未处理</td>
+</tr>
+<tr>
+<td style="text-align:center">203</td>
+<td style="text-align:left">Non-Authoritative Information</td>
+<td style="text-align:left">服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝</td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td style="text-align:left">No Content</td>
+<td style="text-align:left">服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息</td>
+</tr>
+<tr>
+<td style="text-align:center">205</td>
+<td style="text-align:left">Reset Content</td>
+<td style="text-align:left">服务器成功处理了请求，且没有返回任何内容</td>
+</tr>
+<tr>
+<td style="text-align:center">206</td>
+<td style="text-align:left">Partial Content</td>
+<td style="text-align:left">服务器已经成功处理了部分GET请求</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/07/04/http-status-code/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-common-reg-expression" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/30/common-reg-expression/">常用正则表达式汇总</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/30/common-reg-expression/">
+            <time datetime="2016-06-29T16:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/REG/">REG</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/REG/">REG</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>正则表达式是web开发必备的一项基本技能，熟练掌握使用正则表达式，能使你的开发效率得到大幅度的提升，尤其是在对网络爬虫爬取页面内容进行分析方面有巨大的作用，下面就来介绍一些常用的正则表达式，希望对大家能有所帮助<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f7pi31lalmj30m71br15a.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/06/30/common-reg-expression/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-webfront-dont-know" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/24/webfront-dont-know/">前端冷知识课堂</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/24/webfront-dont-know/">
+            <time datetime="2016-06-23T16:00:00.000Z" itemprop="datePublished">2016-06-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/WEB/">WEB</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WEB/">WEB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h3 id="HTML篇"><a href="#HTML篇" class="headerlink" title="HTML篇"></a>HTML篇</h3><hr>
+<h4 id="浏览器地址栏运行JS代码"><a href="#浏览器地址栏运行JS代码" class="headerlink" title="浏览器地址栏运行JS代码"></a>浏览器地址栏运行JS代码</h4><p>在浏览器地址栏可以直接运行JS代码，做法是以<code>javascript:</code>开头后跟要执行的语句。比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(&apos;alert from the address bar :)&apos;);</div></pre></td></tr></table></figure></p>
+<p>将以上代码贴到浏览器地址栏回车后执行，<code>alert</code>弹出一个窗口</p>
+<blockquote>
+<p>需要注意的是如果是通过复制粘贴代码到浏览器地址栏的话，IE及Chrome会自动去掉代码开头的<code>javascript:</code>，所以需要手动添加起来才能正确执行，而Firefox中虽然不会自动去掉，但它根本就不支持在地址栏运行<code>JS</code>代码，so :(</p>
+</blockquote>
+<h4 id="浏览器地址栏运行HTML代码"><a href="#浏览器地址栏运行HTML代码" class="headerlink" title="浏览器地址栏运行HTML代码"></a>浏览器地址栏运行HTML代码</h4><hr>
+<p>在非IE内核的浏览器地址栏可以直接运行<code>HTML</code>代码，比如在地址栏输入以下代码然后回车运行，会出现指定的页面内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如下:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7otaez542j30j102iweq.jpg" alt=""></p>
+<h4 id="浏览器变成编辑器"><a href="#浏览器变成编辑器" class="headerlink" title="浏览器变成编辑器"></a>浏览器变成编辑器</h4><hr>
+<p>将以下代码贴到地址栏运行后浏览器变成了一个原始而简单的编辑器，跟<code>windows</code>记事本效果一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html, &lt;html contenteditable&gt;</div></pre></td></tr></table></figure></p>
+<p>主要是因为<code>HTML5</code>中新加了<code>contenteditable</code>属性，当元素指定了该属性后，元素的内容成为可编辑状态。举一反三，将以下代码在控制台执行后，整个页面变成可编辑状态，肆意玩耍吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.body.contentEditable=&apos;true&apos;;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/06/24/webfront-dont-know/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-ubuntu-install-node" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -541,268 +862,6 @@
 
 
 
-    <article id="post-ubuntu-webstorm-problems" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/09/ubuntu-webstorm-problems/">解决Ubuntu下Webstorm系列问题</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/09/ubuntu-webstorm-problems/">
-            <time datetime="2016-05-08T16:00:00.000Z" itemprop="datePublished">2016-05-09</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>, <a class="tag-link" href="/tags/Webstorm/">Webstorm</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="中文输入问题"><a href="#中文输入问题" class="headerlink" title="中文输入问题"></a>中文输入问题</h4><hr>
-<p><strong>解决办法：</strong><br>在<code>Webstorm</code>安装目录的<code>bin</code>目录下找到<code>webstorm.sh</code>，然后打开之后在前面加上如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export XMODIFIERS=@im=fcitx</div><div class="line">export QT_IM_MODULE=fcitxubun</div></pre></td></tr></table></figure></p>
-<h4 id="注册："><a href="#注册：" class="headerlink" title="注册："></a>注册：</h4><hr>
-<blockquote>
-<p><strong>License Server :</strong><br><a href="http://idea.lanyus.com/" target="_blank" rel="external">http://idea.lanyus.com/</a><br><a href="http://15.idea.lanyus.com/" target="_blank" rel="external">http://15.idea.lanyus.com/</a><br><a href="http://121.42.190.89:1025" target="_blank" rel="external">http://121.42.190.89:1025</a><br><a href="http://idea.qinxi1992.cn/" target="_blank" rel="external">http://idea.qinxi1992.cn/</a><br><a href="http://114.215.133.70:41017" target="_blank" rel="external">http://114.215.133.70:41017</a><br><strong>上面的已失效，下面几个暂时可用</strong><br><a href="http://idea.imsxm.com/" target="_blank" rel="external">http://idea.imsxm.com/</a><br><a href="http://jetbrains.tencent.click" target="_blank" rel="external">http://jetbrains.tencent.click</a><br><strong>注册码</strong><br>因注册码过长，所以，你懂得～～ <a href="http://demo.luckyw.cn/webstorm_code.txt" target="_blank" rel="external">点击获取注册码</a></p>
-</blockquote>
-<h4 id="NodeJS代码提示"><a href="#NodeJS代码提示" class="headerlink" title="NodeJS代码提示"></a>NodeJS代码提示</h4><hr>
-<blockquote>
-<p><strong>2016-8-18更新</strong></p>
-</blockquote>
-<p>每当编写<code>Node</code>代码时，总是没有代码提示，其他语言的基本都有，而众所周知为什么<code>WebStorm</code>这么流行的原因就在于它的代码提示功能相当强大，那为什么没有提示了？</p>
-<ol>
-<li>我们需要开启<code>NodeJs</code>代码提示，那么请点击<code>File -&gt; Settings -&gt; Language &amp;&amp; FrameWork -&gt; Node.js and NPM -&gt; Enable</code>即可，如下图所示:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f8yr1udsiuj30m00473z5.jpg" alt=""></li>
-<li>或者更简单的方式就是鼠标点击<code>Node</code>的核心模块高亮处，按组合键<code>Alt+Enter</code>，弹出下拉菜单，最后敲<code>Enter</code>开启代码提示功能，如下图<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f8yr41o165j30lc04n40d.jpg" alt=""></li>
-</ol>
-
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-node-gulp" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/08/node-gulp/">gulp构建前端自动化</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/08/node-gulp/">
-            <time datetime="2016-05-07T16:00:00.000Z" itemprop="datePublished">2016-05-08</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Node/Gulp/">Gulp</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Gulp/">Gulp</a>, <a class="tag-link" href="/tags/Node/">Node</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>目前最知名的构建工具： <code>Gulp</code>、<code>Grunt</code>、<code>NPM + Webpack</code>；</p>
-<blockquote>
-<p><code>grunt</code>是前端工程化的先驱<br><code>gulp</code>更自然基于流的方式连接任务<br><code>Webpack</code>最年轻，擅长用于依赖管理，配置稍较复杂<br>推荐使用<code>Gulp</code>，<code>Gulp</code>基于<code>nodejs</code>中<code>stream</code>，效率更好语法更自然,不需要编写复杂的配置文件</p>
-</blockquote>
-<p><strong>基础安装</strong><br><code>Gulp</code>是基于<code>Node.js</code>的，需要要安装<code>Node.js</code><br>1、为了确保依赖环境正确，我们先执行几个简单的命令检查。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-HP-Pavilion-dv4-Notebook-PC:~$ node -v</div><div class="line">v4.2.6</div></pre></td></tr></table></figure></p>
-<p><code>Node</code>是一个基于<code>Google V8</code>引擎建立的一个解释器<br>检测<code>Node</code>是否已经安装，如果正确安装的话你会看到所安装的<code>Node</code>的版本号<br>2、接下来看看<code>npm</code>，它是<code>node</code>的包管理工具，可以利用它安装<code>gulp</code>所需的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-HP-Pavilion-dv4-Notebook-PC:~$ npm -v</div><div class="line">3.5.2</div></pre></td></tr></table></figure></p>
-<p>这同样能得到<code>npm</code>的版本号，装<code>Node</code>时已经自动安装了<code>npm</code><br></p>
-            <p class="article-more-link">
-                <a href="/2016/05/08/node-gulp/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-linux-cmd" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/04/30/linux-cmd/">Linux常用命令</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/04/30/linux-cmd/">
-            <time datetime="2016-04-29T16:00:00.000Z" itemprop="datePublished">2016-04-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>废了一点时间，装了两次<code>Ubuntu</code>才真正装好，因为装的是双系统，主系统是<code>win10</code>，刚入手<code>Ubuntu</code>还对命令不是很熟悉，所以首先学习下<code>Linux</code>下的常用命令。说实在话，<code>Ubuntu</code>好用的不是一丁点，现在基本都不怎么使用<code>win10</code>了</p>
-<h4 id="Terminal-终端-的使用技巧"><a href="#Terminal-终端-的使用技巧" class="headerlink" title="Terminal(终端)的使用技巧"></a>Terminal(终端)的使用技巧</h4><hr>
-<blockquote>
-<p><code>Up键</code>: 可以调出历史执行记录，快速执行命令<br><code>Down键</code>: 配合Up键选择历史执行记录执行命令<br><code>history</code>: 显示历史执行记录<br><code>Home键</code>: 移动光标到本行开头<br><code>End键</code>: 移动光标到本行末尾<br><code>PaUp键</code>: 向上翻页<br><code>PaDn键</code>: 向下翻页<br><code>Ctrl+C组合键</code>: 终止当前程序，某些程序也可以用q键退出<br><code>Ctrl+L组合键</code>: 清屏，也可以在终端输入<code>clear</code><br><code>Ctrl+Shift+C组合键</code>: 复制<br><code>Ctrl+Shift+V组合键</code>: 粘贴<br><code>Tab键</code>: 自动补全命令或文件名，省时准确</p>
-</blockquote>
-<h4 id="查看帮助说明-man-info-help"><a href="#查看帮助说明-man-info-help" class="headerlink" title="查看帮助说明 man/info/help"></a>查看帮助说明 man/info/help</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">man ls</div><div class="line">info ls</div><div class="line">ls --help</div></pre></td></tr></table></figure>
-<h4 id="下载工具-wget"><a href="#下载工具-wget" class="headerlink" title="下载工具 wget"></a>下载工具 wget</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ wget http://luckyw.cn/img/1.jpg</div><div class="line">--2016-4-29 20:30:36--  http://luckyw.cn/img/1.jpg</div><div class="line">正在解析主机 luckyw.cn (luckyw.cn)... 166.62.28.80</div><div class="line">正在连接 luckyw.cn (luckyw.cn)|166.62.28.80|:80... 已连接。</div><div class="line">已发出 HTTP 请求，正在等待回应... 200 OK</div><div class="line">长度： 234838 (229K) [image/jpeg]</div><div class="line">正在保存至: “1.jpg”</div><div class="line"></div><div class="line">1.jpg               100%[===================&gt;] 229.33K   416KB/s    in 0.6s</div><div class="line"></div><div class="line">2016-4-29 20:30:40 (416 KB/s) - 已保存 “1.jpg” [234838/234838])</div></pre></td></tr></table></figure>
-<h4 id="查看当前所在的工作目录的全路径-pwd"><a href="#查看当前所在的工作目录的全路径-pwd" class="headerlink" title="查看当前所在的工作目录的全路径 pwd"></a>查看当前所在的工作目录的全路径 pwd</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">leo@leo-PC:~$ pwd</div><div class="line">/home/leo</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2016/04/30/linux-cmd/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-js-prototype-ajax" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/04/24/js-prototype-ajax/">原生JS写Ajax的请求函数</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/04/24/js-prototype-ajax/">
-            <time datetime="2016-04-23T16:00:00.000Z" itemprop="datePublished">2016-04-24</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JS/">JS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JS/">JS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="JS原生ajax"><a href="#JS原生ajax" class="headerlink" title="JS原生ajax"></a>JS原生ajax</h4><hr>
-<p><code>ajax</code>:一种请求数据的方式，不需要刷新整个页面<br><code>ajax</code>的技术核心是<code>XMLHttpRequest</code>对象<br><code>ajax</code>请求过程:创建<code>XMLHttpRequest</code>对象、连接服务器、发送请求、接收响应数据<br>下面简单封装一个函数，之后稍作解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">ajax(&#123;</div><div class="line">    url: &quot;./TestXHR.aspx&quot;,//请求地址</div><div class="line">    type: &quot;POST&quot;,//请求方式</div><div class="line">    data: &#123;name: &quot;super&quot;, age: 20&#125;,//请求参数</div><div class="line">    dataType: &quot;json&quot;,</div><div class="line">    success: function (response, xml) &#123;</div><div class="line">		//此处放成功后执行的代码</div><div class="line">    &#125;,</div><div class="line">    fail: function (status) &#123;</div><div class="line">		//此处放失败后执行的代码</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">function ajax(options) &#123;</div><div class="line">    options = options || &#123;&#125;;</div><div class="line">    options.type = (options.type || &quot;GET&quot;).toUpperCase();</div><div class="line">    options.dataType = options.dataType || &quot;json&quot;;</div><div class="line">    var params = formatParams(options.data);</div><div class="line">	//创建 - IE6 - 第一步</div><div class="line">    if (window.XMLHttpRequest) &#123;</div><div class="line">        var xhr = new XMLHttpRequest();</div><div class="line">    &#125; else &#123;//IE6及其以下版本浏览器</div><div class="line">        var xhr = new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);</div><div class="line">    &#125;</div><div class="line">	//连接和发送 - 第二步</div><div class="line">    if (options.type == &quot;GET&quot;) &#123;</div><div class="line">        xhr.open(&quot;GET&quot;, options.url + &quot;?&quot; + params, true);</div><div class="line">        xhr.send(null);</div><div class="line">    &#125; else if (options.type == &quot;POST&quot;) &#123;</div><div class="line">        xhr.open(&quot;POST&quot;, options.url, true);</div><div class="line">		//设置表单提交时的内容类型</div><div class="line">        xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);</div><div class="line">        xhr.send(params);</div><div class="line">    &#125;</div><div class="line">	//接收 - 第三步</div><div class="line">    xhr.onreadystatechange = function () &#123;</div><div class="line">        if (xhr.readyState == 4) &#123;</div><div class="line">            var status = xhr.status;</div><div class="line">            if (status &gt;= 200 &amp;&amp; status &lt; 300) &#123;</div><div class="line">                options.success &amp;&amp; options.success(xhr.responseText, xhr.responseXML);</div><div class="line">            &#125; else &#123;</div><div class="line">                options.fail &amp;&amp; options.fail(status);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//格式化参数</div><div class="line">function formatParams(data) &#123;</div><div class="line">    var arr = [];</div><div class="line">    for (var name in data) &#123;</div><div class="line">        arr.push(encodeURIComponent(name) + &quot;=&quot; + encodeURIComponent(data[name]));</div><div class="line">    &#125;</div><div class="line">    arr.push((&quot;v=&quot; + Math.random()).replace(&quot;.&quot;, &quot;&quot;));</div><div class="line">    return arr.join(&quot;&amp;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/04/24/js-prototype-ajax/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">下一页 &raquo;</a>
     </nav>
@@ -815,6 +874,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1120,82 +1255,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/04/arukas-create-ss/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="arukas.io免费docker搭建ss服务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
-                            <p class="item-title"><a href="/2016/09/04/arukas-create-ss/" class="title">arukas.io免费docker搭建ss服务</a></p>
-                            <p class="item-date"><time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/28/one-cmdline/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f8u7r47vjqj308s08s0su.jpg)" alt="一行代码系列" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
-                            <p class="item-title"><a href="/2016/08/28/one-cmdline/" class="title">一行代码系列</a></p>
-                            <p class="item-date"><time datetime="2016-08-27T16:00:00.000Z" itemprop="datePublished">2016-08-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/08/21/ubuntu-lamp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f8qtdevfadj30b40b43yz.jpg)" alt="Ubuntu16.04搭建LAMP环境" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
-                            <p class="item-title"><a href="/2016/08/21/ubuntu-lamp/" class="title">Ubuntu16.04搭建LAMP环境</a></p>
-                            <p class="item-date"><time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1206,7 +1265,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 11.43px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1310,8 +1369,7 @@
 </footer>
 
         
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-
+    
     <script type="text/javascript">
     var duoshuoQuery = {short_name:'leoyaojy'};
     (function() {
@@ -1324,6 +1382,7 @@
     })();
     </script>
 
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
 
 
 

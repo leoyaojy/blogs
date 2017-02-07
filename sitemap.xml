@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.luckyw.cn/2017/02/04/music-visualize/</loc>
+    
+    <lastmod>2017-02-07T12:50:48.305Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2017/01/21/canvas-easy-game/</loc>
+    
+    <lastmod>2017-02-07T10:48:52.445Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2016/02/15/html5-canvas/</loc>
+    
+    <lastmod>2017-02-07T09:42:26.370Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2017/01/14/music-share/</loc>
+    
+    <lastmod>2017-02-07T09:18:57.471Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2017/01/07/you-must-know-github/</loc>
+    
+    <lastmod>2017-02-03T13:08:09.687Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2016/03/28/css-flexbox/</loc>
+    
+    <lastmod>2017-01-27T02:31:03.432Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luckyw.cn/2016/08/07/ubuntu-software-list/</loc>
+    
+    <lastmod>2017-01-13T10:03:01.779Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.luckyw.cn/2016/12/31/chrome-plugin-dev/</loc>
     
     <lastmod>2017-01-07T09:19:51.471Z</lastmod>
@@ -40,13 +89,6 @@
     <loc>https://blog.luckyw.cn/2016/04/30/linux-cmd/</loc>
     
     <lastmod>2016-12-21T03:20:48.528Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.luckyw.cn/2016/08/07/ubuntu-software-list/</loc>
-    
-    <lastmod>2016-12-16T04:19:19.324Z</lastmod>
     
   </url>
   
@@ -254,13 +296,6 @@
   </url>
   
   <url>
-    <loc>https://blog.luckyw.cn/2016/02/15/html5-canvas/</loc>
-    
-    <lastmod>2016-11-20T10:56:48.260Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.luckyw.cn/2016/06/10/grub-rescue-solve/</loc>
     
     <lastmod>2016-11-20T10:55:42.309Z</lastmod>
@@ -341,13 +376,6 @@
     <loc>https://blog.luckyw.cn/2015/10/15/css-layout/</loc>
     
     <lastmod>2016-11-20T10:44:31.286Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.luckyw.cn/2016/03/28/css-flexbox/</loc>
-    
-    <lastmod>2016-11-20T10:43:05.897Z</lastmod>
     
   </url>
   
@@ -569,14 +597,14 @@
   </url>
   
   <url>
-    <loc>https://blog.luckyw.cn/tags/index.html</loc>
+    <loc>https://blog.luckyw.cn/categories/index.html</loc>
     
     <lastmod>2016-09-09T08:16:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.luckyw.cn/categories/index.html</loc>
+    <loc>https://blog.luckyw.cn/tags/index.html</loc>
     
     <lastmod>2016-09-09T08:16:08.000Z</lastmod>
     

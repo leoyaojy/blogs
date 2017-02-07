@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>canvas写个简单的小游戏 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="canvas,easy game">
+    <meta name="description" content="之前在HTML5 Canvas属性和方法汇总一文中，介绍过Canvas的各种属性以及方法的说明，并列举了自己写的一些Canvas demo，接下来开始写一个简单的小游戏吧，有多简单，这么说吧，代码不到100行，先上效果图:左侧为我们控制的控制板，右侧为假想的电脑控制的控制板体验小游戏链接: https://demo.luckyw.cn/code.html?path=tennis-game
+初始化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas写个简单的小游戏">
+<meta property="og:url" content="https://blog.luckyw.cn/2017/01/21/canvas-easy-game/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="之前在HTML5 Canvas属性和方法汇总一文中，介绍过Canvas的各种属性以及方法的说明，并列举了自己写的一些Canvas demo，接下来开始写一个简单的小游戏吧，有多简单，这么说吧，代码不到100行，先上效果图:左侧为我们控制的控制板，右侧为假想的电脑控制的控制板体验小游戏链接: https://demo.luckyw.cn/code.html?path=tennis-game
+初始化">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp">
+<meta property="og:updated_time" content="2017-02-07T10:48:52.445Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas写个简单的小游戏">
+<meta name="twitter:description" content="之前在HTML5 Canvas属性和方法汇总一文中，介绍过Canvas的各种属性以及方法的说明，并列举了自己写的一些Canvas demo，接下来开始写一个简单的小游戏吧，有多简单，这么说吧，代码不到100行，先上效果图:左侧为我们控制的控制板，右侧为假想的电脑控制的控制板体验小游戏链接: https://demo.luckyw.cn/code.html?path=tennis-game
+初始化">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                85
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                30
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-canvas-easy-game" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            canvas写个简单的小游戏
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/21/canvas-easy-game/">
+            <time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Html5/">Html5</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Html5/">Html5</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>之前在<a href="https://blog.luckyw.cn/2016/02/15/html5-canvas/">HTML5 Canvas属性和方法汇总</a>一文中，介绍过<code>Canvas</code>的各种属性以及方法的说明，并列举了自己写的一些<code>Canvas demo</code>，接下来开始写一个简单的小游戏吧，有多简单，这么说吧，代码不到100行，先上效果图:<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fci1rt8q2dj30m80go0su" alt=""><br>左侧为我们控制的控制板，右侧为假想的电脑控制的控制板<br>体验小游戏链接: <a href="https://demo.luckyw.cn/code.html?path=tennis-game" target="_blank" rel="external">https://demo.luckyw.cn/code.html?path=tennis-game</a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><hr>
+<p>首先在<code>html</code>页面中添加中添加一个<code>canvas</code>元素，并给出一个<code>id</code>用于在<code>js</code>代码中获取该元素并对其进行操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p>
+<p>然后就是对各种参数，注释中都有给出，我就不多说了，直接看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//获取canvas元素以及2d绘图环境c，以及设置canvas宽高为800x600</div><div class="line">var canvas = document.getElementById(&quot;canvas&quot;),</div><div class="line">    c = canvas.getContext(&quot;2d&quot;),</div><div class="line">    W = canvas.width = 800,</div><div class="line">    H = canvas.height = 600;</div><div class="line">var ballX = W / 2, ballY = H / 2, ballR = 10, ballVx = 10, ballVy = 2,	//球的位置、半径以及在X轴及Y轴的速度</div><div class="line">    panelW = 10, panelH = 100, panel1Y = (H - panelH) / 2, panel2Y = (H - panelH) / 2,	//控制板的宽高以及初始位置</div><div class="line">    player1Score = 0, player2Score = 0, winnerScore = 3,	//记录玩家的分数以及得了多少分算赢</div><div class="line">    isEnd = 0;	//判断是否比赛结束的变量，0为未结束，1为已结束</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="封装工具方法"><a href="#封装工具方法" class="headerlink" title="封装工具方法"></a>封装工具方法</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//绘制长方形(也就是控制板)</div><div class="line">function fillRect(x, y, w, h, style) &#123;</div><div class="line">    c.fillStyle = style;</div><div class="line">    c.fillRect(x, y, w, h);</div><div class="line">&#125;</div><div class="line">//绘制圆(也就是游戏中的球)</div><div class="line">function fillCircle(x, y, r, style) &#123;</div><div class="line">    c.fillStyle = style;</div><div class="line">    c.beginPath();</div><div class="line">    c.arc(x, y, r, 0, Math.PI * 2);</div><div class="line">    c.fill();</div><div class="line">&#125;</div><div class="line">//绘制文字(得分和显示输赢)</div><div class="line">function fillText(txt, x, y, font, style) &#123;</div><div class="line">    c.fillStyle = style || &quot;white&quot;;</div><div class="line">    c.font = font || &quot;40px DejaVu Sans Mono&quot;;</div><div class="line">    c.textAlign = &quot;center&quot;;</div><div class="line">    c.textBaseline = &quot;middle&quot;;</div><div class="line">    c.fillText(txt, x, y);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h4><hr>
+<p>我们需要在<code>canvas</code>元素上添加监听事件，一是当结束的也就是<code>isEnd</code>为1的时候，当鼠标点击在<code>canvas</code>上的时候再来一把游戏，重置玩家分数以及重启动画绘制，二是我们需要控制左侧控制板的运动，不过只需要在Y轴运动即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">canvas.addEventListener(&quot;click&quot;, function () &#123;</div><div class="line">    if (isEnd) &#123;</div><div class="line">        player1Score = 0;</div><div class="line">        player2Score = 0;</div><div class="line">        isEnd = 0;</div><div class="line">        animate();	//主要的绘制方法</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">//获取鼠标在canvas上实际Y轴位置减去控制板的高度也就是控制板实际绘制的初始位置</div><div class="line">canvas.addEventListener(&quot;mousemove&quot;, function (e) &#123;</div><div class="line">    panel1Y = e.clientY - canvas.getBoundingClientRect().top - panelH / 2;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="边界判断"><a href="#边界判断" class="headerlink" title="边界判断"></a>边界判断</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//球边界判断</div><div class="line">if (ballX - ballR - panelW &lt; 0) &#123;</div><div class="line">    if (ballY &gt; panel1Y &amp;&amp; ballY &lt; panel1Y + panelH) &#123;</div><div class="line">        ballVx = -ballVx;</div><div class="line">        ballVy = (ballY - (panel1Y + panelH / 2)) * .3;</div><div class="line">    &#125; else &#123;</div><div class="line">        player2Score++;</div><div class="line">        ballReset();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">if (ballX + ballR + panelW &gt; W) &#123;</div><div class="line">    if (ballY &gt; panel2Y &amp;&amp; ballY &lt; panel2Y + panelH) &#123;</div><div class="line">        ballVx = -ballVx;</div><div class="line">        ballVy = (ballY - (panel2Y + panelH / 2)) * .3;</div><div class="line">    &#125; else &#123;</div><div class="line">        player1Score++;</div><div class="line">        ballReset();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">if (ballY + ballR &lt; 0 || ballY - ballR &gt; H) &#123;</div><div class="line">    ballVy = -ballVy;</div><div class="line">&#125;</div><div class="line">//用于控制右侧控制板的运动</div><div class="line">if (panel2Y + panelH / 2 &lt; ballY - 40) &#123;</div><div class="line">    panel2Y = panel2Y + 5;</div><div class="line">&#125; else if (panel2Y + panelH / 2 &gt; ballY + 40) &#123;</div><div class="line">    panel2Y = panel2Y - 5;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="执行动画"><a href="#执行动画" class="headerlink" title="执行动画"></a>执行动画</h4><hr>
+<p>我这里直接在<code>animate</code>方法里使用<code>requestAnimationFrame(animate)</code>，更兼容的方法应该是以下这样，为了偷个懒就没写兼容写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var RAF = (function () &#123;</div><div class="line">    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (callback) &#123;</div><div class="line">            window.setTimeout(callback, 1000 / 60);</div><div class="line">        &#125;</div><div class="line">&#125;)();</div><div class="line">RAF(animate);</div></pre></td></tr></table></figure></p>
+<p>到此，该小游戏的介绍到此结束，简单吧</p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2017/01/21/canvas-easy-game/" target="_blank" title="canvas写个简单的小游戏">canvas写个简单的小游戏</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2017/01/21/canvas-easy-game/" target="_blank" title="canvas写个简单的小游戏">https://blog.luckyw.cn/2017/01/21/canvas-easy-game/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-number">1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装工具方法"><span class="toc-number">2.</span> <span class="toc-text">封装工具方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加事件"><span class="toc-number">3.</span> <span class="toc-text">添加事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#边界判断"><span class="toc-number">4.</span> <span class="toc-text">边界判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行动画"><span class="toc-number">5.</span> <span class="toc-text">执行动画</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+        <a href="/2017/02/04/music-visualize/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    音乐可视化
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/01/14/music-share/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">个人码代码时喜欢听的音乐分享</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/01/21/canvas-easy-game/" data-title="canvas写个简单的小游戏" data-url="https://blog.luckyw.cn/2017/01/21/canvas-easy-game/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/music-share/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci0zflpzbj30rs0rsdhc)" alt="个人码代码时喜欢听的音乐分享" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Music/">Music</a></p>
+                            <p class="item-title"><a href="/2017/01/14/music-share/" class="title">个人码代码时喜欢听的音乐分享</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
+                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
+                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
+                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
+                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
+                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
+                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
+                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
