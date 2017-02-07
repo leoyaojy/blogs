@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.luckyw.cn/2017/01/14/music-share/</loc>
+    
+    <lastmod>2017-02-07T13:05:52.694Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.luckyw.cn/2017/02/04/music-visualize/</loc>
     
     <lastmod>2017-02-07T12:50:48.305Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://blog.luckyw.cn/2016/02/15/html5-canvas/</loc>
     
     <lastmod>2017-02-07T09:42:26.370Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.luckyw.cn/2017/01/14/music-share/</loc>
-    
-    <lastmod>2017-02-07T09:18:57.471Z</lastmod>
     
   </url>
   
