@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                84
+                89
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                32
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,319 @@
 
             
             <section id="main">
+    <article id="post-free-google-mirror" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/10/free-google-mirror/">免费日本樱花搭建谷歌镜像</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/10/free-google-mirror/">
+            <time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Google/">Google</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Google/">Google</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
+<p>日本樱花由于之前我已经在<a href="//blog.luckyw.cn/2016/09/04/arukas-create-ss/">arukas.io免费docker搭建ss服务</a>一文中介绍过，所以不再赘述了，不了解的可以先去看看，我们可以利用它来搭建<code>SS、VPS、VPN</code>等等，本文介绍的是怎么利用它来搭建谷歌镜像，利用的是<code>cuber大大</code>写的<code>ngx_http_google_filter_module</code>——<code>Nginx Google 扩展</code><br>因为不知道什么时候日本樱花会突然停止测试，所以有效性待查，失效的话我会及时更新告诉各位亲</p>
+<h4 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h4><hr>
+<p>由于我本机用的<code>linux</code>系统是<code>ubuntu</code>，对它相比较其它<code>linux</code>系统而言熟悉些，所以本测试在日本樱花服务安装的是<code>ubuntu</code>系统，如果你有其它的系统可以用其它的，安装过程见下图:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9m3916a4cj30w40e60w0.jpg" alt=""><br><code>docker</code>镜像地址:<code>tutum/ubuntu:latest</code>，看不清的点图放大看，最后点击创建，然后启动服务等待完成也就是<code>running</code>状态，然后点击<code>watch</code>查看输出的信息也就是<code>ssh</code>的随机密码<br><strong>注意</strong>:如果点击<code>watch</code>之后没反应，那么反复点击吧，不过别太快，大概十秒一次就可以，如果将近五六分钟还没反应建议重启以下，我也是这么熬过来的╮(╯▽╰)╭</p>
+<h4 id="安装nginx反向代理谷歌镜像"><a href="#安装nginx反向代理谷歌镜像" class="headerlink" title="安装nginx反向代理谷歌镜像"></a>安装nginx反向代理谷歌镜像</h4><hr>
+<p>首先我们先从<code>app</code>的<code>port</code>中查找到我们的服务器的<code>ip</code>和端口号，详见下图:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9m3r1ciwoj30i101pt95.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/10/free-google-mirror/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-ubuntu-heroku-node" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/05/ubuntu-heroku-node/">heroku线上部署node小程序</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/05/ubuntu-heroku-node/">
+            <time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Node/">Node</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><hr>
+<p>首先我们需要个<code>heroku</code>账户，可以点<a href="https://www.heroku.com/">这里</a>申请，然后我们需要在本地下载安装它的工具包(我这里只讲<code>Ubuntu</code>，其他请转<a href="https://devcenter.heroku.com/articles/heroku-command-line">https://devcenter.heroku.com/articles/heroku-command-line</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh</div></pre></td></tr></table></figure></p>
+<p>如果上面代码安装失败(可能只是我的电脑问题)，并报认证之类的错误，那就把<code>https://toolbelt.heroku.com/install-ubuntu.sh</code>的代码复制到本地保存为<code>install.sh</code>,将第13行的<code>http</code>改为<code>https</code>,如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">&#123;</div><div class="line">    echo &quot;This script requires superuser access to install apt packages.&quot;</div><div class="line">    echo &quot;You will be prompted for your password by sudo.&quot;</div><div class="line"></div><div class="line">    # clear any previous sudo permission</div><div class="line">    sudo -k</div><div class="line"></div><div class="line">    # run inside sudo</div><div class="line">    sudo sh &lt;&lt;SCRIPT</div><div class="line"></div><div class="line">  # add heroku repository to apt</div><div class="line">  echo &quot;deb https://toolbelt.heroku.com/ubuntu ./&quot; &gt; /etc/apt/sources.list.d/heroku.list</div><div class="line"></div><div class="line">  # install heroku&apos;s release key for package verification</div><div class="line">  wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -</div><div class="line"></div><div class="line">  # update your sources</div><div class="line">  apt-get update</div><div class="line"></div><div class="line">  # install the toolbelt</div><div class="line">  apt-get install -y heroku-toolbelt</div><div class="line"></div><div class="line">  # install ruby if needed (vervet)</div><div class="line">  if ! type ruby &gt;/dev/null 2&gt;&amp;1; then</div><div class="line">    apt-get install -y ruby</div><div class="line">  fi</div><div class="line"></div><div class="line">SCRIPT</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后再执行<code>sh install.sh</code>应该就没问题了<br></p>
+            <p class="article-more-link">
+                <a href="/2016/10/05/ubuntu-heroku-node/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-py3-douban-movie" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/27/py3-douban-movie/">Python3爬取豆瓣电影保存到MySQL数据库</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/27/py3-douban-movie/">
+            <time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python，Mysql/">Python，Mysql</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="48行代码实现Python3爬取豆瓣电影排行榜"><a href="#48行代码实现Python3爬取豆瓣电影排行榜" class="headerlink" title="48行代码实现Python3爬取豆瓣电影排行榜"></a>48行代码实现Python3爬取豆瓣电影排行榜</h4><hr>
+<p>代码基于<code>python3</code>，用到的类库有:</p>
+<blockquote>
+<p><code>requests</code>:通过伪造请求头或设置代理等方式获取页面内容，<a href="http://docs.python-requests.org/en/master/">参考文档</a><br><code>BeautifulSoup</code>:对页面进行解析，提取数据，<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">参考文档</a><br><code>PyMySQL</code>:<code>python3</code>版本中用于操作<code>MySQL</code>数据库，<code>python2</code>中则使用<code>mysqldb</code>，<a href="https://github.com/PyMySQL/PyMySQL">Github</a></p>
+</blockquote>
+<p>pip安装用到的几个类库:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pip install requests</div><div class="line">pip install bs4</div><div class="line">pip install pymysql</div></pre></td></tr></table></figure></p>
+<h4 id="分析豆瓣电影页面"><a href="#分析豆瓣电影页面" class="headerlink" title="分析豆瓣电影页面"></a>分析豆瓣电影页面</h4><hr>
+<p><strong>页面分析:</strong><br>爬取数据之前，我们都需要对页面进行分析，看我们可以从中提取到哪些数据，从下图我们看到豆瓣电影top250的页面结构，我们可以从中提取出<code>排行榜(rank)、电影名字(name)、电影详情页链接(link)、电影海报(poster)、电影评分(score)、电影评论(quote)</code>等，我在图中进行了标注<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9cd7l52fnj30qk0cpn1e.jpg" alt=""><br><strong>URL分析:</strong><br>通过点击分页我们可以发现URL的格式为:<code>https://movie.douban.com/top250?start=num&amp;filter=</code><br>其中<code>num</code>表示<code>25</code>的倍数的数字，最小是<code>0</code>也就是第一页，最大为<code>225</code>也就是最后一页，这可以作为我们爬取页面的限制条件，<code>filter</code>为过滤条件这里可不用管<br></p>
+            <p class="article-more-link">
+                <a href="/2016/09/27/py3-douban-movie/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-linux-crontab" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/18/linux-crontab/">Linux crontab 定时任务</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/18/linux-crontab/">
+            <time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>今天是个特殊的日子，不用说大家也知道，在这里我只想说八个字:<strong>勿忘国耻，振兴中华</strong></p>
+<h4 id="什么是crontab？"><a href="#什么是crontab？" class="headerlink" title="什么是crontab？"></a>什么是crontab？</h4><hr>
+<p><code>crontab</code>命令是<code>cron table</code>的简写，它是<code>cron</code>的配置文件，也叫作任务列表，我们可以在下列目录下找到相关配置文件</p>
+<blockquote>
+<p><code>/var/spool/cron/</code>:存放所有用户定义要定期执行的任务，文件名与用户名一致<br><code>/etc/crontab</code>:系统周期性所要执行的任务<br><code>/etc/cron.d/</code>:目录用来存放任何要执行的<code>crontab</code>文件或脚本<br>其他目录:<code>/etc/cron.hourly、/etc/cron.daily、/etc/cron.weekly、/etc/cron.monthly</code>，各代表存放每小时、每天、每星期、每月执行一次的任务</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/09/18/linux-crontab/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-php-upload-download" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/11/php-upload-download/">php实现图片上传与下载</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/11/php-upload-download/">
+            <time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Php/">Php</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Php/">Php</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>本文接下来的内容讲的是如何通过<code>php</code>实现图片的上传与下载</p>
+<h4 id="构建上传文件前端页面"><a href="#构建上传文件前端页面" class="headerlink" title="构建上传文件前端页面"></a>构建上传文件前端页面</h4><hr>
+<p>这里我借助<code>bootstrap</code>前端框架以及<code>fontawesome</code>图标库，内容很简单就一个图片上传框以及一个提交按钮，代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!--form.php--&gt;</div><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;form action=&quot;upload_del.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; class=&quot;form-horizontal&quot;&gt;</div><div class="line">        &lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</div><div class="line">        &lt;div class=&quot;btn btn-success fileBox&quot;&gt;</div><div class="line">            &lt;span&gt;</div><div class="line">                &lt;i class=&quot;fa fa-file-image-o&quot;&gt;&lt;/i&gt;</div><div class="line">                上传图片</div><div class="line">            &lt;/span&gt;</div><div class="line">            &lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传&quot; class=&quot;btn btn-primary&quot;&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>其中:<br><code>&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;2097152&quot;&gt;</code>隐藏域主要是用来现在文件上传大小的，设置为<code>2M=&gt;2*1024*1024=&gt;2097152</code><br><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; name=&quot;file[]&quot; multiple&gt;</code>设置接收文件类型为图片格式，可多张图片上传，注意<code>name</code>属性值为<code>file[]</code>时服务器可接收多图片<br></p>
+            <p class="article-more-link">
+                <a href="/2016/09/11/php-upload-download/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-arukas-create-ss" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -537,323 +850,6 @@
 
 
 
-    <article id="post-nodejs-mailer" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/05/nodejs-mailer/">使用nodejs发送邮件</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/05/nodejs-mailer/">
-            <time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node/">Node</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近一些天在学<code>python</code>，我觉得这门语言这门简单又很好玩，为什么不把这门语言当做程序员学语言的敲门砖了，而选择那么复杂的<code>C语言</code>。在学<code>python</code>的过程中，有学习到<code>python</code>有可以发送邮件的功能，我就在想<code>node</code>会不会也有发送邮件的模块工具了，果不其然，让我找到一个，也就是本文所要介绍到的<code>nodemailer</code>了，<code>npm</code>官方地址:<a href="https://www.npmjs.com/package/nodemailer">https://www.npmjs.com/package/nodemailer</a></p>
-<h4 id="python发送邮件简单实现"><a href="#python发送邮件简单实现" class="headerlink" title="python发送邮件简单实现"></a>python发送邮件简单实现</h4><hr>
-<p>不多说，直接看代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#-*-coding:utf8-*-</div><div class="line">import smtplib</div><div class="line">from email.mime.text import MIMEText</div><div class="line"></div><div class="line">mail_host=&apos;smtp.126.com&apos;	//设置主机，如果是QQ请换成smtp.qq.com</div><div class="line">mail_user=&apos;xxxxxxxx@126.com&apos;		//账户</div><div class="line">mail_pass = &apos;这里填入授权码，下面会说到&apos;	//邮箱授权码，非密码</div><div class="line"></div><div class="line">me = &apos;Leo Angel&apos;+&apos;&lt;&apos;+mail_user+&apos;&gt;&apos; //发件人</div><div class="line">to = &apos;xxxxxxxxx@qq.com&apos; 			    //收件人</div><div class="line">msg = MIMEText(&quot;Test&quot;,_subtype=&apos;plain&apos;,_charset=&apos;utf-8&apos;)</div><div class="line">msg[&apos;Subject&apos;] = &apos;Hello&apos;	//主题</div><div class="line">msg[&apos;From&apos;] = me		//发件人</div><div class="line">msg[&apos;To&apos;] = to			//收件人</div><div class="line">try:</div><div class="line">    server = smtplib.SMTP()		//创建一个SMTP对象</div><div class="line">    server.connect(mail_host)		//连接主机</div><div class="line">    server.login(mail_user,mail_pass)	//登录账号</div><div class="line">    server.sendmail(me,to,msg.as_string())	//发送邮件</div><div class="line">    server.close()				//关闭SMTP对象</div><div class="line">    print &apos;邮件发送成功&apos;			//打印发送成功提示信息</div><div class="line">except Exception as e:</div><div class="line">    print e			//打印错误日志</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/08/05/nodejs-mailer/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-requests-socks-proxy" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/30/requests-socks-proxy/">如何使requests通过socks代理工作</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/30/requests-socks-proxy/">
-            <time datetime="2016-07-29T16:00:00.000Z" itemprop="datePublished">2016-07-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
-<p>鉴于国内的网络环境，想爬取一些被墙的网站，只能通过代理或其他方式，而我使用的是<code>SS代理</code>，<code>SS</code>使用的是<code>socks5</code>代理方式，而<code>requests</code>爬取网站内容的时候是不支持<code>socks</code>代理的，那么如何使<code>requests</code>通过<code>socks</code>代理工作？<br>其实，我们发现在<code>2016-04-29</code>发布的<a href="https://github.com/kennethreitz/requests/blob/master/HISTORY.rst#2100-2016-04-29" target="_blank" rel="external"><code>requests 2.10.0</code></a>版本中，提供了对<code>socks</code>代理工作的支持，前提是需要安装<code>PySocks</code>，安装代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pysocks</div></pre></td></tr></table></figure></p>
-<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">proxies = &#123;</div><div class="line">    &apos;http&apos;:&apos;socks5://yourproxy:port&apos;,</div><div class="line">    &apos;https&apos;:&apos;socks5://yourproxy:port&apos;</div><div class="line">&#125;</div><div class="line">requests.get(url,proxies=proxies)</div></pre></td></tr></table></figure>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-mzitu" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/25/mzitu/">爬取并下载妹子图网站图片</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/25/mzitu/">
-            <time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="github地址-https-github-com-leoyaojy-mzitu"><a href="#github地址-https-github-com-leoyaojy-mzitu" class="headerlink" title="github地址 : https://github.com/leoyaojy/mzitu"></a>github地址 : <a href="https://github.com/leoyaojy/mzitu">https://github.com/leoyaojy/mzitu</a></h4><hr>
-<p>主要分为三个版本:</p>
-<blockquote>
-<p>单页版、单图版、全图版</p>
-</blockquote>
-<h4 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h4><hr>
-<ul>
-<li>Ubuntu 16.04</li>
-<li>Python 2.7.12</li>
-<li>Pycharm 2016.2</li>
-</ul>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/leoyaojy/mzitu.git</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd mzitu</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python page.py | single.py | full.py</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2016/07/25/mzitu/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-css-content-intro" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/17/css-content-intro/">CSS content属性介绍</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/17/css-content-intro/">
-            <time datetime="2016-07-16T16:00:00.000Z" itemprop="datePublished">2016-07-17</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>CSS中主要的伪元素有四个:<code>before、after、first-letter、first-line</code><br>在<code>before</code>、<code>after</code>伪元素选择器中，常用来清除浮动，有一个<code>content</code>属性，能够实现页面中的内容插入</p>
-<h4 id="纯文本插入"><a href="#纯文本插入" class="headerlink" title="纯文本插入"></a>纯文本插入</h4><hr>
-<p>效果如下:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f7uktkwjxnj305u02edfu.jpg" alt=""><br>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*css*/</div><div class="line">h1:after&#123;</div><div class="line">    content: &quot; World&quot;</div><div class="line">&#125;</div><div class="line">h2:before&#123;</div><div class="line">    content: &quot;Leo &quot;</div><div class="line">&#125;</div><div class="line">&lt;!-- html --&gt;</div><div class="line">&lt;h1&gt;Hello&lt;/h1&gt;</div><div class="line">&lt;h2&gt;Angel&lt;/h2&gt;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/07/17/css-content-intro/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-css-triangle" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/07/10/css-triangle/">CSS制作小三角</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/07/10/css-triangle/">
-            <time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><hr>
-<p><strong>CSS盒模型</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f7ui3zyktgj30cn09gjru.jpg" alt=""></p>
-<blockquote>
-<ol>
-<li>盒模型 = <code>Margin + Border + Padding + Content</code></li>
-<li>上下左右边框交界处出呈现平滑的斜线. 利用这个特点, 通过设置不同的上下左右边框宽度或者颜色可以得到小三角, 小梯形等</li>
-<li>调整宽度大小可以调节三角形形状</li>
-</ol>
-</blockquote></p>
-            <p class="article-more-link">
-                <a href="/2016/07/10/css-triangle/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
     </nav>
@@ -866,6 +862,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/05/vim-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe40oshbr8j30m80m83zm.jpg)" alt="Vim常用命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/03/05/vim-cmd/" class="title">Vim常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/25/ubuntu-tips/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f94bwh2hvoj30b50b5wf9.jpg)" alt="ubuntu所遇问题汇总" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2017/02/25/ubuntu-tips/" class="title">ubuntu所遇问题汇总</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/18/arukas-api-getss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="调用arukas接口实时获取ss配置信息" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2017/02/18/arukas-api-getss/" class="title">调用arukas接口实时获取ss配置信息</a></p>
+                            <p class="item-date"><time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/11/express-jade/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmmutcn5wj30go0got8s)" alt="Express之Jade模板引擎" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Express/">Express</a></p>
+                            <p class="item-title"><a href="/2017/02/11/express-jade/" class="title">Express之Jade模板引擎</a></p>
+                            <p class="item-date"><time datetime="2017-02-10T16:00:00.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -902,6 +974,25 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
                             <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
                             <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/vue-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmn6zg7sxj30dw0dw0sr)" alt="Vue入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vue/">Vue</a></p>
+                            <p class="item-title"><a href="/2017/01/14/vue-learn/" class="title">Vue入门初体验</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
                         </div>
                     </li>
                 
@@ -1152,101 +1243,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
-                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
-                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
-                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
-                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
-                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
-                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
-                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1257,7 +1253,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 

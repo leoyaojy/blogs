@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                84
+                89
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                32
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,323 @@
 
             
             <section id="main">
+    <article id="post-nodejs-mailer" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/05/nodejs-mailer/">使用nodejs发送邮件</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/05/nodejs-mailer/">
+            <time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Node/">Node</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>最近一些天在学<code>python</code>，我觉得这门语言这门简单又很好玩，为什么不把这门语言当做程序员学语言的敲门砖了，而选择那么复杂的<code>C语言</code>。在学<code>python</code>的过程中，有学习到<code>python</code>有可以发送邮件的功能，我就在想<code>node</code>会不会也有发送邮件的模块工具了，果不其然，让我找到一个，也就是本文所要介绍到的<code>nodemailer</code>了，<code>npm</code>官方地址:<a href="https://www.npmjs.com/package/nodemailer">https://www.npmjs.com/package/nodemailer</a></p>
+<h4 id="python发送邮件简单实现"><a href="#python发送邮件简单实现" class="headerlink" title="python发送邮件简单实现"></a>python发送邮件简单实现</h4><hr>
+<p>不多说，直接看代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#-*-coding:utf8-*-</div><div class="line">import smtplib</div><div class="line">from email.mime.text import MIMEText</div><div class="line"></div><div class="line">mail_host=&apos;smtp.126.com&apos;	//设置主机，如果是QQ请换成smtp.qq.com</div><div class="line">mail_user=&apos;xxxxxxxx@126.com&apos;		//账户</div><div class="line">mail_pass = &apos;这里填入授权码，下面会说到&apos;	//邮箱授权码，非密码</div><div class="line"></div><div class="line">me = &apos;Leo Angel&apos;+&apos;&lt;&apos;+mail_user+&apos;&gt;&apos; //发件人</div><div class="line">to = &apos;xxxxxxxxx@qq.com&apos; 			    //收件人</div><div class="line">msg = MIMEText(&quot;Test&quot;,_subtype=&apos;plain&apos;,_charset=&apos;utf-8&apos;)</div><div class="line">msg[&apos;Subject&apos;] = &apos;Hello&apos;	//主题</div><div class="line">msg[&apos;From&apos;] = me		//发件人</div><div class="line">msg[&apos;To&apos;] = to			//收件人</div><div class="line">try:</div><div class="line">    server = smtplib.SMTP()		//创建一个SMTP对象</div><div class="line">    server.connect(mail_host)		//连接主机</div><div class="line">    server.login(mail_user,mail_pass)	//登录账号</div><div class="line">    server.sendmail(me,to,msg.as_string())	//发送邮件</div><div class="line">    server.close()				//关闭SMTP对象</div><div class="line">    print &apos;邮件发送成功&apos;			//打印发送成功提示信息</div><div class="line">except Exception as e:</div><div class="line">    print e			//打印错误日志</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/08/05/nodejs-mailer/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-requests-socks-proxy" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/30/requests-socks-proxy/">如何使requests通过socks代理工作</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/30/requests-socks-proxy/">
+            <time datetime="2016-07-29T16:00:00.000Z" itemprop="datePublished">2016-07-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr>
+<p>鉴于国内的网络环境，想爬取一些被墙的网站，只能通过代理或其他方式，而我使用的是<code>SS代理</code>，<code>SS</code>使用的是<code>socks5</code>代理方式，而<code>requests</code>爬取网站内容的时候是不支持<code>socks</code>代理的，那么如何使<code>requests</code>通过<code>socks</code>代理工作？<br>其实，我们发现在<code>2016-04-29</code>发布的<a href="https://github.com/kennethreitz/requests/blob/master/HISTORY.rst#2100-2016-04-29" target="_blank" rel="external"><code>requests 2.10.0</code></a>版本中，提供了对<code>socks</code>代理工作的支持，前提是需要安装<code>PySocks</code>，安装代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pysocks</div></pre></td></tr></table></figure></p>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">proxies = &#123;</div><div class="line">    &apos;http&apos;:&apos;socks5://yourproxy:port&apos;,</div><div class="line">    &apos;https&apos;:&apos;socks5://yourproxy:port&apos;</div><div class="line">&#125;</div><div class="line">requests.get(url,proxies=proxies)</div></pre></td></tr></table></figure>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-mzitu" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/25/mzitu/">爬取并下载妹子图网站图片</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/25/mzitu/">
+            <time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished">2016-07-25</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="github地址-https-github-com-leoyaojy-mzitu"><a href="#github地址-https-github-com-leoyaojy-mzitu" class="headerlink" title="github地址 : https://github.com/leoyaojy/mzitu"></a>github地址 : <a href="https://github.com/leoyaojy/mzitu">https://github.com/leoyaojy/mzitu</a></h4><hr>
+<p>主要分为三个版本:</p>
+<blockquote>
+<p>单页版、单图版、全图版</p>
+</blockquote>
+<h4 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h4><hr>
+<ul>
+<li>Ubuntu 16.04</li>
+<li>Python 2.7.12</li>
+<li>Pycharm 2016.2</li>
+</ul>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/leoyaojy/mzitu.git</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd mzitu</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python page.py | single.py | full.py</div></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2016/07/25/mzitu/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-css-content-intro" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/17/css-content-intro/">CSS content属性介绍</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/17/css-content-intro/">
+            <time datetime="2016-07-16T16:00:00.000Z" itemprop="datePublished">2016-07-17</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>CSS中主要的伪元素有四个:<code>before、after、first-letter、first-line</code><br>在<code>before</code>、<code>after</code>伪元素选择器中，常用来清除浮动，有一个<code>content</code>属性，能够实现页面中的内容插入</p>
+<h4 id="纯文本插入"><a href="#纯文本插入" class="headerlink" title="纯文本插入"></a>纯文本插入</h4><hr>
+<p>效果如下:<br><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f7uktkwjxnj305u02edfu.jpg" alt=""><br>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*css*/</div><div class="line">h1:after&#123;</div><div class="line">    content: &quot; World&quot;</div><div class="line">&#125;</div><div class="line">h2:before&#123;</div><div class="line">    content: &quot;Leo &quot;</div><div class="line">&#125;</div><div class="line">&lt;!-- html --&gt;</div><div class="line">&lt;h1&gt;Hello&lt;/h1&gt;</div><div class="line">&lt;h2&gt;Angel&lt;/h2&gt;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/07/17/css-content-intro/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-css-triangle" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/10/css-triangle/">CSS制作小三角</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/10/css-triangle/">
+            <time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><hr>
+<p><strong>CSS盒模型</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f7ui3zyktgj30cn09gjru.jpg" alt=""></p>
+<blockquote>
+<ol>
+<li>盒模型 = <code>Margin + Border + Padding + Content</code></li>
+<li>上下左右边框交界处出呈现平滑的斜线. 利用这个特点, 通过设置不同的上下左右边框宽度或者颜色可以得到小三角, 小梯形等</li>
+<li>调整宽度大小可以调节三角形形状</li>
+</ol>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/07/10/css-triangle/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-http-status-code" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -550,319 +867,6 @@
 
 
 
-    <article id="post-ubuntu-sublime-chinese-resolve" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/05/ubuntu-sublime-chinese-resolve/">解决ubuntu下sublime无法输入中文问题</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/05/ubuntu-sublime-chinese-resolve/">
-            <time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Sublime/">Sublime</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h4><hr>
-<p>系统:<code>Ubuntu 16.04</code>优麒麟 (应该大多数<code>linux</code>系统都试用)<br>输入法:小企鹅输入法 <code>fcitx 4.2.9.1</code><br><code>Sublime Text</code>版本:<code>Sublime Text 3 Build 3114</code></p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p><strong>1、保存以下代码到sublime-imfix.c(位于～目录)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include &lt;gtk/gtkimcontext.h&gt;</div><div class="line">void gtk_im_context_set_client_window (GtkIMContext *context,</div><div class="line">         GdkWindow    *window)</div><div class="line">&#123;</div><div class="line"> GtkIMContextClass *klass;</div><div class="line"> g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line"> klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"> if (klass-&gt;set_client_window)</div><div class="line">   klass-&gt;set_client_window (context, window);</div><div class="line"> g_object_set_data(G_OBJECT(context),&quot;window&quot;,window);</div><div class="line"> if(!GDK_IS_WINDOW (window))</div><div class="line">   return;</div><div class="line"> int width = gdk_window_get_width(window);</div><div class="line"> int height = gdk_window_get_height(window);</div><div class="line"> if(width != 0 &amp;&amp; height !=0)</div><div class="line">   gtk_im_context_focus_in(context);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2016/06/05/ubuntu-sublime-chinese-resolve/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-chrome-console" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/01/chrome-console/">Chrome Console命令</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/01/chrome-console/">
-            <time datetime="2016-05-31T16:00:00.000Z" itemprop="datePublished">2016-06-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Chrome/">Chrome</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="显示信息"><a href="#显示信息" class="headerlink" title="显示信息"></a>显示信息</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">console.log(&apos;log&apos;);			//最常用</div><div class="line">console.info(&apos;info&apos;);</div><div class="line">console.error(&apos;error&apos;);</div><div class="line">console.warn(&apos;warn&apos;);</div></pre></td></tr></table></figure>
-<p><strong>效果:</strong><br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f7ix83esyrj305d03q74e.jpg" alt=""></p>
-<h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><hr>
-<p><code>console</code>上述的集中度支持<code>printf</code>的占位符格式，支持的占位符有:<code>字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(&quot;%d年%d月%d日&quot;,2016,6,1);</div></pre></td></tr></table></figure></p>
-<p><strong>效果:</strong><br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7ixnbi4z7j307z012wee.jpg" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2016/06/01/chrome-console/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-css-common-code" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/22/css-common-code/">css常用代码大全</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/22/css-common-code/">
-            <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished">2016-05-22</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="Css背景颜色透明"><a href="#Css背景颜色透明" class="headerlink" title="Css背景颜色透明"></a>Css背景颜色透明</h4><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.liter&#123;</div><div class="line">	filter:progid:DXImageTransform.Microsoft.gradient(enabled=&apos;true&apos;,startColorstr=&apos;#4CDDDDDD&apos;, endColorstr=&apos;#4CDDDDDD&apos;);</div><div class="line">&#125;</div><div class="line">:root .liter &#123;</div><div class="line">	filter:none;     /*处理IE9浏览器中的滤镜效果*/</div><div class="line">	background-color:rgba(221,221,221,0.3);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="图片垂直居中对齐"><a href="#图片垂直居中对齐" class="headerlink" title="图片垂直居中对齐"></a>图片垂直居中对齐</h4><hr>
-<p><strong>第一种：table-cell法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test_box&quot;&gt;</div><div class="line">	&lt;img src=&quot;book.jpg&quot; alt=&quot;&quot; /&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.test_box &#123;</div><div class="line">	display:table-cell</div><div class="line">	;width:200px;</div><div class="line">	height:200px;</div><div class="line">	vertical-align:middle;</div><div class="line">	text-align:center;</div><div class="line">	*float:left;</div><div class="line">	*font-family:simsun;</div><div class="line">	*font-size:200px;</div><div class="line">	*line-height:1;</div><div class="line">	border:1px solid #000000;</div><div class="line">&#125;</div><div class="line">.test_box img &#123;</div><div class="line">	vertical-align:middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2016/05/22/css-common-code/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-imooc-video-download" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/16/imooc-video-download/">慕课网视频解析下载</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/16/imooc-video-download/">
-            <time datetime="2016-05-15T16:00:00.000Z" itemprop="datePublished">2016-05-16</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/慕课网/">慕课网</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/慕课网/">慕课网</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="慕课网视频解析下载"><a href="#慕课网视频解析下载" class="headerlink" title="慕课网视频解析下载"></a>慕课网视频解析下载</h4><hr>
-<p><a href="//imooc.luckyw.cn">慕课网视频解析地址</a><br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f7avfkofgjj311j0wdwnv.jpg" alt=""></p>
-<h4 id="技术说明"><a href="#技术说明" class="headerlink" title="技术说明"></a>技术说明</h4><hr>
-<p>采用<code>Bootstrap</code>构建页面，<code>jQuery</code>实现页面交互，输入课程号点击解析，<code>ajax</code>通过跨域中转获取慕课网对应链接的网页代码进行分析，提取相关课程信息，获取课程章节列表及课程类型(视频、练习、编程)。如果是视频，则通过慕课网视频链接的<code>api</code>接口获取<code>json</code>数据，然后我们可以选择视频的清晰度进行下载<code>(L,M,H)</code>,右键另存为的方式进行下载。而如果是练习、编程，可以点击按钮直接跳转到慕课网进行学习<br></p>
-            <p class="article-more-link">
-                <a href="/2016/05/16/imooc-video-download/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-ubuntu-webstorm-problems" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/05/09/ubuntu-webstorm-problems/">解决Ubuntu下Webstorm系列问题</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/05/09/ubuntu-webstorm-problems/">
-            <time datetime="2016-05-08T16:00:00.000Z" itemprop="datePublished">2016-05-09</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>, <a class="tag-link" href="/tags/Webstorm/">Webstorm</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="中文输入问题"><a href="#中文输入问题" class="headerlink" title="中文输入问题"></a>中文输入问题</h4><hr>
-<p><strong>解决办法：</strong><br>在<code>Webstorm</code>安装目录的<code>bin</code>目录下找到<code>webstorm.sh</code>，然后打开之后在前面加上如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export XMODIFIERS=@im=fcitx</div><div class="line">export QT_IM_MODULE=fcitxubun</div></pre></td></tr></table></figure></p>
-<h4 id="NodeJS代码提示"><a href="#NodeJS代码提示" class="headerlink" title="NodeJS代码提示"></a>NodeJS代码提示</h4><hr>
-<blockquote>
-<p><strong>2016-8-18更新</strong></p>
-</blockquote>
-<p>每当编写<code>Node</code>代码时，总是没有代码提示，其他语言的基本都有，而众所周知为什么<code>WebStorm</code>这么流行的原因就在于它的代码提示功能相当强大，那为什么没有提示了？</p>
-<ol>
-<li>我们需要开启<code>NodeJs</code>代码提示，那么请点击<code>File -&gt; Settings -&gt; Language &amp;&amp; FrameWork -&gt; Node.js and NPM -&gt; Enable</code>即可，如下图所示:<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f8yr1udsiuj30m00473z5.jpg" alt=""></li>
-<li>或者更简单的方式就是鼠标点击<code>Node</code>的核心模块高亮处，按组合键<code>Alt+Enter</code>，弹出下拉菜单，最后敲<code>Enter</code>开启代码提示功能，如下图<br><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f8yr41o165j30lc04n40d.jpg" alt=""></li>
-</ol>
-
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">下一页 &raquo;</a>
     </nav>
@@ -875,6 +879,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/05/vim-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe40oshbr8j30m80m83zm.jpg)" alt="Vim常用命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/03/05/vim-cmd/" class="title">Vim常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/25/ubuntu-tips/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f94bwh2hvoj30b50b5wf9.jpg)" alt="ubuntu所遇问题汇总" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2017/02/25/ubuntu-tips/" class="title">ubuntu所遇问题汇总</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/18/arukas-api-getss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="调用arukas接口实时获取ss配置信息" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2017/02/18/arukas-api-getss/" class="title">调用arukas接口实时获取ss配置信息</a></p>
+                            <p class="item-date"><time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/11/express-jade/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmmutcn5wj30go0got8s)" alt="Express之Jade模板引擎" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Express/">Express</a></p>
+                            <p class="item-title"><a href="/2017/02/11/express-jade/" class="title">Express之Jade模板引擎</a></p>
+                            <p class="item-date"><time datetime="2017-02-10T16:00:00.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -911,6 +991,25 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
                             <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
                             <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/vue-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmn6zg7sxj30dw0dw0sr)" alt="Vue入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vue/">Vue</a></p>
+                            <p class="item-title"><a href="/2017/01/14/vue-learn/" class="title">Vue入门初体验</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
                         </div>
                     </li>
                 
@@ -1161,101 +1260,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
-                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
-                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
-                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
-                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
-                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
-                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
-                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1266,7 +1270,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 

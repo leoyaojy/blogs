@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                84
+                89
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                32
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,463 @@
 
             
             <section id="main">
+    <article id="post-front-knowledge-collect" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/03/front-knowledge-collect/">前端知识资源整合</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/03/front-knowledge-collect/">
+            <time datetime="2016-04-02T16:00:00.000Z" itemprop="datePublished">2016-04-03</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/WEB/">WEB</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/WEB/">WEB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><blockquote>
+<p><code>HTML</code>:对Web标准的理解、浏览器内核差异、兼容性、hack<br><code>CSS</code>:布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端适应<br><code>JavaScript</code>:数据类型、面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、内存泄漏、事件机制、异步装载回调、模板引擎、Nodejs、JSON、ajax等<br>其他:HTTP、安全、正则、优化、重构、响应式、移动端、团队协作、可维护、SEO、UED、架构、职业生涯</p>
+</blockquote>
+<hr>
+<h4 id="Cookie的优劣"><a href="#Cookie的优劣" class="headerlink" title="Cookie的优劣"></a>Cookie的优劣</h4><hr>
+<p><code>cookie</code>虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的<br><strong> 优点:极高的扩展性和可用性 </strong></p>
+<blockquote>
+<p>通过良好的编程，控制保存在<code>cookie</code>中的<code>session</code>对象的大小<br>通过加密和安全传输技术<code>SSL</code>，减少<code>cookie</code>被破解的可能性<br>只在<code>cookie</code>中存放不敏感数据，即使被盗也不会有重大损失<br>控制<code>cookie</code>的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的<code>cookie</code></p>
+</blockquote>
+<p><strong> 缺点: </strong></p>
+<blockquote>
+<p><code>Cookie</code>数量和长度的限制:每个<code>domain</code>最多只能有<code>20</code>条<code>cookie</code>，每个<code>cookie</code>长度不能超过<code>4KB</code>，否则会被截掉<br>安全性问题:如果<code>cookie</code>被人拦截了，那人就可以取得所有的<code>session</code>信息。即使加密也与事无补，因为拦截者并不需要知道<code>cookie</code>的意义，他只要原样转发<code>cookie</code>就可以达到目的了<br>有些状态不可能保存在客户端:例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/04/03/front-knowledge-collect/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-css-flexbox" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/28/css-flexbox/">Flexbox布局</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/28/css-flexbox/">
+            <time datetime="2016-03-27T16:00:00.000Z" itemprop="datePublished">2016-03-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><a href="http://codepen.io/enxaneta/pen/adLPwv">Flexbox playground</a><br><code>Flexbox Layout</code>，<code>W3C</code>官方称为<code>CSS弹性盒子布局</code>，是在<code>CSS3</code>中定义的一种新的布局模式。<code>Flexbox</code>可以控制在容器内的子元素的对齐方式、排列方式以及排序顺序，即使其子元素的尺寸是未知或者动态的情况下。弹性容器的主要特点就是能够调整其子元素的宽度或者高度以使其能在不同分辨率的屏幕下能用最好的方式去填充可用空间<br><code>Flex</code>布局的主要思想是让容器能使其子元素的宽高（或其他属性）能够以最好的方式去填充可用空间（主要是去适应不同的设备跟分辨率）。一个<code>Flex</code>弹性盒子能让子元素填充可用空间或者为了阻止子元素超出区域而进行收缩<br><code>Flexbox</code>布局常用于小的应用程序组件之中，而<code>CSS Grid</code>布局模块将应用于大规模的布局之中<br>下面就用<code>codepen</code>代码演示的方式来先简单介绍<code>Flex</code>属性的原理，不同的属性是怎么样使用以及如何影响控制元素的布局的:</p>
+<h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><hr>
+<p><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f9ypldwna8j30yv0ci0u8.jpg" alt=""><br>在开始这部分知识介绍之前，我们先来看上面的这张图，简单了解一下<code>Flex</code>布局的盒子模型以及相关的术语:<br><code>flex</code>盒子模型由容器<code>flex container</code>以及容器的直接子元素<code>flex item</code>组成<br>以容器<code>flex container</code>定义，有主坐标<code>main axis</code>以及纵坐标<code>cross axis</code>，主坐标为默认横向，默认从左到右，纵坐标默认为纵向，默认从上到下（当布局排列方式变化的时候，<code>main axis</code>跟<code>cross axis</code>的方向也会跟着变化）<br>子元素（<code>flex item</code>）在<code>main axis</code>方向的尺寸为<code>main size</code>，在<code>cross axis</code>方向的尺寸为<code>cross size</code><br>如果你想了解有关这方面更详细的信息，可以阅读<a href="http://www.w3.org/TR/css-flexbox/#box-model">W3C官方中有关于Flexbox模块的相关资料。</a><br></p>
+            <p class="article-more-link">
+                <a href="/2016/03/28/css-flexbox/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-window" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/20/js-window/">JS Window对象</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/20/js-window/">
+            <time datetime="2016-03-19T16:00:00.000Z" itemprop="datePublished">2016-03-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h4><hr>
+<p><code>Window</code>对象表示浏览器中打开的窗口<br>如果文档包含框架（<code>&lt;frame&gt;</code>或<code>&lt;iframe&gt;</code>标签），浏览器会为<code>HTML</code>文档创建一个<code>window</code>对象，并为每个框架创建一个额外的<code>window</code>对象<br>注意:没有应用于<code>window</code>对象的公开标准，不过所有浏览器都支持该对象</p>
+<h4 id="Window-对象属性"><a href="#Window-对象属性" class="headerlink" title="Window 对象属性"></a>Window 对象属性</h4><hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">closed</td>
+<td style="text-align:left">返回窗口是否已被关闭</td>
+</tr>
+<tr>
+<td style="text-align:left">defaultStatus</td>
+<td style="text-align:left">设置或返回窗口状态栏中的默认文本</td>
+</tr>
+<tr>
+<td style="text-align:left">document</td>
+<td style="text-align:left">对Document对象的只读引用</td>
+</tr>
+<tr>
+<td style="text-align:left">frames</td>
+<td style="text-align:left">返回窗口中所有命名的框架。该集合是Window对象的数组，每个Window对象在窗口中含有一个框</td>
+</tr>
+<tr>
+<td style="text-align:left">history</td>
+<td style="text-align:left">对History对象的只读引用</td>
+</tr>
+<tr>
+<td style="text-align:left">innerHeight</td>
+<td style="text-align:left">返回窗口的文档显示区的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">innerWidth</td>
+<td style="text-align:left">返回窗口的文档显示区的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">length</td>
+<td style="text-align:left">设置或返回窗口中的框架数量</td>
+</tr>
+<tr>
+<td style="text-align:left">location</td>
+<td style="text-align:left">用于窗口或框架的Location对象</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">设置或返回窗口的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">navigator</td>
+<td style="text-align:left">对Navigator对象的只读引用</td>
+</tr>
+<tr>
+<td style="text-align:left">opener</td>
+<td style="text-align:left">返回对创建此窗口的窗口的引用</td>
+</tr>
+<tr>
+<td style="text-align:left">outerHeight</td>
+<td style="text-align:left">返回窗口的外部高度，包含工具条与滚动条</td>
+</tr>
+<tr>
+<td style="text-align:left">outerWidth</td>
+<td style="text-align:left">返回窗口的外部宽度，包含工具条与滚动条</td>
+</tr>
+<tr>
+<td style="text-align:left">pageXOffset</td>
+<td style="text-align:left">设置或返回当前页面相对于窗口显示区左上角的X位置</td>
+</tr>
+<tr>
+<td style="text-align:left">pageYOffset</td>
+<td style="text-align:left">设置或返回当前页面相对于窗口显示区左上角的Y位置</td>
+</tr>
+<tr>
+<td style="text-align:left">parent</td>
+<td style="text-align:left">返回父窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">screen</td>
+<td style="text-align:left">对Screen对象的只读引用</td>
+</tr>
+<tr>
+<td style="text-align:left">screenLeft</td>
+<td style="text-align:left">返回相对于屏幕窗口的x坐标</td>
+</tr>
+<tr>
+<td style="text-align:left">screenTop</td>
+<td style="text-align:left">返回相对于屏幕窗口的y坐标</td>
+</tr>
+<tr>
+<td style="text-align:left">screenX</td>
+<td style="text-align:left">返回相对于屏幕窗口的x坐标</td>
+</tr>
+<tr>
+<td style="text-align:left">screenY</td>
+<td style="text-align:left">返回相对于屏幕窗口的y坐标</td>
+</tr>
+<tr>
+<td style="text-align:left">self</td>
+<td style="text-align:left">返回对当前窗口的引用</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">设置窗口状态栏的文本</td>
+</tr>
+<tr>
+<td style="text-align:left">top</td>
+<td style="text-align:left">返回最顶层的父窗口</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/03/20/js-window/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-navigator" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/15/js-navigator/">JS Navigator对象</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/15/js-navigator/">
+            <time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="Navigator-对象"><a href="#Navigator-对象" class="headerlink" title="Navigator 对象"></a>Navigator 对象</h4><hr>
+<p><code>Navigator</code>对象包含有关浏览器的信息<br>注意:没有应用于<code>navigator</code>对象的公开标准，不过所有浏览器都支持该对象</p>
+<h4 id="Navigator-对象属性"><a href="#Navigator-对象属性" class="headerlink" title="Navigator 对象属性"></a>Navigator 对象属性</h4><hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">appCodeName</td>
+<td style="text-align:left">返回浏览器的代码名</td>
+</tr>
+<tr>
+<td style="text-align:left">appName</td>
+<td style="text-align:left">返回浏览器的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">appVersion</td>
+<td style="text-align:left">返回浏览器的平台和版本信息</td>
+</tr>
+<tr>
+<td style="text-align:left">cookieEnabled</td>
+<td style="text-align:left">返回指明浏览器中是否启用 cookie 的布尔值</td>
+</tr>
+<tr>
+<td style="text-align:left">platform</td>
+<td style="text-align:left">返回运行浏览器的操作系统平台</td>
+</tr>
+<tr>
+<td style="text-align:left">userAgent</td>
+<td style="text-align:left">返回由客户机发送服务器的user-agent 头部的值</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/03/15/js-navigator/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-js-array-usage" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/12/js-array-usage/">JS数组操作汇总</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/12/js-array-usage/">
+            <time datetime="2016-03-11T16:00:00.000Z" itemprop="datePublished">2016-03-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="如何定义一个数组"><a href="#如何定义一个数组" class="headerlink" title="如何定义一个数组"></a>如何定义一个数组</h4><hr>
+<p>定义数组有三种方法：<br>1、常规方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var names = new Array();</div><div class="line">names[0] = &quot;CSS&quot;;</div><div class="line">names[1] = &quot;JS&quot;;</div><div class="line">names[2] = &quot;PHP&quot;;</div></pre></td></tr></table></figure></p>
+<p>2、简洁方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div></pre></td></tr></table></figure></p>
+<p>3、字面量方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var names = [&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;];</div></pre></td></tr></table></figure></p>
+<h4 id="如何访问数组元素"><a href="#如何访问数组元素" class="headerlink" title="如何访问数组元素"></a>如何访问数组元素</h4><hr>
+<p>通过下标的方式访问，注意：下标以<code>0</code>开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var names = new Array(&quot;CSS&quot;,&quot;JS&quot;,&quot;PHP&quot;);</div><div class="line">alert(names[0]);//CSS</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2016/03/12/js-array-usage/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-js-array" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -682,327 +1139,6 @@
 
 
 
-    <article id="post-get-style" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/02/10/get-style/">getComputedStyle与currentStyle获取样式</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/02/10/get-style/">
-            <time datetime="2016-02-09T16:00:00.000Z" itemprop="datePublished">2016-02-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CSS/">CSS</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>CSS的样式分为三类：</p>
-<blockquote>
-<p><code>内嵌样式</code>：是写在标签里面的，内嵌样式只对所在的标签有效<br><code>内部样式</code>：是写在<code>HTML</code>里面的，内部样式只对所在的网页有效<br><code>外部样式表</code>：如果很多网页需要用到同样的样式，将样式写在一个以<code>.css</code>为后缀的<code>CSS</code>文件里，然后在每个需要用到这些样式的网页里引用这个<code>CSS</code>文件</p>
-</blockquote>
-<p><code>getComputedStyle</code>是一个可以获取当前元素所有最终使用的<code>CSS</code>属性值，返回的是一个<code>CSS</code>样式声明对象，只读<br><code>currentStyle</code>是IE浏览器的一个属性</p>
-<h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><hr>
-<p>众所周知，用<code>document.getElementById(&#39;element&#39;).style.xxx</code>可以获取<code>element</code>的<code>xxx</code>样式信息，可是它获取的只能是DOM元素<code>内嵌样式</code>style属性里的样式规则，对于使用<code>外部样式表</code>或<code>内部样式</code>设置的元素，就获取不到样式信息了<br>DOM标准里有个全局方法<code>getComputedStyle</code>，可以获取到当前对象样式信息，如：<code>getComputedStyle(obj,null).paddingLeft</code>，就能获取到对象的左内边距。但是IE不支持此方法，IE中获取样式的方法是<code>currentStyle</code>，不同于全局方法<code>getComputedStyle</code>，它是作为DOM元素属性存在的，如：obj.currentStyle.paddingLeft，在IE中就获取到对象的左内边距了，兼容性的写法如下：<br></p>
-            <p class="article-more-link">
-                <a href="/2016/02/10/get-style/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-google-10search-tips" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/02/05/google-10search-tips/">关于Google的10个搜索技巧(译)</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/02/05/google-10search-tips/">
-            <time datetime="2016-02-04T16:00:00.000Z" itemprop="datePublished">2016-02-05</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Chrome/">Chrome</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="准确搜索"><a href="#准确搜索" class="headerlink" title="准确搜索"></a>准确搜索</h4><hr>
-<p><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f9yrposn81j30qt0g3dia.jpg" alt=""><br>最简单、有效的准确搜索方式是在关键词上加上双引号，在这种情况下，搜索引擎只会反馈和关键词完全吻合的搜索结果。<br>比方说在搜索<code>Joe Bloggs</code>的时候，在没有给关键词加上双引号的情况，搜索引擎会显示所有分别和<code>Joe</code>以及<code>Bloggs</code>相关的信息，但这些显然并不是我们想要的结果。但在加上双引号后，搜索引擎则仅会在页面上反馈和<code>Joe Bloggs</code>相吻合的信息<br>准确搜索在排除常见但相近度偏低的信息时非常有用，可以为用户省去再度对结果进行筛选的麻烦</p>
-<h4 id="排除关键词"><a href="#排除关键词" class="headerlink" title="排除关键词"></a>排除关键词</h4><hr>
-<p><img src="//ww4.sinaimg.cn/large/0062vBsDgw1f9yrq4rw8xj30tl0hrwhh.jpg" alt=""><br>如果在进行准确搜索时没有找到自己想要的结果，用户可以对包含特定词汇的信息进行排除，仅需使用减号即可<br>例如在搜索<code>Joe Bloggs-jeans</code>时，你所得到的结果反馈是不包含<code>jeans</code>字眼的<code>Joe Bloggs</code>条目</p>
-<h4 id="用「Either-OR」（或）逻辑进行搜索"><a href="#用「Either-OR」（或）逻辑进行搜索" class="headerlink" title="用「Either OR」（或）逻辑进行搜索"></a>用「Either OR」（或）逻辑进行搜索</h4><hr>
-<p><img src="//ww2.sinaimg.cn/large/0062vBsDgw1f9yrqj096dj30tl0hrn1d.jpg" alt=""><br>在默认搜索下，搜索引擎会反馈所有和查询词汇相关的结果，但通过使用<code>OR</code>逻辑，你可以得到和两个关键词分别相关的结果，而不仅仅是和两个关键词都同时相关的结果。巧妙使用<code>OR</code>搜索可以让你在未能确定哪个关键词对于搜索结果起决定作用时依然可以确保搜索结果的准确性</p></p>
-            <p class="article-more-link">
-                <a href="/2016/02/05/google-10search-tips/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-jquery-ajax-method" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/30/jquery-ajax-method/">JQuery中$.ajax()方法参数详解</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/30/jquery-ajax-method/">
-            <time datetime="2016-01-29T16:00:00.000Z" itemprop="datePublished">2016-01-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JQuery/">JQuery</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><code>url</code>: <code>String</code>，发送请求的地址，默认为当前页地址<br><code>type</code>: <code>String</code>，请求方式，默认为<code>get</code>。注意其他<code>http</code>请求方法，例如<code>put</code>和<code>delete</code>也可以使用，但仅部分浏览器支持<br><code>timeout</code>: <code>Number</code>，设置请求超时时间(毫秒)<br><code>async</code>:<code>Boolean</code>，默认值为<code>true</code>，所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为<code>false</code>。注意，同步请求将锁住浏览器，用户其他操作必须等待请求完成才可以执行<br><code>cache</code>:<code>Boolean</code>，默认为<code>true</code>（当<code>dataType</code>为<code>script</code>时，默认为<code>false</code>）。设置为<code>false</code>将不会从浏览器缓存中加载请求信息<br><code>data</code>:<code>Object</code>或<code>String</code>，发送到服务器的数据。如果已经不是字符串，将自动转换为字符串格式。<code>get</code>请求中将附加在<code>url</code>后。对象必须为<code>key/value</code>格式，例如<code>{foo1:&quot;bar1&quot;,foo2:&quot;bar2&quot;}</code>转换为<code>&amp;foo1=bar1&amp;foo2=bar2</code>。如果是数组，<code>JQuery</code>将自动为不同值对应同一个名称。例如<code>{foo:[&quot;bar1&quot;,&quot;bar2&quot;]}</code>转换为<code>&amp;foo=bar1&amp;foo=bar2</code><br><code>dataType</code>: <code>String</code>，预期服务器返回的数据类型。如果不指定，<code>JQuery</code>将自动根据<code>http</code>包<code>mime</code>信息返回<code>responseXML</code>或<code>responseText</code>，并作为回调函数参数传递<br>可用的类型如下：</p>
-<ul>
-<li><code>xml</code>:返回<code>XML</code>文档，可用<code>JQuery</code>处理。</li>
-<li><code>html</code>:返回纯文本<code>HTML</code>信息，包含的<code>script</code>标签会在插入<code>DOM</code>时执行。</li>
-<li><code>script</code>:返回纯文本<code>JavaScript</code>代码。不会自动缓存结果。除非设置了<code>cache</code>参数。注意在远程请求时（不在同一个域下），所有<code>post</code>请求都将转为<code>get</code>请求</li>
-<li><code>json</code>:返回<code>JSON</code>数据。</li>
-<li><code>jsonp</code>:<code>JSONP</code>格式。使用<code>JSONP</code>形式调用函数时，例如<code>myurl?callback=?</code>，<code>JQuery</code>将自动替换后一个<code>?</code>为正确的函数名，以执行回调函数</li>
-<li><code>text</code>:返回纯文本字符串</li>
-</ul></p>
-            <p class="article-more-link">
-                <a href="/2016/01/30/jquery-ajax-method/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-node-mongodb-express" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/24/node-mongodb-express/">建站：Node+MongoDb+Express简单实例</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/24/node-mongodb-express/">
-            <time datetime="2016-01-23T16:00:00.000Z" itemprop="datePublished">2016-01-24</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Node/MongoDb/">MongoDb</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MongoDb/">MongoDb</a>, <a class="tag-link" href="/tags/Node/">Node</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="安装Node以及Express"><a href="#安装Node以及Express" class="headerlink" title="安装Node以及Express"></a>安装Node以及Express</h4><hr>
-<p>前往官网<a href="https://nodejs.org">https://nodejs.org</a> 下载安装<code>NodeJs</code>,跟常规的软件安装类似，安装成功测试代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
-<p>成功如下图所示：<br><img src="//ww1.sinaimg.cn/large/0062vBsDgw1f6yz8oq3pxj30cy02raa5.jpg" alt=""><br>当前显示我的<code>NodeJs</code>版本是<code>5.10.0</code>，安装<code>Node</code>的同时，系统会自带<code>NPM</code>工具，我们可以利用<code>NPM</code>下载我们所需的强大的<code>node</code>开源框架——<code>Express</code>，安装命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g express</div></pre></td></tr></table></figure></p>
-<p>其中<code>-g</code>是表示全局安装，如果不写是本地安装<br>安装完最新版的<code>express</code>之后，需要再安装:<code>express-generator</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g express-generator</div></pre></td></tr></table></figure></p>
-<p>同上安装成功后我们可以通过如下命令查看是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">express -V</div></pre></td></tr></table></figure></p>
-<p>成功如图所示：<br><img src="//ww3.sinaimg.cn/large/0062vBsDgw1f6yz93ezj8j30db038aa7.jpg" alt=""><br><code>Tips</code>:注意是大写的<code>V</code></p>
-            <p class="article-more-link">
-                <a href="/2016/01/24/node-mongodb-express/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-jquery-tips" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/01/15/jquery-tips/">jQuery小技巧(译文)</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/01/15/jquery-tips/">
-            <time datetime="2016-01-14T16:00:00.000Z" itemprop="datePublished">2016-01-15</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/JQuery/">JQuery</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="回到顶部按钮"><a href="#回到顶部按钮" class="headerlink" title="回到顶部按钮"></a>回到顶部按钮</h4><hr>
-<p>利用<code>jQuery</code>里的<code>animate</code>和<code>scrollTop</code>方法，你便不需要使用插件创建简单的滚动到顶部动画<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;.top&apos;).click(function (e) &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    $(&apos;html, body&apos;).animate(&#123;scrollTop: 0&#125;, 800);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>通过<code>scrollTop</code>的值来改变你想要滚动到的位置<br>其实你就是做了:在接下来的800毫秒中让页面滚动，直到它滚动到文档的顶部</p>
-<h4 id="图片预加载"><a href="#图片预加载" class="headerlink" title="图片预加载"></a>图片预加载</h4><hr>
-<p>如果你的网页使用了很多隐藏图片文件（例如：鼠标悬停展示的图片），那么图片的预加载是有意义的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.preloadImages = function () &#123;</div><div class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</div><div class="line">		$(&apos;&lt;img&gt;&apos;).attr(&apos;src&apos;, arguments[i]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">$.preloadImages(&apos;img/hover-on.png&apos;, &apos;img/hover-off.png&apos;);</div></pre></td></tr></table></figure></p>
-<h4 id="判断图片是否加载完"><a href="#判断图片是否加载完" class="headerlink" title="判断图片是否加载完"></a>判断图片是否加载完</h4><hr>
-<p>有时候你可能需要检查图像是否已经加载完成，以便于可以继续执行相应的<code>js</code>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;img&apos;).load(function () &#123;</div><div class="line">	console.log(&apos;image load successful&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>你还可以检查一个特定的图片是否加载完并且被带有<code>id</code>或者<code>class</code>的<code>&lt;img&gt;</code>标签代替。<br></p>
-            <p class="article-more-link">
-                <a href="/2016/01/15/jquery-tips/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">下一页 &raquo;</a>
     </nav>
@@ -1015,6 +1151,82 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/05/vim-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe40oshbr8j30m80m83zm.jpg)" alt="Vim常用命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/03/05/vim-cmd/" class="title">Vim常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/25/ubuntu-tips/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f94bwh2hvoj30b50b5wf9.jpg)" alt="ubuntu所遇问题汇总" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2017/02/25/ubuntu-tips/" class="title">ubuntu所遇问题汇总</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/18/arukas-api-getss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="调用arukas接口实时获取ss配置信息" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2017/02/18/arukas-api-getss/" class="title">调用arukas接口实时获取ss配置信息</a></p>
+                            <p class="item-date"><time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/11/express-jade/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmmutcn5wj30go0got8s)" alt="Express之Jade模板引擎" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Express/">Express</a></p>
+                            <p class="item-title"><a href="/2017/02/11/express-jade/" class="title">Express之Jade模板引擎</a></p>
+                            <p class="item-date"><time datetime="2017-02-10T16:00:00.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1051,6 +1263,25 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
                             <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
                             <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/vue-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmn6zg7sxj30dw0dw0sr)" alt="Vue入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vue/">Vue</a></p>
+                            <p class="item-title"><a href="/2017/01/14/vue-learn/" class="title">Vue入门初体验</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
                         </div>
                     </li>
                 
@@ -1301,101 +1532,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
-                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
-                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
-                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
-                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
-                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
-                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
-                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1406,7 +1542,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 

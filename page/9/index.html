@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                84
+                89
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                29
+                32
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,312 @@
 
             
             <section id="main">
+    <article id="post-js-settimeout" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/10/20/js-settimeout/">Js setTimeout小问题</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/10/20/js-settimeout/">
+            <time datetime="2015-10-19T16:00:00.000Z" itemprop="datePublished">2015-10-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>做项目的时候发现了一个<code>setTimeout</code>问题，比如以下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for(var i=0;i&lt;10;i++)&#123;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        console.log(i)</div><div class="line">    &#125;,1000*i)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>本意我是想让这个for循环每隔1秒延时后打印一次i的值，结果是每隔一秒打印了<code>10</code>，打印了10个10，对此我表示不求甚解<br></p>
+            <p class="article-more-link">
+                <a href="/2015/10/20/js-settimeout/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-css-layout" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/10/15/css-layout/">学习CSS布局</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/10/15/css-layout/">
+            <time datetime="2015-10-14T16:00:00.000Z" itemprop="datePublished">2015-10-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h4><hr>
+<p>每个元素都有默认的<code>display</code>属性，一般是<code>block</code>或者<code>inline</code><br><code>block</code>表示块级元素，而<code>inline</code>表示行内元素<br><code>block</code>元素（如<code>div、table、p、form</code>等）会新开始一行并尽可能撑满容器。而<code>inline</code>元素（如<code>span、a</code>等）即行内元素不会打破包裹它的容器的布局<br>另一个常用的<code>display</code>值为<code>none</code>，<code>display:none</code>通常是被<code>JavaScript</code>用来在不删除元素的情况下隐藏该元素。<br>其他的<code>display</code>值还有<code>list-item</code>和<code>table</code>等,你可以随时随地人工改变一个元素的<code>display</code>值。<br>常见的是:设置<code>li</code>元素为<code>display:inline</code>制作水平菜单。</p>
+<h4 id="marigin-auto"><a href="#marigin-auto" class="headerlink" title="marigin:auto"></a>marigin:auto</h4><hr>
+<p>如何使一个元素居中，并且不用担心小屏幕会显示出滚动条：(<code>max-width</code> 支持IE7+)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#main&#123;</div><div class="line">	max-width:600px;</div><div class="line">	margin:0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h4><hr>
+<p>盒模型的宽度高度我们知道要通过计算（真正的宽度=<code>width+2padding+2border</code>）我们使用<code>box-sizing</code>来改进它，当设置一个元素为<code>box-sizing:border-box</code>时，此元素的内边距和边框不会增加该元素的宽度。支持IE8+，如果要在所有浏览器中使用该属性，则可以利用下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">	-webkit-box-sizing:border-box;</div><div class="line">	-moz-box-sizing:border-box;</div><div class="line">	box-sizing:border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2015/10/15/css-layout/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-css-hide-element" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/10/08/css-hide-element/">CSS中隐藏元素的几种方法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/10/08/css-hide-element/">
+            <time datetime="2015-10-07T16:00:00.000Z" itemprop="datePublished">2015-10-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="几种方法的简单介绍"><a href="#几种方法的简单介绍" class="headerlink" title="几种方法的简单介绍"></a>几种方法的简单介绍</h4><hr>
+<p><strong> display:none </strong><br>最常用的隐藏元素的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.hidden&#123;</div><div class="line">    display:none</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>将元素设置为<code>display:none</code>后，元素在页面上将彻底消失，元素本来占有的空间就会被其他元素占有，也就是说它会导致浏览器的重排和重绘<br><strong> visibility:hidden </strong><br>此方法也是一种常用的隐藏元素的方法，和<code>display:none</code>的区别在于，元素在页面消失后，其占据的空间依旧会保留着，所以它只会导致浏览器重绘而不会重排<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.hidden&#123;</div><div class="line">    visibility:hidden</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>visibility:hidden</code>适用于那些元素隐藏后不希望页面布局会发生变化的场景<br><strong> opacity:0 </strong><br><code>opacity</code>属性表示元素的透明度，而将元素的透明度设置为0后，在我们眼中，元素也就是隐藏起来的，这也算是一种隐藏元素的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.transparent &#123;</div><div class="line">    opacity:0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种方法和<code>visibility:hidden</code>的一个共同点是元素隐藏后依旧占据着空间，但我们都知道，设置透明度为0后，元素只是隐身了，它依旧存在页面中<br></p>
+            <p class="article-more-link">
+                <a href="/2015/10/08/css-hide-element/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/09/27/prototype/">JavaScript prototype 使用介绍</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/27/prototype/">
+            <time datetime="2015-09-26T16:00:00.000Z" itemprop="datePublished">2015-09-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>每个函数都有一个<code>prototype</code>属性，这个属性是指向一个对象的引用，这个对象称为原型对象，原型对象包含函数实例共享的方法和属性，也就是说将函数用作构造函数调用（使用new操作符调用）的时候，新创建的对象会从原型对象上继承属性和方法。</p>
+<h4 id="私有变量、函数"><a href="#私有变量、函数" class="headerlink" title="私有变量、函数"></a>私有变量、函数</h4><hr>
+<p>在具体说<code>prototype</code>之前说几个相关的知识点，可以更好的理解<code>prototype</code>的设计意图。<code>JavaScript</code>的函数作用域，在函数内定义的变量和函数如果不对外提供接口，那么外部将无法访问到，也就是变为私有变量和私有函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Obj()&#123;</div><div class="line">	var a=0; //私有变量</div><div class="line">	var fn=function()&#123; //私有函数</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样在函数对象Obj外部无法访问变量a和函数fn，它们就变成私有的，只能在Obj内部使用，即使是函数Obj的实例仍然无法访问这些变量和函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var o=new Obj();</div><div class="line">console.log(o.a); //undefined</div><div class="line">console.log(o.fn); //undefined</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2015/09/27/prototype/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-parse-eval" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/09/20/parse-eval/">JSON.parse和eval的区别</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/20/parse-eval/">
+            <time datetime="2015-09-19T16:00:00.000Z" itemprop="datePublished">2015-09-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JSON/">JSON</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JSON/">JSON</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><hr>
+<p><code>JSON</code>是一种轻量级的数据格式，采用完全独立于语言的文本格式，是理想的数据交换格式。同时，<code>JSON</code>是<code>javascript</code>原生数据格式，这意味着在<code>javascript</code>中处理<code>JSON</code>数据时效率非常高<br>基本格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var data=&#123;&quot;data1&quot;:&quot;Hello,&quot;,&quot;data2&quot;:&quot;world!&quot;&#125;</div></pre></td></tr></table></figure></p>
+<p>调用方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(data.data1 + data.data2)</div></pre></td></tr></table></figure></p>
+<p>将<code>json</code>数据存入数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var data=[&#123;&quot;name&quot;:&quot;LiLei&quot;,&quot;age&quot;:19,&quot;sex&quot;:&quot;male&quot;&#125;,&#123;&quot;name&quot;:&quot;HanMei&quot;,&quot;age&quot;:18,&quot;sex&quot;:&quot;famale&quot;&#125;]</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2015/09/20/parse-eval/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-html5-head" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -442,6 +748,82 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/03/05/vim-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe40oshbr8j30m80m83zm.jpg)" alt="Vim常用命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/03/05/vim-cmd/" class="title">Vim常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/25/ubuntu-tips/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f94bwh2hvoj30b50b5wf9.jpg)" alt="ubuntu所遇问题汇总" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2017/02/25/ubuntu-tips/" class="title">ubuntu所遇问题汇总</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/18/arukas-api-getss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="调用arukas接口实时获取ss配置信息" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2017/02/18/arukas-api-getss/" class="title">调用arukas接口实时获取ss配置信息</a></p>
+                            <p class="item-date"><time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/11/express-jade/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmmutcn5wj30go0got8s)" alt="Express之Jade模板引擎" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Express/">Express</a></p>
+                            <p class="item-title"><a href="/2017/02/11/express-jade/" class="title">Express之Jade模板引擎</a></p>
+                            <p class="item-date"><time datetime="2017-02-10T16:00:00.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/02/04/music-visualize/" class="thumbnail">
     
     
@@ -474,6 +856,25 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
                             <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
                             <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/vue-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmn6zg7sxj30dw0dw0sr)" alt="Vue入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vue/">Vue</a></p>
+                            <p class="item-title"><a href="/2017/01/14/vue-learn/" class="title">Vue入门初体验</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
                         </div>
                     </li>
                 
@@ -724,101 +1125,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/10/free-google-mirror/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9n98gr8spj31jk1jk78b.jpg)" alt="免费日本樱花搭建谷歌镜像" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Google/">Google</a></p>
-                            <p class="item-title"><a href="/2016/10/10/free-google-mirror/" class="title">免费日本樱花搭建谷歌镜像</a></p>
-                            <p class="item-date"><time datetime="2016-10-09T16:00:00.000Z" itemprop="datePublished">2016-10-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/05/ubuntu-heroku-node/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f9euixguynj30e80e874i.jpg)" alt="heroku线上部署node小程序" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
-                            <p class="item-title"><a href="/2016/10/05/ubuntu-heroku-node/" class="title">heroku线上部署node小程序</a></p>
-                            <p class="item-date"><time datetime="2016-10-04T16:00:00.000Z" itemprop="datePublished">2016-10-05</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/27/py3-douban-movie/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f9cdwi9y43j308c08c3yp.jpg)" alt="Python3爬取豆瓣电影保存到MySQL数据库" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2016/09/27/py3-douban-movie/" class="title">Python3爬取豆瓣电影保存到MySQL数据库</a></p>
-                            <p class="item-date"><time datetime="2016-09-26T16:00:00.000Z" itemprop="datePublished">2016-09-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/18/linux-crontab/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f9a0ee40oaj30k00k00u9.jpg)" alt="Linux crontab 定时任务" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
-                            <p class="item-title"><a href="/2016/09/18/linux-crontab/" class="title">Linux crontab 定时任务</a></p>
-                            <p class="item-date"><time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/09/11/php-upload-download/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1f99zyza6tjj308c08cjrn.jpg)" alt="php实现图片上传与下载" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
-                            <p class="item-title"><a href="/2016/09/11/php-upload-download/" class="title">php实现图片上传与下载</a></p>
-                            <p class="item-date"><time datetime="2016-09-10T16:00:00.000Z" itemprop="datePublished">2016-09-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -829,7 +1135,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
