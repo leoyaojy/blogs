@@ -141,11 +141,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                89
+                90
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                32
+                33
                 <span>标签</span>
             </div>
         </div>
@@ -170,6 +170,188 @@
 
             
             <section id="main">
+    <article id="post-html5-canvas" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/02/15/html5-canvas/">HTML5 Canvas属性和方法汇总</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/02/15/html5-canvas/">
+            <time datetime="2016-02-14T16:00:00.000Z" itemprop="datePublished">2016-02-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Html5/">Html5</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Html5/">Html5</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><hr>
+<p><code>Canvas画布</code>是<code>html5</code>新增标签元素，主要用于通过脚本(通常是<code>javascript</code>)来绘制图像，而<code>canvas</code>元素本身并没有绘制能力(它仅仅是图形的容器)，必须使用脚本来完成实际的绘图任务<br><code>getContext()</code>方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性<br>详细<code>Canvas API</code>请参考: //demo.luckyw.cn/src/canvas-api/<br><strong>demo:</strong></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">链接地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">时钟一</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-clock/">https://demo.luckyw.cn/src/canvas-clock/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">时钟二</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-clock2/">https://demo.luckyw.cn/src/canvas-clock2/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">时钟三</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clock/">https://demo.luckyw.cn/src/clock/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">酷炫粒子时钟</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/cool-clock/">https://demo.luckyw.cn/src/cool-clock/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">七彩酷炫粒子</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/dots-animate/">https://demo.luckyw.cn/src/dots-animate/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">图片模糊</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/blur-img/">https://demo.luckyw.cn/src/blur-img/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">心形动画</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/canvas-heart/">https://demo.luckyw.cn/src/canvas-heart/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">刮刮卡</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clip-card/">https://demo.luckyw.cn/src/clip-card/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">图片橡皮擦</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/clip-img/">https://demo.luckyw.cn/src/clip-img/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">彩色球沿轨迹运动</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/color-ball-canvas/">https://demo.luckyw.cn/src/color-ball-canvas/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">图像处理</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/image-process/">https://demo.luckyw.cn/src/image-process/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">手写字</td>
+<td style="text-align:left"><a href="https://demo.luckyw.cn/src/learn-to-write-a-word/">https://demo.luckyw.cn/src/learn-to-write-a-word/</a></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><hr>
+<p>IE9、Firefox、Opera、Chrome以及Safari均支持<code>canvas</code>及其属性和方法。<br>注释：IE8以及更早的版本不支持<code>canvas</code>元素</p>
+<h4 id="颜色、样式和阴影"><a href="#颜色、样式和阴影" class="headerlink" title="颜色、样式和阴影"></a>颜色、样式和阴影</h4><hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">fillStyle</td>
+<td style="text-align:left">设置或返回用于填充绘画的颜色、渐变或模式</td>
+</tr>
+<tr>
+<td style="text-align:left">strokeStyle</td>
+<td style="text-align:left">设置或返回用于笔触的颜色、渐变或模式</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowColor</td>
+<td style="text-align:left">设置或返回用于阴影的颜色</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowBlur</td>
+<td style="text-align:left">设置或返回用于阴影的模糊级别</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowOffsetX</td>
+<td style="text-align:left">设置或返回阴影距形状的水平距离</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowOffsetY</td>
+<td style="text-align:left">设置或返回阴影距形状的垂直距离</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">createLinearGradient()</td>
+<td style="text-align:left">创建线性渐变（用在画布内容上）</td>
+</tr>
+<tr>
+<td style="text-align:left">createPattern()</td>
+<td style="text-align:left">在指定的方向上重复指定的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">createRadialGradient()</td>
+<td style="text-align:left">创建放射状/环形的渐变（用在画布内容上）</td>
+</tr>
+<tr>
+<td style="text-align:left">addColorStop()</td>
+<td style="text-align:left">规定渐变对象中的颜色和停止位置</td>
+</tr>
+</tbody>
+</table></p>
+            <p class="article-more-link">
+                <a href="/2016/02/15/html5-canvas/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-get-style" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -760,71 +942,6 @@
 
 
 
-    <article id="post-front-end-development" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/12/15/front-end-development/">前端开发面试题集锦</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/12/15/front-end-development/">
-            <time datetime="2015-12-14T16:00:00.000Z" itemprop="datePublished">2015-12-15</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/WEB/">WEB</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/WEB/">WEB</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="你如何理解HTML结构的语意化"><a href="#你如何理解HTML结构的语意化" class="headerlink" title="你如何理解HTML结构的语意化?"></a>你如何理解HTML结构的语意化?</h4><hr>
-<blockquote>
-<p>1、去掉或样式丢失的时候能让页面呈现清晰的结构<br>2、屏幕阅读器（如果访客有视障）会完全根据你的标记来”读”你的网页<br>3、PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）<br>4、搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重<br>5、你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记，而只注重语义标记<br>6、便于团队开发和维护</p>
-</blockquote>
-<h4 id="Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义"><a href="#Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义" class="headerlink" title="Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义?"></a>Doctype文档声明的严格模式和混杂模式，如何触发这两种模式，区分它们有何意义?</h4><hr>
-<p><strong>1、如何触发两种模式</strong><br>加入xml头部声明，可以触发IE浏览器的<code>Quirks mode</code>(怪异模式)，触发之后，浏览器解析方式就和IE5.5一样，拥有IE5.5一样的bug和其他问题，行为（<code>Javascript</code>）也是如此。<br><strong>2、IE6的触发：在XHTML的DOCTYPE前加入XML声明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>3、IE7的触发：在XML声明和XHTML的DOCTYPE之间，加入HTML注释</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;!-- ... and keep IE7 in quirks mode --&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>4、IE6和IE7都可以触发的：在HTML4.01的DOCTYPE文档头部，加入HTML注释</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- quirks mode --&gt;  &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2015/12/15/front-end-development/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/6/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">下一页 &raquo;</a>
     </nav>
@@ -837,6 +954,25 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/11/mp4-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe66ngcbuej30e80e80tk.jpg)" alt="自己动手搭建一个离线下载在线观看站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vps/">Vps</a></p>
+                            <p class="item-title"><a href="/2017/03/11/mp4-download/" class="title">自己动手搭建一个离线下载在线观看站</a></p>
+                            <p class="item-date"><time datetime="2017-03-10T16:00:00.000Z" itemprop="datePublished">2017-03-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1199,25 +1335,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/16/https-whole-website/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1f9zenhtpxtj30cq0bmgm8.jpg)" alt="利用腾讯云免费证书打造全https站" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Https/">Https</a></p>
-                            <p class="item-title"><a href="/2016/10/16/https-whole-website/" class="title">利用腾讯云免费证书打造全https站</a></p>
-                            <p class="item-date"><time datetime="2016-10-15T16:00:00.000Z" itemprop="datePublished">2016-10-16</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1228,7 +1345,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vps/" style="font-size: 10px;">Vps</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.luckyw.cn/2017/03/11/mp4-download/</loc>
+    
+    <lastmod>2017-03-31T10:08:57.726Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.luckyw.cn/2017/02/18/arukas-api-getss/</loc>
     
     <lastmod>2017-03-30T13:19:52.064Z</lastmod>
@@ -625,14 +632,14 @@
   </url>
   
   <url>
-    <loc>https://blog.luckyw.cn/tags/index.html</loc>
+    <loc>https://blog.luckyw.cn/categories/index.html</loc>
     
     <lastmod>2016-09-09T08:16:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.luckyw.cn/categories/index.html</loc>
+    <loc>https://blog.luckyw.cn/tags/index.html</loc>
     
     <lastmod>2016-09-09T08:16:08.000Z</lastmod>
     

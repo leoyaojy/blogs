@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    
+    <title>自己动手搭建一个离线下载在线观看站 | Leo Angel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="离线,磁力,html5,video">
+    <meta name="description" content="115又涨价了
+记得115网盘刚出来那会，某宝不到一百一年会员，第二年涨到接近两百，今天直接三百了，还让不让我们这些穷屌丝活了，看个小姐姐就这么贵吗？本文基于自己年费过期又不想花那么多钱的背景下，自己动手搭建一个可离线下载、在线观看的站点，种子也是可以的哦，O(∩_∩)O哈哈哈~
+需求
+
+Linux服务器一台(本文使用vultr提供的服务器)
+SSH连接工具[putty,xshell](本文使用U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己动手搭建一个离线下载在线观看站">
+<meta property="og:url" content="https://blog.luckyw.cn/2017/03/11/mp4-download/index.html">
+<meta property="og:site_name" content="Leo Angel">
+<meta property="og:description" content="115又涨价了
+记得115网盘刚出来那会，某宝不到一百一年会员，第二年涨到接近两百，今天直接三百了，还让不让我们这些穷屌丝活了，看个小姐姐就这么贵吗？本文基于自己年费过期又不想花那么多钱的背景下，自己动手搭建一个可离线下载、在线观看的站点，种子也是可以的哦，O(∩_∩)O哈哈哈~
+需求
+
+Linux服务器一台(本文使用vultr提供的服务器)
+SSH连接工具[putty,xshell](本文使用U">
+<meta property="og:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe66ngcbuej30e80e80tk.jpg">
+<meta property="og:updated_time" content="2017-03-31T10:08:57.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自己动手搭建一个离线下载在线观看站">
+<meta name="twitter:description" content="115又涨价了
+记得115网盘刚出来那会，某宝不到一百一年会员，第二年涨到接近两百，今天直接三百了，还让不让我们这些穷屌丝活了，看个小姐姐就这么贵吗？本文基于自己年费过期又不想花那么多钱的背景下，自己动手搭建一个可离线下载、在线观看的站点，种子也是可以的哦，O(∩_∩)O哈哈哈~
+需求
+
+Linux服务器一台(本文使用vultr提供的服务器)
+SSH连接工具[putty,xshell](本文使用U">
+<meta name="twitter:image" content="https://blog.luckyw.cn//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe66ngcbuej30e80e80tk.jpg">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="icon" href="/css/images/favicon.ico" />
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">Leo Angel</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/logo.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/logo.jpg" />
+            <h2 id="name">Leo Angel</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>长沙，中国</span>
+            <a id="follow" target="_blank" href="https://github.com/leoyaojy/">关注</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                90
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                33
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/leoyaojy" target="_blank" title="github" >
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-mp4-download" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            自己动手搭建一个离线下载在线观看站
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/11/mp4-download/">
+            <time datetime="2017-03-10T16:00:00.000Z" itemprop="datePublished">2017-03-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Vps/">Vps</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Vps/">Vps</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="115又涨价了"><a href="#115又涨价了" class="headerlink" title="115又涨价了"></a>115又涨价了</h4><hr>
+<p>记得115网盘刚出来那会，某宝不到一百一年会员，第二年涨到接近两百，今天直接三百了，还让不让我们这些穷屌丝活了，看个小姐姐就这么贵吗？本文基于自己年费过期又不想花那么多钱的背景下，自己动手搭建一个可离线下载、在线观看的站点，种子也是可以的哦，O(∩_∩)O哈哈哈~</p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><hr>
+<ol>
+<li><code>Linux</code>服务器一台(本文使用<code>vultr</code>提供的服务器)</li>
+<li><code>SSH</code>连接工具[<code>putty</code>,<code>xshell</code>](本文使用<code>Ubuntu</code>终端工具)</li>
+<li>一个域名并配置好二级域名映射到服务器<code>ip</code></li>
+</ol>
+<p>如何获取可参考:<a href="https://blog.luckyw.cn/2016/11/13/vps-website-build-vps/">手把手教你近乎免费搭建VPS和网站</a><br><a id="more"></a></p>
+<h4 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h4><hr>
+<ol>
+<li><p>服务器<br> 这里我采用的<code>vultr</code>提供的服务器，为什么不使用之前的<code>digitalocean</code>的服务器了，那是因为<code>vultr</code>新出了一款低配，性价比更高，仅需<code>$2.5</code>每月。注册过程就不多介绍了，注册之后需要使用信用卡、贷记卡或者<code>PayPal</code>进行账户认证。接下来我们开始创建一个实例(<code>Deploy New Instance</code>)，具体配置信息如下(可自行抉择):</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Server Location: Tokyo Japan</div><div class="line">Server Type: 16.04  x64</div><div class="line">Server Size: $2.50/mo</div></pre></td></tr></table></figure>
+<p> 之后点击<code>Deploy Now</code>按钮，实例就创建成功了，需要等上几分钟。好了之后点击右侧<code>Manage</code>按钮进入管理该实例的详细信息，如下图所示:<br> <img src="//ww1.sinaimg.cn/large/005K0nVZgy1fe61xvdhijj319z0jk0vj.jpg" alt=""><br> 可以看到服务器<code>ip</code>地址以及<code>root</code>账户密码，我们选择复制密码。打开终端，输入<code>ssh root@YourServerIp</code>再粘贴密码到终端里，之后我们可以看到成功登录的信息<br> <img src="//ww1.sinaimg.cn/large/005K0nVZgy1fe621nttdmj30oj0750tj.jpg" alt=""><br> 注:如果觉得本文对你有帮助的话，不妨使用博主的<code>refer</code>进行注册，大家都可以获得<code>$10</code>优惠券。<a href="https://m.do.co/c/7e83c86e99aa" target="_blank" rel="external">digitalocean注册</a>  <a href="http://www.vultr.com/?ref=7137861" target="_blank" rel="external">vultr注册</a></p>
+</li>
+<li><p>安装LAMP环境</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">apt install lamp-server^</div><div class="line">vim /etc/apache2/apache2.conf</div><div class="line">修改对应部分为:</div><div class="line">&lt;Directory /var/www/&gt;</div><div class="line">    Options Indexes FollowSymLinks</div><div class="line">    AllowOverride All	//这里改为all，表示允许重写</div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+<p> 这里采用一键安装，其他安装方式可参考:<a href="https://blog.luckyw.cn/2016/08/21/ubuntu-lamp/">Ubuntu16.04搭建LAMP环境</a></p>
+</li>
+<li><p>安装<code>h5ai</code><br> <code>h5ai</code>是一个强大美观的目录列表程序</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd /var/www		//apache默认项目目录</div><div class="line">mkdir h5 &amp;&amp; cd $_	//创建目录并进入</div><div class="line">wget https://release.larsjung.de/h5ai/h5ai-0.29.0.zip</div><div class="line">unzip h5ai-0.29.0.zip	//unzip可通过apt install unzip进行安装</div><div class="line">vim .htaccess</div><div class="line">//粘贴入以下内容</div><div class="line">DirectoryIndex  index.html  index.php  /_h5ai/public/index.php</div></pre></td></tr></table></figure>
+<p> 创建<code>Apache</code>配置文件<code>h5.conf</code>:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">cd /etc/apache2/sites-available/</div><div class="line">cp 000-default.conf h5.conf //复制一份默认配置文件，直接在基础上修改即可</div><div class="line">vim h5.conf</div><div class="line">修改对应部分为:</div><div class="line">ServerName h5.****.**</div><div class="line">DocumentRoot /var/www/h5</div><div class="line">//启用h5.conf配置文件</div><div class="line">a2ensite h5.conf</div><div class="line">//重启apache</div><div class="line">service apache2 restart</div></pre></td></tr></table></figure>
+<p> 至此，文件服务器也即在线观看站就搭建完成了，效果如下图:<br> <img src="//ww1.sinaimg.cn/large/005K0nVZgy1fe642yq7ddj31ha06p3yl.jpg" alt=""></p>
+</li>
+<li><p>安装<code>aria2</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt install aria2</div><div class="line">cd /var/www</div><div class="line">mkdir ui &amp;&amp; cd $_</div><div class="line">git clone https://github.com/ziahamza/webui-aria2.git</div><div class="line">mv webui-aria2/* .</div></pre></td></tr></table></figure>
+<p> 创建<code>Apache</code>配置文件<code>ui.conf</code>:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">cd /etc/apache2/sites-available/</div><div class="line">cp 000-default.conf ui.conf //复制一份默认配置文件，直接在基础上修改即可</div><div class="line">vim ui.conf</div><div class="line">修改对应部分为:</div><div class="line">ServerName ui.****.**</div><div class="line">DocumentRoot /var/www/ui</div><div class="line">//启用ui.conf配置文件</div><div class="line">a2ensite ui.conf</div><div class="line">//重启apache</div><div class="line">service apache2 restart</div><div class="line">//启动aria2c并保持后台运行</div><div class="line">aria2c --enable-rpc --rpc-listen-all -D</div></pre></td></tr></table></figure>
+<p> 离线站点效果图如下:<br> <img src="//ww1.sinaimg.cn/large/005K0nVZgy1fe66bkjea0j31fs0p1dhs.jpg" alt=""></p>
+<h4 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h4></li>
+</ol>
+<hr>
+<p>115你虽然很强大，但是对我等这种屌丝而言，消费不起，还是自己搭建站点丰衣足食。但比起115网盘而言还是差了很多，没有115网盘那种变态的下载速度，不过还是可以将就着用的，你不妨试试看</p>
+
+        
+        </div>
+	
+	    <div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <div class="pay-code">
+        <img src="/css/images/zhifubao.jpg">
+        <img src="/css/images/weixin.jpg">
+    </div>
+</div>
+
+	    <div class="article-footer-copyright">
+	<p>
+		<b>版权声明</b>:本文由<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>创作和发表,采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">署名-非商业性使用-禁止演绎</a>3.0进行许可
+	</p>
+	<p>
+	<b>转载</b>请注明作者及出处,本文作者为:<a href="/about" target="_blank" title="Leo Angel">Leo Angel</a>
+	</p>
+	<p>
+	<b>本文标题</b>:<b><a href="/2017/03/11/mp4-download/" target="_blank" title="自己动手搭建一个离线下载在线观看站">自己动手搭建一个离线下载在线观看站</a></b>
+	</p>
+	<p>
+	<b>本文链接</b>:<b><a href="/2017/03/11/mp4-download/" target="_blank" title="自己动手搭建一个离线下载在线观看站">https://blog.luckyw.cn/2017/03/11/mp4-download/</a></b>
+	</p>
+</div>
+
+	    <p class="show-toc-btn">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+</p>
+<div id="menu" class="menu-article">
+    <p>目录</p>
+    <span class="menu-close" title="隐藏导航">×</span>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#115又涨价了"><span class="toc-number">1.</span> <span class="toc-text">115又涨价了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需求"><span class="toc-number">2.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搭建过程"><span class="toc-number">3.</span> <span class="toc-text">搭建过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结束语"><span class="toc-number">4.</span> <span class="toc-text">结束语</span></a></li></ol>
+</div>
+
+	
+	
+
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/03/05/vim-cmd/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Vim常用命令</div>
+        </a>
+    
+</nav>
+
+
+    
+    </div>
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/03/11/mp4-download/" data-title="自己动手搭建一个离线下载在线观看站" data-url="https://blog.luckyw.cn/2017/03/11/mp4-download/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+    
+    </section>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/11/mp4-download/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe66ngcbuej30e80e80tk.jpg)" alt="自己动手搭建一个离线下载在线观看站" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vps/">Vps</a></p>
+                            <p class="item-title"><a href="/2017/03/11/mp4-download/" class="title">自己动手搭建一个离线下载在线观看站</a></p>
+                            <p class="item-date"><time datetime="2017-03-10T16:00:00.000Z" itemprop="datePublished">2017-03-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/05/vim-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fe40oshbr8j30m80m83zm.jpg)" alt="Vim常用命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/03/05/vim-cmd/" class="title">Vim常用命令</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/25/ubuntu-tips/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1f94bwh2hvoj30b50b5wf9.jpg)" alt="ubuntu所遇问题汇总" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a></p>
+                            <p class="item-title"><a href="/2017/02/25/ubuntu-tips/" class="title">ubuntu所遇问题汇总</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/18/arukas-api-getss/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1f99zxx4x0qj30b40b4gm8.jpg)" alt="调用arukas接口实时获取ss配置信息" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/SS/">SS</a></p>
+                            <p class="item-title"><a href="/2017/02/18/arukas-api-getss/" class="title">调用arukas接口实时获取ss配置信息</a></p>
+                            <p class="item-date"><time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/11/express-jade/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmmutcn5wj30go0got8s)" alt="Express之Jade模板引擎" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Express/">Express</a></p>
+                            <p class="item-title"><a href="/2017/02/11/express-jade/" class="title">Express之Jade模板引擎</a></p>
+                            <p class="item-date"><time datetime="2017-02-10T16:00:00.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/04/music-visualize/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci73turfcj308c08c3ys)" alt="音乐可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/02/04/music-visualize/" class="title">音乐可视化</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T16:00:00.000Z" itemprop="datePublished">2017-02-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/21/canvas-easy-game/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fci3g4g5ehj30ev0evdhp)" alt="canvas写个简单的小游戏" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Html5/">Html5</a></p>
+                            <p class="item-title"><a href="/2017/01/21/canvas-easy-game/" class="title">canvas写个简单的小游戏</a></p>
+                            <p class="item-date"><time datetime="2017-01-20T16:00:00.000Z" itemprop="datePublished">2017-01-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/vue-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgy1fdmn6zg7sxj30dw0dw0sr)" alt="Vue入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vue/">Vue</a></p>
+                            <p class="item-title"><a href="/2017/01/14/vue-learn/" class="title">Vue入门初体验</a></p>
+                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/you-must-know-github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1fcdk0veuc0j30dw0dwt8w)" alt="你不可不知的github" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Github/">Github</a></p>
+                            <p class="item-title"><a href="/2017/01/07/you-must-know-github/" class="title">你不可不知的github</a></p>
+                            <p class="item-date"><time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/31/chrome-plugin-dev/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/005K0nVZgw1fbhyb87ay7j30ay0aydg8.jpg)" alt="Chrome插件开发——本地天气" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Chrome/">Chrome</a></p>
+                            <p class="item-title"><a href="/2016/12/31/chrome-plugin-dev/" class="title">Chrome插件开发——本地天气</a></p>
+                            <p class="item-date"><time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/25/php-gd-captcha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgw1fbet11ui4fj30dw0dw3yr.jpg)" alt="GD库生成图片验证码" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Php/">Php</a></p>
+                            <p class="item-title"><a href="/2016/12/25/php-gd-captcha/" class="title">GD库生成图片验证码</a></p>
+                            <p class="item-date"><time datetime="2016-12-24T16:00:00.000Z" itemprop="datePublished">2016-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/18/sass-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/005K0nVZgw1fb6qadz9wyj30b40b4t98.jpg)" alt="sass入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/18/sass-learn/" class="title">sass入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-17T16:00:00.000Z" itemprop="datePublished">2016-12-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/11/less-learn/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fb6l9s45a7j3074074mxa.jpg)" alt="less入门初体验" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/CSS/">CSS</a></p>
+                            <p class="item-title"><a href="/2016/12/11/less-learn/" class="title">less入门初体验</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T16:00:00.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/04/linux-funny-cmd/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/005K0nVZgw1fbet2a4agbj306y06ya9u.jpg)" alt="Linux下有趣的命令" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/12/04/linux-funny-cmd/" class="title">Linux下有趣的命令</a></p>
+                            <p class="item-date"><time datetime="2016-12-03T16:00:00.000Z" itemprop="datePublished">2016-12-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/27/js-stop-prevent/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1facr3o35j6j308c08c74a.jpg)" alt="JS阻止事件冒泡以及浏览器默认行为" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2016/11/27/js-stop-prevent/" class="title">JS阻止事件冒泡以及浏览器默认行为</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T16:00:00.000Z" itemprop="datePublished">2016-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/20/vps-website-build-website/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww2.sinaimg.cn/thumbnail/0062vBsDgw1fabhr7lqmhj30eq0eqgls.jpg)" alt="手把手教你近乎免费搭建VPS和网站——.me域名" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/20/vps-website-build-website/" class="title">手把手教你近乎免费搭建VPS和网站——.me域名</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T16:00:00.000Z" itemprop="datePublished">2016-11-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/13/vps-website-build-vps/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fabhzew49sj305k05kq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——VPS服务器" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/13/vps-website-build-vps/" class="title">手把手教你近乎免费搭建VPS和网站——VPS服务器</a></p>
+                            <p class="item-date"><time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
+                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
+                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
+                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
+                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
+                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vps/" style="font-size: 10px;">Vps</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">相关链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.jetbrains.com/">JetBrains</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.sublimetext.com/">Sublime Text</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://codepen.io/">CodePen</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.imooc.com/">慕课网</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.jikexueyuan.com/">极客学院</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.runoob.com/">菜鸟教程</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://taobaofed.org/">淘宝FED</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.75team.com/">360奇舞团</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fex.baidu.com/">百度FEX</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.alloyteam.com/">腾讯全端 AlloyTeam</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.css88.com/">CSS88</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://daneden.github.io/animate.css/">AnimateCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://fontawesome.io/">FontAwesome</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://necolas.github.io/normalize.css/">NormalizeCss</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://developer.mozilla.org/zh-CN/">Mozilla开发者网络</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 Leo Angel<br>
+        </div>
+		<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<span id="showDays"></span>
+		<script>
+		      var birthDay = new Date('09/01/2015');
+		      var now = new Date();
+		      var duration = now.getTime() - birthDay.getTime();
+		      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+		      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+		</script>
+		<span id="busuanzi_container_site_pv">
+		| 总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+    </div>
+
+</footer>
+
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'leoyaojy'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//luckyw.cn/js/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
