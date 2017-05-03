@@ -141,7 +141,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                90
+                93
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -170,6 +170,196 @@
 
             
             <section id="main">
+    <article id="post-storage" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/01/storage/">本地存储——Cookie与Web Storage</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/01/storage/">
+            <time datetime="2017-03-31T16:00:00.000Z" itemprop="datePublished">2017-04-01</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><hr>
+<p><code>cookie</code>是客户端用来存储数据的,它既可以在客户端设置也可以在服务器端设置。<code>cookie</code>会跟随任意<code>HTTP</code>请求一起发送</p>
+<h4 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h4><hr>
+<p><code>html5</code>标准中的<code>Web Storage</code>包括了两种存储方式:<code>sessionStorage</code>和<code>localStorage</code><br><code>sessionStorage</code>用于本地存储一个会话中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此<code>sessionStorage</code>仅仅是会话级别的存储<br>而<code>localStorage</code>用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><hr>
+<p><code>Web Storage</code>和<code>Cookie</code>相似都是客户端用来存储数据的，区别是它是为了更大容量存储设计的<br><code>Cookie</code>的大小是受限的，最多只能存储<code>4KB</code>的数据；并且每次你请求一个新的页面的时候，<code>Cookie</code>都会被发送过去，这样无形中浪费了带宽；再有就是不安全，很容易被拦截者截取进行篡改<br><code>Web Storage</code>拥有<code>setItem</code>、<code>getItem</code>、<code>removeItem</code>、<code>clear</code>等方法，不像<code>cookie</code>需要自己封装<code>setCookie</code>、<code>getCookie</code>等方法<br>但是<code>Cookie</code>也是不可以或缺的:<code>Cookie</code>的作用是与服务器进行交互，作为<code>HTTP</code>规范的一部分而存在 ，而<code>Web Storage</code>仅仅是为了在本地存储数据而生<br></p>
+            <p class="article-more-link">
+                <a href="/2017/04/01/storage/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-tostring-tolocalestring" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/03/24/tostring-tolocalestring/">toString与toLocaleString在不同数据类型下输出的差异</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/24/tostring-tolocalestring/">
+            <time datetime="2017-03-23T16:00:00.000Z" itemprop="datePublished">2017-03-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><code>Object</code>对象存在两个转化为字符串的方法，一个是常用的<code>toString</code>，另一个则是<code>toLocaleString</code>。接下来通过示例来展示各种不同数据类型下的输出差异<br>注:基本数据类型在调用<code>toString</code>与<code>toLocaleString</code>时，会首先将基本数据类型实例化为对应的对象类型。比如<code>var x = &#39;abc&#39;;</code>，示例中<code>x</code>并不是对象类型，但是在调用时，会首先通过<code>new String()</code>将文本实例化为<code>String</code>包装类型</p>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><hr>
+<p>效果相同，调用的是原始的<code>Object.toString()</code>方法<br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1feyq7utfxaj30ia04q3yo.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/24/tostring-tolocalestring/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
+    <article id="post-yarn-introduce" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/03/18/yarn-introduce/">Npm完美替代工具——Yarn</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/18/yarn-introduce/">
+            <time datetime="2017-03-17T16:00:00.000Z" itemprop="datePublished">2017-03-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Node/">Node</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node/">Node</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>众所周知，<code>npm</code>是<code>nodejs</code>默认的包管理工具，我们通过<code>npm</code>可以下载安装或者发布包，但是<code>npm</code>其实存在着很多小问题，比如安装速度慢、每次都要在线重新安装等，而<code>yarn</code>也正是为了解决<code>npm</code>当前存在的问题而产生。不说别的，光<code>github</code>上那么多星，你还不用这个那就真的凹凸了<br><code>Yarn</code>官网(支持中文): <a href="https://yarnpkg.com">https://yarnpkg.com</a><br>主要亮点:<br><img src="//ww1.sinaimg.cn/large/005ZaTfigy1fepg4l0yimj313t09rq5m.jpg" alt=""></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><hr>
+<ol>
+<li><p>可直接通过<code>npm</code>工具全局安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yarn</div></pre></td></tr></table></figure>
+</li>
+<li><p>参考官网各平台安装方式: <a href="https://yarnpkg.com/zh-Hans/docs/install">https://yarnpkg.com/zh-Hans/docs/install</a></p>
+</li>
+<li>输入<code>yarn -V</code>，正确显示版本号说明安装成功;<code>yarn -h</code>可查看帮助信息</li>
+</ol></p>
+            <p class="article-more-link">
+                <a href="/2017/03/18/yarn-introduce/#more">阅读更多</a>
+            </p>
+        
+        </div>
+	
+	
+
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-mp4-download" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -601,193 +791,8 @@
 
 
 
-    <article id="post-vue-learn" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/14/vue-learn/">Vue入门初体验</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/14/vue-learn/">
-            <time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Vue/">Vue</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Vue/">Vue</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><code>Vue</code>可以说是现在最火的<code>MVVM</code>前端UI框架了吧，整体性能优于<code>React</code>，比<code>Angular</code>也更轻量，具体可参考官网<a href="https://cn.vuejs.org/v2/guide/comparison.html">对比其他框架</a><br>官方文档: <a href="https://cn.vuejs.org/v2/api/">https://cn.vuejs.org/v2/api/</a></p>
-<h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><hr>
-<p>首先我们开始从学每门语言的<code>hello world</code>入门<code>Vue</code>吧<br><code>html</code>代码，同<code>angular</code>一样，采用双大括号的形式实现数据绑定:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p><code>js</code>代码，通过<code>el</code>获取到<code>html</code>的节点，向节点中插入<code>data</code>里的<code>message</code>的值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var app = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello VueJs&apos;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello VueJs</div></pre></td></tr></table></figure></p>
-<p>注:<code>el</code>指明了创建的<code>Vue</code>实例对象的作用域，<code>data</code>则是用于存储<code>Vue</code>实例的数据对象<br></p>
-            <p class="article-more-link">
-                <a href="/2017/01/14/vue-learn/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-you-must-know-github" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/07/you-must-know-github/">你不可不知的github</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/07/you-must-know-github/">
-            <time datetime="2017-01-06T16:00:00.000Z" itemprop="datePublished">2017-01-07</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Github/">Github</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Github/">Github</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="使用Github-Pages搭建自己的静态网站、博客"><a href="#使用Github-Pages搭建自己的静态网站、博客" class="headerlink" title="使用Github Pages搭建自己的静态网站、博客"></a>使用Github Pages搭建自己的静态网站、博客</h4><hr>
-<p>链接:<a href="https://pages.github.com">https://pages.github.com</a><br>可参考我的这篇文章<a href="https://blog.luckyw.cn/2015/09/05/github-hexo/">github上搭建hexo博客</a>教你如何使用<code>hexo</code>以及<code>Github Pages</code>搭建个人博客</p>
-<h4 id="Github短网址生成"><a href="#Github短网址生成" class="headerlink" title="Github短网址生成"></a>Github短网址生成</h4><hr>
-<p>链接:<a href="https://git.io">https://git.io</a><br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fcdkci8hl8j30ma02bdft" alt=""><br>注意:只能使用<code>github.com</code>域名下的网址</p>
-<h4 id="Github简历"><a href="#Github简历" class="headerlink" title="Github简历"></a>Github简历</h4><hr>
-<p>链接:<a href="https://resume.github.io">https://resume.github.io</a><br><img src="//ww1.sinaimg.cn/large/005K0nVZgy1fcdkswffhvj30pw09kt9c" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2017/01/07/you-must-know-github/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
-    <article id="post-chrome-plugin-dev" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/12/31/chrome-plugin-dev/">Chrome插件开发——本地天气</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/12/31/chrome-plugin-dev/">
-            <time datetime="2016-12-30T16:00:00.000Z" itemprop="datePublished">2016-12-31</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Chrome/">Chrome</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>经常在<code>Chrome应用商店</code>下载扩展程序也就是插件，有时候在想可不可以自己也开发一个插件用用呢？本文就是在这样的背景下产生的，以一个生活必需的简单获取天气的插件作为开发演示，下面就开始我们的<code>Chrome插件开发之旅</code>吧！<br>源码地址: <a href="https://github.com/leoyaojy/chrome-plugin-weather.git">https://github.com/leoyaojy/chrome-plugin-weather.git</a><br>目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">├── css</div><div class="line">│   └── main.css</div><div class="line">├── imgs</div><div class="line">│   ├── icon-128.png</div><div class="line">│   ├── icon-16.png</div><div class="line">│   ├── icon-19.png</div><div class="line">│   └── icon-38.png</div><div class="line">├── js</div><div class="line">│   ├── jquery.js</div><div class="line">│   └── main.js</div><div class="line">├── manifest.json</div><div class="line">└── popup.html</div></pre></td></tr></table></figure></p>
-<p>效果图:<br><img src="//ww2.sinaimg.cn/large/005K0nVZgw1fbhym8jwlqj308d0e7mya.jpg" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2016/12/31/chrome-plugin-dev/#more">阅读更多</a>
-            </p>
-        
-        </div>
-	
-	
-
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
 </section>
             
@@ -798,6 +803,63 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/01/storage/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1ff842wu6uzj308c08cgm1.jpg)" alt="本地存储——Cookie与Web Storage" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2017/04/01/storage/" class="title">本地存储——Cookie与Web Storage</a></p>
+                            <p class="item-date"><time datetime="2017-03-31T16:00:00.000Z" itemprop="datePublished">2017-04-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/24/tostring-tolocalestring/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1feyqs4mx1bj30k00k0t9a.jpg)" alt="toString与toLocaleString在不同数据类型下输出的差异" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/2017/03/24/tostring-tolocalestring/" class="title">toString与toLocaleString在不同数据类型下输出的差异</a></p>
+                            <p class="item-date"><time datetime="2017-03-23T16:00:00.000Z" itemprop="datePublished">2017-03-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/18/yarn-introduce/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/005K0nVZgy1feyp0irpicj307s07s3yg.jpg)" alt="Npm完美替代工具——Yarn" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Node/">Node</a></p>
+                            <p class="item-title"><a href="/2017/03/18/yarn-introduce/" class="title">Npm完美替代工具——Yarn</a></p>
+                            <p class="item-date"><time datetime="2017-03-17T16:00:00.000Z" itemprop="datePublished">2017-03-18</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1122,63 +1184,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/06/vps-website-build-edumail/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww3.sinaimg.cn/thumbnail/0062vBsDgw1fabi1mew7rj305p05pmx2.jpg)" alt="手把手教你近乎免费搭建VPS和网站——注册edu邮箱" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
-                            <p class="item-title"><a href="/2016/11/06/vps-website-build-edumail/" class="title">手把手教你近乎免费搭建VPS和网站——注册edu邮箱</a></p>
-                            <p class="item-date"><time datetime="2016-11-05T16:00:00.000Z" itemprop="datePublished">2016-11-06</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/30/vps-website-build-background/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww4.sinaimg.cn/thumbnail/0062vBsDgw1fabjctc56mj306y06yq34.jpg)" alt="手把手教你近乎免费搭建VPS和网站——背景介绍" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/建站/">建站</a></p>
-                            <p class="item-title"><a href="/2016/10/30/vps-website-build-background/" class="title">手把手教你近乎免费搭建VPS和网站——背景介绍</a></p>
-                            <p class="item-date"><time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/23/js-jquery-wh/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//ww1.sinaimg.cn/thumbnail/0062vBsDgw1fac6fijte1j305p04pdft.jpg)" alt="JS、jQuery各种宽高属性" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/JS-JQuery/">JS,JQuery</a></p>
-                            <p class="item-title"><a href="/2016/10/23/js-jquery-wh/" class="title">JS、jQuery各种宽高属性</a></p>
-                            <p class="item-date"><time datetime="2016-10-22T16:00:00.000Z" itemprop="datePublished">2016-10-23</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1189,7 +1194,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 13.75px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.25px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 13.75px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.5px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Php/" style="font-size: 12.5px;">Php</a> <a href="/tags/Python/" style="font-size: 11.25px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.25px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 16.25px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vps/" style="font-size: 10px;">Vps</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.5px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 13.75px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
+            <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 14.29px;">Chrome</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 12.86px;">Hexo</a> <a href="/tags/Html5/" style="font-size: 14.29px;">Html5</a> <a href="/tags/Https/" style="font-size: 10px;">Https</a> <a href="/tags/JQuery/" style="font-size: 12.86px;">JQuery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/Linux/" style="font-size: 12.86px;">Linux</a> <a href="/tags/MongoDb/" style="font-size: 10px;">MongoDb</a> <a href="/tags/Node/" style="font-size: 15.71px;">Node</a> <a href="/tags/Php/" style="font-size: 12.86px;">Php</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Python，Mysql/" style="font-size: 10px;">Python，Mysql</a> <a href="/tags/REG/" style="font-size: 10px;">REG</a> <a href="/tags/SS/" style="font-size: 11.43px;">SS</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 15.71px;">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vps/" style="font-size: 10px;">Vps</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/WEB/" style="font-size: 17.14px;">WEB</a> <a href="/tags/Webstorm/" style="font-size: 10px;">Webstorm</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/建站/" style="font-size: 14.29px;">建站</a> <a href="/tags/慕课网/" style="font-size: 10px;">慕课网</a>
         </div>
     </div>
 
@@ -1294,19 +1299,16 @@
 
         
     
+    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysYD5g1F"></script>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
     <script type="text/javascript">
-    var duoshuoQuery = {short_name:'leoyaojy'};
-    (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//luckyw.cn/js/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    window.changyan.api.config({
+    appid: 'cysYD5g1F',
+    conf: 'prod_8b3ce8e332616f54cd1342f48a5f6fdc'
+    });
     </script>
 
-    <script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
+
 
 
 
